@@ -11,4 +11,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 db = SQLAlchemy(app)
 
-from ludido import routes # noqa
+from ludido import routes  # noqa
