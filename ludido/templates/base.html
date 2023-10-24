@@ -22,17 +22,17 @@
 <!-- Bootstrap Navbar-->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" id="logo">Ludido</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}" id="logo">Ludido</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="nav-toggler-icon"><i class="fa-solid fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse text-center" id="navbarToggler">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Activities</a>
+            <a class="nav-link" href="{{ url_for('activities') }}">Activities</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Disabled</a>
@@ -40,7 +40,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
 
 <!-- Main content -->
 <div class="container">
