@@ -1,0 +1,35 @@
+/* NAVIGATION BAR */
+
+#logo {
+    font-family: 'Kablammo', cursive;
+    color: #FF9D2E;
+    font-size: xx-large;
+    text-shadow: rgb(255, 255, 139) 2px 0px 0px, rgb(255, 255, 139) 1.75517px 0.958851px 0px, rgb(255, 255, 139) 1.0806px 1.68294px 0px, rgb(255, 255, 139) 0.141474px 1.99499px 0px, rgb(255, 255, 139) -0.832294px 1.81859px 0px, rgb(255, 255, 139) -1.60229px 1.19694px 0px, rgb(255, 255, 139) -1.97998px 0.28224px 0px, rgb(255, 255, 139) -1.87291px -0.701566px 0px, rgb(255, 255, 139) -1.30729px -1.5136px 0px, rgb(255, 255, 139) -0.421592px -1.95506px 0px, rgb(255, 255, 139) 0.567324px -1.91785px 0px, rgb(255, 255, 139) 1.41734px -1.41108px 0px, rgb(255, 255, 139) 1.92034px -0.558831px 0px;
+
+}
+
+#logo:hover {
+    transform: scale(1.04);
+}
+
+.nav-link {
+    font-family: 'Chewy', cursive;
+    color: #FF9D2E;
+    font-size: large;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 139);
+}
+
+nav {
+    background-color: #13245D;
+}
+
+.navbar-toggler {
+    color: #FF9D2E;
+}
+
+.nav-toggler-icon {
+    color: #FF9D2E;
+}
