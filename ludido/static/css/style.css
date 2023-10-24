@@ -33,3 +33,24 @@ nav {
 .nav-toggler-icon {
     color: #FF9D2E;
 }
+
+/* FOOTER */
+footer {
+    background-color: #13245D;
+    color: #FF9D2E;
+    font-family: 'Chewy', cursive;
+}
+
+.footer-links a {
+    color: #FF9D2E;
+}
+
+.footer-links a:hover {
+    color: rgb(255, 255, 139);
+}
+
+/* MAIN BODY */
+
+body {
+    background-color: #96B0CB;
+}
