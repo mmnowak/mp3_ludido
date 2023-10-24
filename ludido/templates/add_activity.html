@@ -1,15 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
+<!-- Bootstrap Form -->
+<div class="container m-4">
+    <form class="col s12" method="POST" action="{{ url_for('add_activity') }}">
+    <div class="mb-3 form-floating">
+        <input type="text" class="form-control" id="activity-name" placeholder="Activity Name" required>
+        <label for="activity-name" class="form-label">Activity Name</label>
+    </div>
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Age Group</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Developmental Area</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Activity Type</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="mb-3 form-floating">
+        <input type="text" class="form-control" id="occasion" placeholder="Activity Name" required>
+        <label for="occasion" class="form-label">Occasion</label>
+    </div>
+    <div class="mb-3 form-floating">
+        <textarea class="form-control" id="eactivity-description" rows="10" placeholder="Activity Description" required></textarea>
+        <label for="activity-description" class="form-label">Activity Description</label>
+     </div>
+     <div class="mb-3">        
+        <input class="form-control" type="file" id="images" multiple>
       </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+     <div class="col-auto">
+        <button type="submit" class="btn mb-3">Submit</button>
       </div>
+    </form>
 </div>
 
 

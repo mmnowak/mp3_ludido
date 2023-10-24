@@ -54,3 +54,9 @@ footer {
 body {
     background-color: #96B0CB;
 }
+
+
+.required-field {
+    color: red;
+    font-size: xx-small;
+}
