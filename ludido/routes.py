@@ -52,3 +52,11 @@ def edit_occasion(occasion_id):
         db.session.commit()
         return redirect(url_for("occasions"))
     return render_template("edit_occasion.html", occasion=occasion)
+
+
+@app.route("/delete_occasion/<int:occasion_id>")
+def delete_occasion(occasion_id):
+    occasion = Occasion.query.get_or_404(occasion_id)
+    db.session.delete(occasion)
+    db.session.commit()
+    return redirect(url_for("occasions"))

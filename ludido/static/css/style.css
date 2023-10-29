@@ -73,7 +73,7 @@ body {
 
 .pg-title {
     font-family: 'Kablammo', cursive;
-    font-size: 5rem;
+    font-size: calc(50px + 0.390625vw);
     color: #13245D;
 }
 
@@ -90,4 +90,15 @@ body {
     color: rgb(255, 255, 139);
     background-color: #13245D;
     border: 2px solid rgb(255, 255, 139);
+}
+
+.form {
+    width: 80%;
+    margin: auto;
+}
+
+.delete-modal {
+    background-color: rgb(255, 255, 139);
+    color: #13245D;
+    font-family: 'Chewy', cursive;
 }

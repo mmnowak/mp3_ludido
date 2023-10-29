@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container mt-5 text-center">
+<h1 class="pg-title">Add Occasion</h1>
 <!-- Bootstrap Form -->
-<div class="container m-4">
-    <form class="col s12" method="POST" action="{{ url_for('add_occasion') }}">
+<div class="container mt-3">
+    <form class="col form" method="POST" action="{{ url_for('add_occasion') }}">
     <div class="mb-3 form-floating">
         <input id="occasion_name" name="occasion_name" minlength="3" maxlength="25" type="text" class="validate form-control" required>
-        <label for="occasion_name" class="form-label">Add Occasion</label>
+        <label for="occasion_name" class="form-label">Occasion Name</label>
     </div>
     <div class="col-auto">
-        <button type="submit" class="btn mb-3">Add Occasion</button>
+        <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-plus"></i> Add Occasion</button>
       </div>
     </form>
+</div>
 </div>
 
 
