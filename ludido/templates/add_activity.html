@@ -5,8 +5,8 @@
 <div class="container m-4">
     <form class="col s12" method="POST" action="{{ url_for('add_activity') }}">
     <div class="mb-3 form-floating">
-        <input type="text" class="form-control" id="activity-name" placeholder="Activity Name" required>
-        <label for="activity-name" class="form-label">Activity Name</label>
+        <input type="text" class="form-control" id="activity_name" name="activity_name" placeholder="Activity Name" required>
+        <label for="activity_name" class="form-label">Activity Name</label>
     </div>
     <div class="mb-3">
         <select class="form-select" aria-label="Default select example">
@@ -33,7 +33,7 @@
         </select>
     </div>
     <div class="mb-3 form-floating">
-        <input type="text" class="form-control" id="occasion" placeholder="Activity Name" required>
+        <input type="text" class="form-control" id="occasion" placeholder="Activity Name">
         <label for="occasion" class="form-label">Occasion</label>
     </div>
     <div class="mb-3 form-floating">

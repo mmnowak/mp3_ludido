@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h1>Occasions</h1>
+    <a class="btn" href="{{ url_for('add_occasion') }}">Add Occasion</a>
+    <div class="row">
+        {% for occasion in occasions %}
+        <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ occasion.occasion_name }}</h5>
+              <a href="#" class="btn btn-primary">See</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

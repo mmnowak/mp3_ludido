@@ -1,44 +1,16 @@
 from ludido import db
 
 
-class Ages(db.Model):
-    # schema for the Age Groups model
+class Occasion(db.Model):
+    # schema for the Occasion model
     id = db.Column(db.Integer, primary_key=True)
-    activities = db.relationship("Activity", backref="ages",
+    occasion_name = db.Column(db.String(50), unique=True, nullable=False)
+    activities = db.relationship("Activity", backref="occasion",
                                  cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-        return self
-
-
-class Type(db.Model):
-    # schema for the Activity Typr model
-    id = db.Column(db.Integer, primary_key=True)
-
-    def __repr__(self):
-        # __repr__ to represent itself in the form of a string
-        return self
-
-
-class Development(db.Model):
-    # schema for the Developmental Area model
-    id = db.Column(db.Integer, primary_key=True)
-
-    def __repr__(self):
-        # __repr__ to represent itself in the form of a string
-        return self
-
-
-class Occasion(db.Model):
-    # schema for the Occasion model
-    id = db.Column(db.Integer, primary_key=True)
-    activities = db.relationship("Activity", backref="occasion", cascade="all, \
-                                 delete", lazy=True)
-
-    def __repr__(self):
-        # __repr__ to represent itself in the form of a string
-        return self
+        return self.occasion_name
 
 
 class Activity(db.Model):
@@ -49,8 +21,9 @@ class Activity(db.Model):
     activity_age = db.Column(db.Text, nullable=False)
     activity_type = db.Column(db.Text, nullable=False)
     activity_developmental = db.Column(db.Text, nullable=False)
-    activity_id = db.Column(db.Integer, db.ForeignKey("activity.id",
-                                                      ondelete="CASCADE"), nullable=False)
+    occasion_id = db.Column(db.Integer, db.ForeignKey("occasion.id",
+                                                      ondelete="CASCADE"),
+                            nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
