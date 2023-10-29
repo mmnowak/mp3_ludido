@@ -1,21 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-    <h1>Occasions</h1>
-    <a class="btn" href="{{ url_for('add_occasion') }}">Add Occasion</a>
-    <div class="row">
+<div class="container mt-3 text-center">
+    <h1 class="pg-title">Occasions</h1>
+    <a class="btn add-btn btn-primary" href="{{ url_for('add_occasion') }}">Add Occasion</a>
+    <div class="row mt-3">        
         {% for occasion in occasions %}
-        <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">{{ occasion.occasion_name }}</h5>
+        <div class="col">
+        <div class="card occasion-card m-3">
+            <div class="card-body text-center m-3">
+              <h2 class="card-title">{{ occasion.occasion_name }}</h2>
               <a href="#" class="btn btn-primary">See</a>
             </div>
-          </div>
-    </div>
+        </div>
+        </div>
     {% endfor %}
 </div>
-
-
 
 {% endblock %}
