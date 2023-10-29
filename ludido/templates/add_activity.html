@@ -5,41 +5,57 @@
 <div class="container m-4">
     <form class="col s12" method="POST" action="{{ url_for('add_activity') }}">
     <div class="mb-3 form-floating">
-        <input type="text" class="form-control" id="activity_name" name="activity_name" placeholder="Activity Name" required>
+        <input id="activity_name" name="activity_name" minlength="3" maxlength="25" type="text" class="validate form-control" required>
         <label for="activity_name" class="form-label">Activity Name</label>
     </div>
     <div class="mb-3">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select"  id="activity_age" name="activity_age" aria-label="Default select example">
             <option selected>Age Group</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">>12 months</option>
+            <option value="2">12-18 Months</option>
+            <option value="3">18-24 Months</option>
+            <option value="4">2-3 Years</option>
+            <option value="5">3-5 Years</option>
+            <option value="6">5-7 Years</option>
+            <option value="3">7-11 Years</option>
+            <option value="3">11+ Years</option>
         </select>
     </div>
     <div class="mb-3">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select"  id="activity_developmental" name="activity_developmental" aria-label="Default select example">
             <option selected>Developmental Area</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">Social</option>
+            <option value="2">Motor</option>
+            <option value="3">Intellectual</option>
+            <option value="4">Communication and Language</option>
+            <option value="5">Emotional</option>
         </select>
     </div>
     <div class="mb-3">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" id="activity_type" name="activity_type" aria-label="Default select example">
             <option selected>Activity Type</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">Physical</option>
+            <option value="2">Construction</option>
+            <option value="3">Roleplay and Pretence</option>
+            <option value="4">Arts and Crafts</option>
+            <option value="5">Games with Rules</option>
+            <option value="6">Tuff Trays</option>
+            <option value="7">Sensory</option>
+            <option value="8">Nature and Outdoors</option>
         </select>
     </div>
-    <div class="mb-3 form-floating">
-        <input type="text" class="form-control" id="occasion" placeholder="Activity Name">
-        <label for="occasion" class="form-label">Occasion</label>
+    <div class="mb-3">
+        <select class="form-select" id="occasion_id" name="occasion_id" aria-label="Default select example">
+            <option selected>Occcasion</option>
+            {% for occasion in occasions %}
+            <option value="{{ occasion.id }}">{{ occasion.occasion_name }}</option>
+            {% endfor %}
+        </select>
     </div>
-    <div class="mb-3 form-floating">
-        <textarea class="form-control" id="eactivity-description" rows="10" placeholder="Activity Description" required></textarea>
-        <label for="activity-description" class="form-label">Activity Description</label>
-     </div>
+    <div class="mb-3">
+        <label for="activity_description" class="form-label">Activity Description</label>
+        <textarea id="activity_description" name="activity_description" rows="5" type="text" class="validate form-control" required></textarea>
+        </div>
      <div class="mb-3">        
         <input class="form-control" type="file" id="images" multiple>
       </div>

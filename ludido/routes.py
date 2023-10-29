@@ -20,12 +20,20 @@ def index():
 
 @app.route("/add_activity", methods=["GET", "POST"])
 def add_activity():
+    occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if request.method == "POST":
-        activity = Activity(activity_name=request.form.get("activity_name"))
+        activity = Activity(
+            activity_name=request.form.get("activity_name"),
+            activity_description=request.form.get("activity_description"),
+            activity_age=request.form.get("activity_age"),
+            activity_type=request.form.get("activity_type"),
+            activity_developmental=request.form.get("activity_developmental"),
+            occasion_id=request.form.get("occasion_id")
+            )
         db.session.add(activity)
         db.session.commit()
         return redirect(url_for("activities"))
-    return render_template("add_activity.html")
+    return render_template("add_activity.html", occasions=occasions)
 
 
 @app.route("/occasions")
