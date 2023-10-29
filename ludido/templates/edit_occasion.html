@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Bootstrap Form -->
+<div class="container m-4">
+    <form class="col s12" method="POST" action="{{ url_for('edit_occasion', occasion_id=occasion.id) }}">
+    <div class="mb-3 form-floating">
+        <input id="occasion_name" name="occasion_name" value="{{ occasion.occasion_name }}" minlength="3" maxlength="50" type="text" class="validate form-control" required>
+        <label for="occasion_name" class="form-label">Occasion Name</label>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn mb-3">Edit Occasion</button>
+      </div>
+    </form>
+</div>
+
+
+
+{% endblock %}

@@ -42,3 +42,13 @@ def add_occasion():
         db.session.commit()
         return redirect(url_for("occasions"))
     return render_template("add_occasion.html")
+
+
+@app.route("/edit_occassion/<int:occasion_id>", methods=["GET", "POST"])
+def edit_occasion(occasion_id):
+    occasion = Occasion.query.get_or_404(occasion_id)
+    if request.method == "POST":
+        occasion.occasion_name = request.form.get("occasion_name")
+        db.session.commit()
+        return redirect(url_for("occasions"))
+    return render_template("edit_occasion.html", occasion=occasion)

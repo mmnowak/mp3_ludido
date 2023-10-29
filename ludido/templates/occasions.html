@@ -10,7 +10,8 @@
         <div class="card occasion-card m-3">
             <div class="card-body text-center m-3">
               <h2 class="card-title">{{ occasion.occasion_name }}</h2>
-              <a href="#" class="btn btn-primary">See</a>
+              <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-primary">Edit</a>
+              <a href="#" class="btn btn-primary">Delete</a>
             </div>
         </div>
         </div>
