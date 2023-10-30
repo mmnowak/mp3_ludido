@@ -37,6 +37,30 @@ def add_activity():
     return render_template("add_activity.html", occasions=occasions)
 
 
+@app.route("/full_activity/<int:activity_id>")
+def full_activity(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+    return render_template("full_activity.html", activity=activity)
+
+
+@app.route("/edit_activity/<int:activity_id>", methods=["GET", "POST"])
+def edit_activity(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+    occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
+    if request.method == "POST":
+        activity.activity_name = request.form.get("activity_name"),
+        activity.activity_description = request.form.get("activity_description"),
+        activity.activity_age = request.form.get("activity_age"),
+        activity.activity_type = request.form.get("activity_type"),
+        activity.activity_developmental = \
+            request.form.get("activity_developmental"),
+        activity.occasion_id = request.form.get("occasion_id")
+        db.session.commit()
+        return redirect(url_for("activities"))
+    return render_template("edit_activity.html", activity=activity, 
+                           occasions=occasions)
+
+
 @app.route("/occasions")
 def occasions():
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
@@ -69,12 +93,6 @@ def delete_occasion(occasion_id):
     db.session.delete(occasion)
     db.session.commit()
     return redirect(url_for("occasions"))
-
-
-@app.route("/full_activity/<int:activity_id>")
-def full_activity(activity_id):
-    activity = Activity.query.get_or_404(activity_id)
-    return render_template("full_activity.html", activity=activity)
 
 
 @app.route("/age-groups")

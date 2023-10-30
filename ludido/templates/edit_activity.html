@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-3 text-center">
+    <h1 class="pg-title">Edit Activity</h1>
+<!-- Bootstrap Form -->
+<div class="container m-4">
+    <form class="col s12" method="POST" action="{{ url_for('edit_activity', activity_id=activity.id) }}">
+    <div class="mb-3 form-floating">
+        <input id="activity_name" name="activity_name" value="{{ activity.activity_name }}" minlength="3" maxlength="25" type="text" class="validate form-control" required>
+        <label for="activity_name" class="form-label">Activity Name</label>
+    </div>
+    <div class="mb-3">
+        <select class="form-select"  id="activity_age" name="activity_age" value="{{ activity.activity_age }}" aria-label="Default select example">
+            <option value="12 months">>12 months</option>
+            <option value="12-18 Months">12-18 Months</option>
+            <option value="18-24 Months">18-24 Months</option>
+            <option value="2-3 Years">2-3 Years</option>
+            <option value="3-5 Years">3-5 Years</option>
+            <option value="5-7 Years">5-7 Years</option>
+            <option value="7-11 Years">7-11 Years</option>
+            <option value="11+ Years">11+ Years</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select"  id="activity_developmental" name="activity_developmental" value="{{ activity.activity_developmental }}" aria-label="Default select example">
+            <option value="Social">Social</option>
+            <option value="Fine Motor">Fine Motor</option>
+            <option value="Gross Motor">Gross Motor</option>
+            <option value="Intellectual">Intellectual</option>
+            <option value="Communication and Language">Communication and Language</option>
+            <option value="Emotional">Emotional</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" id="activity_type" name="activity_type" value="{{ activity.activity_type }}" aria-label="Default select example">
+            <option value="Physical">Physical</option>
+            <option value="Construction">Construction</option>
+            <option value="Roleplay and Pretence">Roleplay and Pretence</option>
+            <option value="Arts and Crafts">Arts and Crafts</option>
+            <option value="Games with Rules">Games with Rules</option>
+            <option value="Tuff Trays">Tuff Trays</option>
+            <option value="Sensory">Sensory</option>
+            <option value="Nature and Outdoors">Nature and Outdoors</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" id="occasion_id" name="occasion_id" value="{{ activity.activity_name }}" aria-label="Default select example">
+            {% for occasion in occasions %}
+                {% if occasion == activity.occasion %}
+                    <option value="{{ occasion.id }}" selected>{{ occasion.occasion_name }}</option>
+                {% else %}
+                    <option value="{{ occasion.id }}">{{ occasion.occasion_name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <textarea id="activity_description" name="activity_description" rows="5" type="text" class="validate form-control" required>{{ activity.activity_description }}</textarea>
+        </div>
+     <div class="mb-3">        
+        <input class="form-control" type="file" id="images" multiple>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-plus"></i> Edit Activity</button>
+      </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
