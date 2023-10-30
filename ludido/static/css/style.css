@@ -103,3 +103,34 @@ body {
     color: #13245D;
     font-family: 'Chewy', cursive;
 }
+
+/* Activities Page */
+
+.activity-card {
+    width: 15rem;
+    height: 25rem;
+    margin-top: 2rem;
+    border: 2px solid #13245D;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    background-color: #f5c895;
+}
+
+.activity-card h4 a {
+    font-family: 'Chewy', cursive;
+    text-decoration: none;
+    color: #13245D;
+}
+
+.instructions-button {
+    background-color: #13245D;
+    color: #f5c895;
+    border: 1px solid #13245D;
+}
+
+.instructions-button:hover {
+    background-color: #f5c895;
+    color: #13245D;
+    border: 1px solid #13245D;
+}
+
