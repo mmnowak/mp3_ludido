@@ -134,3 +134,19 @@ body {
     border: 1px solid #13245D;
 }
 
+/* Full Activity Page */
+
+.full-activity {
+    width: 60%;
+    margin: auto;
+    background-color: #f5c895;
+    border: 3px solid #13245D;
+    font-family: 'Varela Round', sans-serif;
+    color: #13245D;
+    text-align: start;
+}
+
+.full-activity h1 {
+    text-align: center;
+    font-family: 'Chewy', cursive;
+}
