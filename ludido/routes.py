@@ -75,3 +75,8 @@ def delete_occasion(occasion_id):
 def full_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
     return render_template("full_activity.html", activity=activity)
+
+
+@app.route("/age-groups")
+def age_groups():
+    return render_template("age-groups.html")
