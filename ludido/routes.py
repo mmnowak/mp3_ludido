@@ -10,7 +10,8 @@ def home():
 
 @app.route("/activities")
 def activities():
-    return render_template("activities.html")
+    activities = list(Activity.query.order_by(Activity.activity_name).all())
+    return render_template("activities.html", activities=activities)
 
 
 @app.route("/index")
@@ -68,3 +69,9 @@ def delete_occasion(occasion_id):
     db.session.delete(occasion)
     db.session.commit()
     return redirect(url_for("occasions"))
+
+
+@app.route("/full_activity/<int:activity_id>")
+def full_activity(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+    return render_template("full_activity.html", activity=activity)
