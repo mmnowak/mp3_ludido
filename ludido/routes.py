@@ -49,7 +49,8 @@ def edit_activity(activity_id):
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if request.method == "POST":
         activity.activity_name = request.form.get("activity_name"),
-        activity.activity_description = request.form.get("activity_description"),
+        activity.activity_description = \
+            request.form.get("activity_description"),
         activity.activity_age = request.form.get("activity_age"),
         activity.activity_type = request.form.get("activity_type"),
         activity.activity_developmental = \
@@ -59,6 +60,14 @@ def edit_activity(activity_id):
         return redirect(url_for("activities"))
     return render_template("edit_activity.html", activity=activity, 
                            occasions=occasions)
+
+
+@app.route("/delete_activity/<int:activity_id>")
+def delete_activity(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+    db.session.delete(activity)
+    db.session.commit()
+    return redirect(url_for("activities"))
 
 
 @app.route("/occasions")
