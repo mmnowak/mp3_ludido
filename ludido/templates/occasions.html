@@ -8,13 +8,14 @@
         {% for occasion in occasions %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
+            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}">
         <div class="card occasion-card m-2">
             <div class="card-body text-center m-3">
               <h2 class="card-title">{{ occasion.occasion_name }}</h2>
               <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>
             </div>
-        </div>
+        </div></a>
         </div></div>
 
     <!-- Bootstrap Modal-->

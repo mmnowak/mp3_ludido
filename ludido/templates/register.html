@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <form method="POST">
+
+        <label for="exampleFormControlInput1" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="username" required>       
+<label for="password" class="form-label">Password</label>
+<input type="password" id="password" name="password" class="form-control" aria-describedby="password" required>
+<div id="passwordBlock" class="form-text">
+  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces or special characters.
+</div>
+<label for="confirm-password" class="form-label">Confirm password</label>
+<input type="password" id="confirm-password" name="confirm-password" class="form-control" aria-describedby="confirm-password" required>
+<div id="confirm-passwordBlock" class="form-text">
+</div>
+
+</form>
+</div>
+
+
+
+{% endblock %}

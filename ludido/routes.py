@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from ludido import app, db
 from ludido.models import Occasion, Activity
 
@@ -104,6 +104,25 @@ def delete_occasion(occasion_id):
     return redirect(url_for("occasions"))
 
 
+@app.route("/activities_by_occasion/<int:occasion_id>")
+def activities_by_occasion(occasion_id):   
+    occasion = Occasion.query.get_or_404(occasion_id) 
+    activities = list(Activity.query.filter_by(occasion).all())
+    return render_template("activities_by_occasion.html",
+                           activities=activities)
+
+
 @app.route("/age-groups")
 def age_groups():
     return render_template("age-groups.html")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'confirm-password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        confirm_password = request.form['password']
+
+
+    return render_template("register.html")
+

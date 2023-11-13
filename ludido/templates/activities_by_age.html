@@ -6,7 +6,7 @@
     <a class="btn add-btn btn-primary" href="{{ url_for('activities') }}">Add Activity</a>
     <div class="row mt-3 justify-content-center">        
         {% for activity in activities %}
-          {% if activity.occasion.id == occasion.id %}
+          {% if activity_age == "12 months" %}
             
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
