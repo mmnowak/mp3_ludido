@@ -22,6 +22,10 @@ def index():
 
 @app.route("/add_activity", methods=["GET", "POST"])
 def add_activity():
+    if "user" not in session:
+        flash("You need to log in to add an activity!")
+        return redirect(url_for("login"))
+
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if request.method == "POST":
         activity = Activity(
@@ -30,12 +34,13 @@ def add_activity():
             activity_age=request.form.get("activity_age"),
             activity_type=request.form.get("activity_type"),
             activity_developmental=request.form.get("activity_developmental"),
+            activity_createdby=session.get("user"),
             occasion_id=request.form.get("occasion_id")
             )
         db.session.add(activity)
         db.session.commit()
         return redirect(url_for("activities"))
-    return render_template("add_activity.html", occasions=occasions)
+    return render_template("add_activity.html", occasions=occasions)    
 
 
 @app.route("/full_activity/<int:activity_id>")
@@ -48,6 +53,15 @@ def full_activity(activity_id):
 def edit_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
+         
+    if "user" not in session:
+        flash("You need to log in to edit an activity!")
+        return redirect(url_for("login"))
+    
+    if activity.activity_createdby != session["user"]:
+        flash("You can only edit your own activities!")
+        return redirect(url_for("activities"))
+
     if request.method == "POST":
         activity.activity_name = request.form.get("activity_name"),
         activity.activity_description = \
@@ -59,15 +73,21 @@ def edit_activity(activity_id):
         activity.occasion_id = request.form.get("occasion_id")
         db.session.commit()
         return redirect(url_for("activities"))
+
     return render_template("edit_activity.html", activity=activity, 
                            occasions=occasions)
+            
 
 
 @app.route("/delete_activity/<int:activity_id>")
 def delete_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
-    db.session.delete(activity)
-    db.session.commit()
+    if activity.activity_createdby != session["user"]:
+        flash("You can only delete your own activities!")
+        return redirect(url_for("activities"))
+    else:
+        db.session.delete(activity)
+        db.session.commit()
     return redirect(url_for("activities"))
 
 
@@ -79,8 +99,14 @@ def occasions():
 
 @app.route("/add_occassion", methods=["GET", "POST"])
 def add_occasion():
+    if "user" not in session:
+        flash("You need to log in to add an occasion!")
+        return redirect(url_for("login"))
+
     if request.method == "POST":
-        occasion = Occasion(occasion_name=request.form.get("occasion_name"))
+        occasion = Occasion(
+            occasion_name=request.form.get("occasion_name"),
+            occasion_createdby=session.get("user"),)
         db.session.add(occasion)
         db.session.commit()
         return redirect(url_for("occasions"))
@@ -90,6 +116,15 @@ def add_occasion():
 @app.route("/edit_occassion/<int:occasion_id>", methods=["GET", "POST"])
 def edit_occasion(occasion_id):
     occasion = Occasion.query.get_or_404(occasion_id)
+
+    if "user" not in session:
+        flash("You need to log in to edit an occasion!")
+        return redirect(url_for("login"))
+    
+    if occasion.occasion_createdby != session["user"]:
+        flash("You can only edit your own occasions!")
+        return redirect(url_for("occasions"))
+
     if request.method == "POST":
         occasion.occasion_name = request.form.get("occasion_name")
         db.session.commit()
@@ -100,8 +135,12 @@ def edit_occasion(occasion_id):
 @app.route("/delete_occasion/<int:occasion_id>")
 def delete_occasion(occasion_id):
     occasion = Occasion.query.get_or_404(occasion_id)
-    db.session.delete(occasion)
-    db.session.commit()
+    if occasion.occasion_createdby != session["user"]:
+        flash("You can only delete your own occasions!")
+        return redirect(url_for("occasions"))
+    else:
+        db.session.delete(occasion)
+        db.session.commit()
     return redirect(url_for("occasions"))
 
 

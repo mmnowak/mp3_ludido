@@ -18,11 +18,14 @@
                 <p><strong>Developmental Area: </strong>{{ activity.activity_developmental }}</p>
                 <p><strong>Activity Type: </strong>{{ activity.activity_type }}</p>
                 <p><strong>Occasion: </strong>{{ activity.occasion }}</p>
+                <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
                 <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
               </div>
+              {% if activity.activity_createdby == session["user"] %}
               <br>
               <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
+              {% endif %}
             </div>
           </div>
         </div></div>

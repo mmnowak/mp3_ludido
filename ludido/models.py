@@ -5,6 +5,8 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(500), nullable=False)
+    activities = db.relationship("Activity", backref="user_activity", lazy=True)
+    occasions = db.relationship("Occasion", backref="user_occasion", lazy=True)
 
     
     def __repr__(self):
@@ -16,8 +18,11 @@ class Occasion(db.Model):
     # schema for the Occasion model
     id = db.Column(db.Integer, primary_key=True)
     occasion_name = db.Column(db.String(50), unique=True, nullable=False)
+    occasion_createdby = db.Column(db.Text, db.ForeignKey("users.username",
+                                                         ondelete="CASCADE"), nullable=False)
     activities = db.relationship("Activity", backref="occasion",
                                  cascade="all, delete", lazy=True)
+    user = db.relationship("Users", backref="user_occasion", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
@@ -32,9 +37,12 @@ class Activity(db.Model):
     activity_age = db.Column(db.Text, nullable=False)
     activity_type = db.Column(db.Text, nullable=False)
     activity_developmental = db.Column(db.Text, nullable=False)
+    activity_createdby = db.Column(db.Text, db.ForeignKey("users.username",
+                                                         ondelete="CASCADE"), nullable=False)
     occasion_id = db.Column(db.Integer, db.ForeignKey("occasion.id",
                                                       ondelete="CASCADE"),
                             nullable=False)
+    user = db.relationship("Users", backref="user_activity", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
