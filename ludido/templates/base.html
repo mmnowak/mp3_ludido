@@ -50,6 +50,18 @@
     </div>
 </nav>
 
+<section>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="row flashes">
+        <h1>{{ message }}</h1>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</section>
+
 <!-- Main content -->
 <div class="container">
 

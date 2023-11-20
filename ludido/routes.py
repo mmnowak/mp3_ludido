@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from ludido import app, db
-from ludido.models import Occasion, Activity
+from ludido.models import Occasion, Activity, Users
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 @app.route("/")
@@ -118,10 +119,26 @@ def age_groups():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'confirm-password' in request.form:
-        username = request.form['username']
-        password = request.form['password']
-        confirm_password = request.form['password']
+    if request.method == 'POST':
+    # check if username already exists in db
+        existing_user = Users.query.filter(Users.username == \
+                                           request.form.get("username").lower()).all()
+        
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        user = Users(
+            username = request.form.get("username").lower(),
+            password = generate_password_hash(request.form.get("password"))
+            )
+        db.session.add(user)
+        db.session.commit()
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("You have successfully registered!")
+        return redirect(url_for("index", username=session["user"]))
 
 
     return render_template("register.html")
