@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <form method="POST" action="{{ url_for('login') }}">
+
+        <label for="exampleFormControlInput1" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="username" required>       
+<label for="password" class="form-label">Password</label>
+<input type="password" id="password" name="password" class="form-control" aria-describedby="password" required>
+<div id="passwordBlock" class="form-text">
+</div>
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+
+
+
+{% endblock %}
