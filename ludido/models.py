@@ -7,6 +7,7 @@ class Users(db.Model):
     password = db.Column(db.String(500), nullable=False)
     activities = db.relationship("Activity", backref="user_activity", lazy=True)
     occasions = db.relationship("Occasion", backref="user_occasion", lazy=True)
+    favourites = db.relationship("Favourite", backref="user_favs", lazy=True)
 
     
     def __repr__(self):
@@ -47,7 +48,24 @@ class Activity(db.Model):
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
         return "#{0} - Activity: {1} | Age Group(s): {2} | Type: {3} | \
-                 Developmental Area: {4}".format(
+                 Developmental Area: {4} | Occasion: {5} | \
+                 Author: {6}".format(
             self.id, self.activity_name, self.activity_age, self.activity_type,
-            self.activity_developmental
+            self.activity_developmental, self.occasion_id, self.activity_createdby
+        )
+
+
+class Favourite(db.Model):
+    # schema for the Favourite model
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.Text, db.ForeignKey("users.username"), nullable=False)
+    activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"),
+                            nullable=False)
+    users = db.relationship("Users", backref="user_favs", lazy=True)
+    activities = db.relationship("Activity", backref="fav_activity", lazy=True)
+
+    def __repr__(self):
+        # __repr__ to represent itself in the form of a string
+        return "#{0} - Username: {1} | Activity ID: {2}".format(
+            self.id, self.username, self.activity_id
         )

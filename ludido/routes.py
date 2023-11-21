@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from ludido import app, db
-from ludido.models import Occasion, Activity, Users
+from ludido.models import Occasion, Activity, Users, Favourite
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -39,6 +39,7 @@ def add_activity():
             )
         db.session.add(activity)
         db.session.commit()
+        print(activity)
         return redirect(url_for("activities"))
     return render_template("add_activity.html", occasions=occasions)    
 
@@ -47,6 +48,45 @@ def add_activity():
 def full_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
     return render_template("full_activity.html", activity=activity)
+
+
+@app.route("/full_activity/<int:activity_id>/favourite", methods=["POST", "GET"])
+def add_favourite(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+
+    if "user" not in session:
+        flash("You need to log in to add to favourites!")
+        return render_template("full_activity.html", activity=activity)
+
+    if request.method == "POST":
+        favourite = Favourite(
+            username = session.get("user"),
+            activity_id = activity_id
+        )
+        flash("Added to favourites!")
+    
+    # adds user favourite to db
+    db.session.add(favourite)
+    db.session.commit()
+    print(favourite)
+
+    return render_template("full_activity.html", activity=activity)
+
+
+@app.route("/favourite-activities/<username>")
+def favourite_activities(username):
+    if "user" not in session:
+        flash("You need to log in to see your favourites!")
+        return redirect(url_for("activities"))
+    else:
+        username = session["user"]
+   
+    activities = list(Activity.query.order_by(Activity.id).all())
+    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
+    return render_template("favourite_activities.html", 
+                           activities=activities, favourites=favourites, username=session["user"])
+
+
 
 
 @app.route("/edit_activity/<int:activity_id>", methods=["GET", "POST"])
@@ -89,6 +129,7 @@ def delete_activity(activity_id):
         db.session.delete(activity)
         db.session.commit()
     return redirect(url_for("activities"))
+
 
 
 @app.route("/occasions")
@@ -154,7 +195,16 @@ def activities_by_occasion(occasion_id):
 
 @app.route("/age-groups")
 def age_groups():
-    ages = ["12 months", "12-18 Months", "18-24 Months", "2-3 Years", "3-5 Years", "5-7 Years", "7-11 Years" ,"11+ Years"]
+    ages = {
+        "1": "12 months", 
+        "2": "12-18 Months", 
+        "3": "18-24 Months", 
+        "4": "2-3 Years", 
+        "5": "3-5 Years", 
+        "6":"5-7 Years", 
+        "7": "7-11 Years",
+        "8": "11+ Years"
+        }    
     return render_template("age-groups.html")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -166,6 +216,10 @@ def register():
         
         if existing_user:
             flash("Username already exists")
+            return redirect(url_for("register"))
+        
+        if request.form.get("password") != request.form.get("confirm_password"):
+            flash("Passwords do not match!")
             return redirect(url_for("register"))
 
         user = Users(

@@ -4,6 +4,7 @@
 <div class="container">
 <div class="user-profile text-center m-4 p-3">
     <a href="{{ url_for('profile', username=session['user']) }}"><h2 id="profile-name"><i class="fa-regular fa-user"></i> {{ username }}'s Profile</h2></a>
+    <a href="{{ url_for('favourite_activities', username=session['user']) }}">My favourites</a>
 <div class="mt-4">
     <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#my-occasions" aria-expanded="false" aria-controls="my-occasions">
         My Occasions

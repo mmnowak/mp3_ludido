@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-3 text-center">
+    <h1 class="pg-title">{{ username }}'s favourites</h1>
+    <div class="row mt-3 justify-content-center">  
+      {% for favourite in favourites if favourite.username == session["user"] %}
+            {% for activity in activities if favourite.activity_id == activity.id %}          
+            <div class="col d-flex justify-content-center">
+              <div class="justify-content-center m-auto">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ activity.activity_name }}</h5>
+                  <div class="card-text">
+                    <p>Age Group: {{ activity.activity_age }}</p>
+                    <p>Developmental Area: {{ activity.activity_developmental }}</p>
+                    <p>Activity Type: {{ activity.activity_type }}</p>
+                    <p>Occasion: {{ activity.occasion }}</p>
+                    <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
+                    <p>ID: {{ favourite.activity_id }} </p>
+                    <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
+                  </div>
+              </div>
+            </div>
+          </div></div>
+            {% endfor %}        
+          {% endfor %}
+        </div>
+
+
+
+{% endblock %}
