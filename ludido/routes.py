@@ -154,6 +154,7 @@ def activities_by_occasion(occasion_id):
 
 @app.route("/age-groups")
 def age_groups():
+    ages = ["12 months", "12-18 Months", "18-24 Months", "2-3 Years", "3-5 Years", "5-7 Years", "7-11 Years" ,"11+ Years"]
     return render_template("age-groups.html")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -179,7 +180,6 @@ def register():
         flash("You have successfully registered!")
         return render_template("profile.html", username=session["user"])
 
-
     return render_template("register.html")
 
 @app.route("/login", methods=["GET", "POST"])
@@ -192,6 +192,7 @@ def login():
             if check_password_hash(
                 existing_user[0].password, request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
+                    flash("Click on your username to load profile")
                     return render_template("profile.html", username=session["user"])
             else:
                 flash("Incorrect Username and/or Password")
@@ -199,7 +200,7 @@ def login():
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
+    
     return render_template("login.html")
 
 

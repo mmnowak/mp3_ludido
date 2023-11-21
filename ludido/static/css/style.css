@@ -55,10 +55,16 @@ body {
     background-color: #96B0CB;
 }
 
+#flash-msgs {
+    font-family: 'Varela Round', sans-serif;
+    font-size: x-large;
+    width: 50%;
+    margin: 1% auto;
+}
 
-.required-field {
-    color: red;
-    font-size: xx-small;
+#flash-msgs div {
+    background-color: #f5c895;
+    color: #13245D;
 }
 
 /* OCCASIONS Pge */
@@ -185,4 +191,48 @@ body {
   font-size: 35px;
   font-family: 'Varela Round', sans-serif;
   color: #13245D;
+}
+
+/* Profile Page */
+
+#profile-name {
+    text-transform: capitalize;
+    color: #c5def9;
+    }
+
+.user-profile {
+    background-color: #13245D;
+    color: #96B0CB;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.user-profile a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.user-profile button {
+    background-color: #96B0CB;
+    color: #13245D;
+}
+
+/* Register and Login Pages */
+
+.user-form {
+    border: 3px solid #13245D;
+    background-color: #c5def9;
+    margin-top: 5%;
+    font-family: 'Varela Round', sans-serif;
+}
+    
+
+.user-form form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.user-form h1 {
+    font-family: 'Kablammo', cursive;
+    color: #13245D;
+    font-size: calc(50px + 0.390625vw);
 }
