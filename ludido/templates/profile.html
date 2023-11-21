@@ -4,6 +4,84 @@
 <div class="container">
 <div class="user-profile text-center">
     <h2>{{ username }}'s Profile</h2>
+<div class="my-occasions">
+    <h3>My Occasions:</h3>
+    <div class="row mt-3 justify-content-center"> 
+    {% for occasion in occasions %}
+        {% if occasion.occasion_createdby == session["user"] %}
+            <div class="col d-flex justify-content-center">
+                <div class="justify-content-center m-auto">
+                <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}">
+            <div class="card occasion-card m-2">
+                <div class="card-body text-center m-3">
+                    <h2 class="card-title">{{ occasion.occasion_name }}</h2>
+                    <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
+                    <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>
+                </div>
+            </div></a>
+            </div></div>
+    
+        <!-- Bootstrap Modal-->
+        <div class="modal fade" id="modal-{{ occasion.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content delete-modal">
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to delete this occasion?</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">DELETE</a>
+                    <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        {% endif %}  
+    {% endfor %}
+</div>
+<div class="my-activities">
+    <h3>My Activities:</h3>
+    <div class="row mt-3 justify-content-center"> 
+    {% for activity in activities %}
+        {% if activity.activity_createdby == session["user"] %}
+        <div class="col d-flex justify-content-center">
+          <div class="justify-content-center m-auto">
+        <div class="card activity-card">
+            <div class="card-body">
+              <h4 class="card-title mt-2"><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4>
+              <div class="card-text activities-card-text">
+                <p><strong>Age Group: </strong>{{ activity.activity_age }}</p>
+                <p><strong>Developmental Area: </strong>{{ activity.activity_developmental }}</p>
+                <p><strong>Activity Type: </strong>{{ activity.activity_type }}</p>
+                <p><strong>Occasion: </strong>{{ activity.occasion }}</p>
+                <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
+              </div>
+              
+              <br>
+              <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
+              <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
+            </div>
+          </div>
+        </div></div>
+        
+    <!-- Bootstrap Modal-->
+    <div class="modal fade" id="modal-{{ activity.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content delete-modal">
+          <div class="modal-header">
+            <h4 class="modal-title">Are you sure you want to delete this activity?</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">DELETE</a>
+            <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
 </div>
    

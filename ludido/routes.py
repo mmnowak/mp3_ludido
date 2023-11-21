@@ -205,11 +205,12 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-
+    activities = list(Activity.query.order_by(Activity.activity_name).all())
+    occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if "user" in session:
-        return render_template("profile.html", username=session["user"])
-    
-    return redirect(url_for("login"))
+        return render_template("profile.html", username=session["user"], activities=activities, occasions=occasions)   
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
