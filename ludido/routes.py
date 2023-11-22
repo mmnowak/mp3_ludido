@@ -105,6 +105,29 @@ def remove_favourite(activity_id):
                            activities=activities, favourites=favourites, username=session["user"])
 
 
+@app.route("/favourite-activities/<username>/unvafourite_all")
+def unfavourite_all(username):
+    if "user" not in session:
+        flash("You need to log in to do this!")
+        return redirect(url_for("login"))
+    else:
+        username = session["user"]
+    
+    activities = list(Activity.query.order_by(Activity.id).all())
+    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
+
+    for favourite in favourites: 
+        if username == favourite.username:
+        # removes all user favourites from db
+            db.session.delete(favourite)
+            db.session.commit()
+            flash("Removed all favourite activities!")
+            return redirect(url_for("activities"))
+    
+    return render_template("favourite_activities.html",
+                           activities=activities, favourites=favourites, username=session["user"])
+
+
 @app.route("/favourite-activities/<username>")
 def favourite_activities(username):
     if "user" not in session:
