@@ -50,7 +50,7 @@ def full_activity(activity_id):
     return render_template("full_activity.html", activity=activity)
 
 
-@app.route("/full_activity/<int:activity_id>/favourite", methods=["POST", "GET"])
+@app.route("/full_activity/<int:activity_id>/favourite", methods=["POST"])
 def add_favourite(activity_id):
     activity = Activity.query.get_or_404(activity_id)
 
@@ -71,6 +71,28 @@ def add_favourite(activity_id):
     print(favourite)
 
     return render_template("full_activity.html", activity=activity)
+
+
+@app.route("/full_activity/<int:activity_id>/unfavourite")
+def remove_favourite(activity_id):
+    activity = Activity.query.get_or_404(activity_id)
+    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
+
+    if "user" not in session:
+        flash("You need to log in to do this!")
+        return render_template("full_activity.html", activity=activity)
+    else:
+        username = session["user"]
+
+    for favourite in favourites:
+        if username == favourite.username:
+        # removes user favourite from db
+            db.session.delete(favourite)
+            db.session.commit()
+            flash("Removed from favourites!")
+    
+
+    return render_template("activities.html")
 
 
 @app.route("/favourite-activities/<username>")

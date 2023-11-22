@@ -27,6 +27,7 @@
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
               {% elif session.user and activity.activity_createdby != session["user"] %}
               <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>
+              <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}">Remove</a>
               {% endif %}
             </div>
           </div>

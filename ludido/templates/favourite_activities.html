@@ -16,7 +16,6 @@
                     <p>Activity Type: {{ activity.activity_type }}</p>
                     <p>Occasion: {{ activity.occasion }}</p>
                     <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
-                    <p>ID: {{ favourite.activity_id }} </p>
                     <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
                   </div>
               </div>
