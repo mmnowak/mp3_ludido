@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("index.html")
 
 
 @app.route("/activities")
@@ -41,7 +41,7 @@ def add_activity():
             )
         db.session.add(activity)
         db.session.commit()
-        print(activity)
+        flash("Thank you for adding a new activity!")
         return redirect(url_for("activities"))
     return render_template("add_activity.html", occasions=occasions)    
 
@@ -141,7 +141,6 @@ def favourite_activities(username):
 
 
 
-
 @app.route("/edit_activity/<int:activity_id>", methods=["GET", "POST"])
 def edit_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
@@ -165,6 +164,7 @@ def edit_activity(activity_id):
             request.form.get("activity_developmental"),
         activity.occasion_id = request.form.get("occasion_id")
         db.session.commit()
+        flash("You edited the activity!")
         return redirect(url_for("activities"))
 
     return render_template("edit_activity.html", activity=activity, 
@@ -181,6 +181,7 @@ def delete_activity(activity_id):
     else:
         db.session.delete(activity)
         db.session.commit()
+        flash("You deleted the activity!")
     return redirect(url_for("activities"))
 
 
@@ -203,6 +204,7 @@ def add_occasion():
             occasion_createdby=session.get("user"),)
         db.session.add(occasion)
         db.session.commit()
+        flash("Thank you for adding a new occasion!")
         return redirect(url_for("occasions"))
     return render_template("add_occasion.html")
 
@@ -222,6 +224,7 @@ def edit_occasion(occasion_id):
     if request.method == "POST":
         occasion.occasion_name = request.form.get("occasion_name")
         db.session.commit()
+        flash("You edited the occasion!")
         return redirect(url_for("occasions"))
     return render_template("edit_occasion.html", occasion=occasion)
 
@@ -235,6 +238,7 @@ def delete_occasion(occasion_id):
     else:
         db.session.delete(occasion)
         db.session.commit()
+        flash("You deleted the occasion!")
     return redirect(url_for("occasions"))
 
 

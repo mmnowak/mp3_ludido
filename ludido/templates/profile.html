@@ -35,8 +35,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">DELETE</a>
-                    <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+                    <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
+                    <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
                 </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <p><strong>Developmental Area: </strong>{{ activity.activity_developmental }}</p>
                 <p><strong>Activity Type: </strong>{{ activity.activity_type }}</p>
                 <p><strong>Occasion: </strong>{{ activity.occasion }}</p>
-                <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
+                <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button"><strong>See Instructions</strong></a>
               </div>
               
               <br>
@@ -83,8 +83,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">DELETE</a>
-            <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">Delete</a>
+            <a class="btn btn-warning" data-bs-dismiss="modal">Xancel</a>
           </div>
         </div>
       </div>

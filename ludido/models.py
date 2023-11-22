@@ -5,9 +5,9 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(500), nullable=False)
-    activities = db.relationship("Activity", backref="user_activity", lazy=True)
-    occasions = db.relationship("Occasion", backref="user_occasion", lazy=True)
-    favourites = db.relationship("Favourite", backref="user_favs", lazy=True)
+    activities = db.relationship("Activity", backref="user_activity", cascade="all, delete", lazy=True)
+    occasions = db.relationship("Occasion", backref="user_occasion", cascade="all, delete", lazy=True)
+    favourites = db.relationship("Favourite", backref="user_favs", cascade="all, delete", lazy=True)
 
     
     def __repr__(self):
@@ -44,6 +44,7 @@ class Activity(db.Model):
                                                       ondelete="CASCADE"),
                             nullable=False)
     user = db.relationship("Users", backref="user_activity", lazy=True)
+    favourites = db.relationship("Favourite", backref="fav_activity", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
@@ -59,8 +60,7 @@ class Favourite(db.Model):
     # schema for the Favourite model
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.Text, db.ForeignKey("users.username"), nullable=False)
-    activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"),
-                            nullable=False)
+    activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"), nullable=False)
     users = db.relationship("Users", backref="user_favs", lazy=True)
     activities = db.relationship("Activity", backref="fav_activity", lazy=True)
 

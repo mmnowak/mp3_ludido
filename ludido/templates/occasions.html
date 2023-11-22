@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid w-100 text-center">
+<div class="container-fluid w-100 text-center title-container">
   <h1 class="pg-title">Occasions</h1>
 </div>
 <div class="container mt-0 w-100 text-center">    
@@ -12,7 +12,7 @@
         {% for occasion in occasions %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
-            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}">
+            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}" class="occasion-name">
         <div class="card occasion-card m-2 d-flex align-items-center">
             <div class="card-body text-center m-3 align-items-center">
               <h2 class="card-title">{{ occasion.occasion_name }}</h2>
@@ -33,8 +33,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">DELETE</a>
-              <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+              <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
+              <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
             </div>
           </div>
         </div>

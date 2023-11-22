@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid w-100 text-center">
+<div class="container-fluid w-100 text-center title-container">
   <h1 class="pg-title">Activities</h1>
 </div>
 
@@ -55,8 +55,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">DELETE</a>
-            <a class="btn btn-warning" data-bs-dismiss="modal">CANCEL</a>
+            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">Delete</a>
+            <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
           </div>
         </div>
       </div>
