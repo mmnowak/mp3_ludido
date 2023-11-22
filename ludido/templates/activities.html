@@ -25,10 +25,19 @@
               <br>
               <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
-              {% elif session.user and activity.activity_createdby != session["user"] %}
-              <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>
-              <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}">Remove</a>
               {% endif %}
+              {% if session.user and activity.activity_createdby != session["user"] %}
+              <br>
+              {% for favourite in favourites if favourite.activity_id == activity.id %}          
+                <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
+              {% else %}
+                <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>  
+              {% endfor %}
+              {% endif %}
+                
+                  
+            
+              
             </div>
           </div>
         </div></div>

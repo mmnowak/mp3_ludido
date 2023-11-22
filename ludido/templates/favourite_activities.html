@@ -17,6 +17,10 @@
                     <p>Occasion: {{ activity.occasion }}</p>
                     <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
                     <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
+                    <br><br>
+                    {% if favourite.activity_id == activity.id %}          
+                    <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
+                    {% endif %}
                   </div>
               </div>
             </div>

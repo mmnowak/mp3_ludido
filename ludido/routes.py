@@ -11,8 +11,10 @@ def home():
 
 @app.route("/activities")
 def activities():
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
     activities = list(Activity.query.order_by(Activity.activity_name).all())
-    return render_template("activities.html", activities=activities)
+    activity_id = Activity.id
+    return render_template("activities.html", activities=activities, favourites=favourites)
 
 
 @app.route("/index")
@@ -59,16 +61,22 @@ def add_favourite(activity_id):
         return render_template("full_activity.html", activity=activity)
 
     if request.method == "POST":
+
+        is_favourite = Favourite.query.filter(Favourite.activity_id == activity_id).first() 
+        if is_favourite:
+            flash("Already in favourites!")
+            return redirect(url_for("activities"))
+        
         favourite = Favourite(
-            username = session.get("user"),
+        username = session.get("user"),
             activity_id = activity_id
-        )
+            )
         flash("Added to favourites!")
     
-    # adds user favourite to db
-    db.session.add(favourite)
-    db.session.commit()
-    print(favourite)
+        # adds user favourite to db
+        db.session.add(favourite)
+        db.session.commit()
+        print(favourite)   
 
     return render_template("full_activity.html", activity=activity)
 
@@ -76,7 +84,8 @@ def add_favourite(activity_id):
 @app.route("/full_activity/<int:activity_id>/unfavourite")
 def remove_favourite(activity_id):
     activity = Activity.query.get_or_404(activity_id)
-    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
+    activities = list(Activity.query.order_by(Activity.id).all())
+    favourites = list(Favourite.query.order_by(Favourite.username).all ()) 
 
     if "user" not in session:
         flash("You need to log in to do this!")
@@ -84,15 +93,16 @@ def remove_favourite(activity_id):
     else:
         username = session["user"]
 
-    for favourite in favourites:
-        if username == favourite.username:
+    for favourite in favourites: 
+        if username == favourite.username and activity.id == favourite.activity_id:
         # removes user favourite from db
             db.session.delete(favourite)
             db.session.commit()
             flash("Removed from favourites!")
+            return redirect(url_for("activities"))
     
-
-    return render_template("activities.html")
+    return render_template("favourite_activities.html",
+                           activities=activities, favourites=favourites, username=session["user"])
 
 
 @app.route("/favourite-activities/<username>")
