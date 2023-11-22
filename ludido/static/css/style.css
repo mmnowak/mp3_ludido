@@ -39,6 +39,7 @@ footer {
     background-color: #13245D;
     color: #FF9D2E;
     font-family: 'Chewy', cursive;
+    position: absolute;
 }
 
 .footer-links a {
@@ -53,18 +54,46 @@ footer {
 
 body {
     background-color: #96B0CB;
+    max-width: 100%;
 }
+
+/*
+#page-container {
+    position: relative;
+    min-height: 100vh; 
+}
+
+#content-container {
+    padding-bottom: 2rem;
+}
+*/
 
 #flash-msgs {
     font-family: 'Varela Round', sans-serif;
     font-size: x-large;
-    width: 50%;
+    height: 50px;
     margin: 1% auto;
+    background-color: #ffff8b;
+    margin: 0 auto;
 }
 
 #flash-msgs div {
-    background-color: #f5c895;
     color: #13245D;
+    height: 50px;
+}
+
+.header-image {
+    background-color: #FF9D2E;
+}
+
+.header-image img {
+    max-width: 100%;
+}
+
+/* Index Page */
+
+.hero-container img {
+    width: 100%
 }
 
 /* OCCASIONS Pge */
@@ -74,20 +103,22 @@ body {
     background-color: #FF9D2E;
     color: #13245D;
     border: 2px solid #13245D;
-    font-family: 'Chewy', cursive;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .pg-title {
     font-family: 'Kablammo', cursive;
     font-size: calc(50px + 0.390625vw);
-    color: #13245D;
+    color: #FF9D2E;
+    background-color: #13245D;
+    text-shadow: rgb(255, 255, 139) 2px 0px 0px, rgb(255, 255, 139) 1.75517px 0.958851px 0px, rgb(255, 255, 139) 1.0806px 1.68294px 0px, rgb(255, 255, 139) 0.141474px 1.99499px 0px, rgb(255, 255, 139) -0.832294px 1.81859px 0px, rgb(255, 255, 139) -1.60229px 1.19694px 0px, rgb(255, 255, 139) -1.97998px 0.28224px 0px, rgb(255, 255, 139) -1.87291px -0.701566px 0px, rgb(255, 255, 139) -1.30729px -1.5136px 0px, rgb(255, 255, 139) -0.421592px -1.95506px 0px, rgb(255, 255, 139) 0.567324px -1.91785px 0px, rgb(255, 255, 139) 1.41734px -1.41108px 0px, rgb(255, 255, 139) 1.92034px -0.558831px 0px;
 }
 
 .add-btn {
     background-color: rgb(255, 255, 139);
     color: #13245D;
-    font-family: 'Chewy', cursive;
-    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: capitalize;
     font-size: x-large;
     border: 2px solid #13245D;
     width: fit-content;
@@ -195,9 +226,8 @@ body {
 
 /* Profile Page */
 
-#profile-name {
+.profile-name {
     text-transform: capitalize;
-    color: #c5def9;
     }
 
 .user-profile {
@@ -211,9 +241,14 @@ body {
     color: inherit;
 }
 
-.user-profile button {
+.profile-btn {
     background-color: #96B0CB;
-    color: #13245D;
+    color: #13245D !important;
+}
+
+.profile-btn:hover {
+    background-color: #13245D;
+    color: #96B0CB !important;
 }
 
 /* Register and Login Pages */
@@ -235,4 +270,16 @@ body {
     font-family: 'Kablammo', cursive;
     color: #13245D;
     font-size: calc(50px + 0.390625vw);
+}
+
+/* Favourites Page */
+
+#unfav-btn:hover {
+    background-color: #96B0CB;
+    color: #13245D !important;
+}
+
+#unfav-btn {
+    background-color: #13245D;
+    color: #96B0CB !important;
 }

@@ -73,22 +73,27 @@
   {% endwith %}
 </section>
 
-<!-- Main content -->
-<div class="container">
+<div id="page-container" class="mt-0"><div id="content-container" class="w-100 mt-0"></div>
 
-    {% block content %}
-    {% endblock %}
-    
+<div class="header-image container-fluid w-100 mt-0 d-flex justify-content-center">
+  <img src="{{ url_for('static', filename='assets/images/content-header.png') }}" alt="cartoon images of children playing">
 </div>
 
-<!-- Footer -->
-<!-- footer class="w-100 p-1 bottom-0 mt-4">
+<!-- Main content -->
+
+{% block content %}
+{% endblock %}
+    
+
+<!-- Footer >
+<footer class="w-100 p-1 bottom-0 mt-4">
 <div class="footer-links text-center bottom-0">
     <p>Made by Martyna Nowak
         <a class="ms-2" href="https://github.com/mmnowak" target="_blank" aria-label="The Github page of the site creator (opens in a new tab)"><i class="fa-brands fa-github"></i></a> 
         <a class="ms-2" href="https://www.linkedin.com/in/martyna-nowak-025790246/" target="_blank" aria-label="The Github page of the site creator (opens in a new tab)"><i class="fa-brands fa-linkedin"></i></a>
     </p>
 </div>
-</footer -->
+</footer>
+</div -->
 </body>
 </html>

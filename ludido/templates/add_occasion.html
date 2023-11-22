@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container mt-5 text-center">
-<h1 class="pg-title">Add Occasion</h1>
+<div class="container-fluid w-100 text-center">
+   <h1 class="pg-title">Add Occasion</h1> 
+</div>
+<div class="container mt-0 w-100 text-center">
 <!-- Bootstrap Form -->
 <div class="container mt-3">
     <form class="col form" method="POST" action="{{ url_for('add_occasion') }}">

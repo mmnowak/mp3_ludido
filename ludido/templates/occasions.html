@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container mt-3 text-center">
-    <h1 class="pg-title">Occasions</h1>
+<div class="container-fluid w-100 text-center">
+  <h1 class="pg-title">Occasions</h1>
+</div>
+<div class="container mt-0 w-100 text-center">    
     {% if session.user %}
     <a class="btn add-btn btn-primary" href="{{ url_for('add_occasion') }}">Add Occasion</a>
     {% endif %}
@@ -11,8 +13,8 @@
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
             <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}">
-        <div class="card occasion-card m-2">
-            <div class="card-body text-center m-3">
+        <div class="card occasion-card m-2 d-flex align-items-center">
+            <div class="card-body text-center m-3 align-items-center">
               <h2 class="card-title">{{ occasion.occasion_name }}</h2>
               {% if occasion.occasion_createdby == session["user"] %}
               <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
