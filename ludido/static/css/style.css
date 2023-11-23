@@ -40,6 +40,7 @@ footer {
     color: #FF9D2E;
     font-family: 'Chewy', cursive;
     position: absolute;
+    bottom: 0;
 }
 
 .footer-links a {
@@ -224,7 +225,7 @@ body {
 
 .age-group img {
     width: 100%; 
-}
+} 
 
 .age-container {
   position: relative;
@@ -239,7 +240,7 @@ body {
   font-size: 35px;
   font-family: 'Varela Round', sans-serif;
   color: #13245D;
-}
+} 
 
 /* Profile Page */
 

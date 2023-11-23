@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+import json
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from ludido import app, db
 from ludido.models import Occasion, Activity, Users, Favourite
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -252,17 +253,25 @@ def activities_by_occasion(occasion_id):
 
 @app.route("/age-groups")
 def age_groups():
-    ages = {
-        "1": "12 months", 
-        "2": "12-18 Months", 
-        "3": "18-24 Months", 
-        "4": "2-3 Years", 
-        "5": "3-5 Years", 
-        "6":"5-7 Years", 
-        "7": "7-11 Years",
-        "8": "11+ Years"
-        }    
-    return render_template("age-groups.html")
+    data = []
+    with open("ludido/data/ages.json", "r") as json_data:
+        data = json.load(json_data) 
+    return render_template("age-groups.html", ages=data)
+
+
+@app.route("/activities_by_age/<age_id>")
+def activities_by_age(age_id):
+    age = {}
+    with open("ludido/data/ages.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["age_id"] == age_id:
+                age = obj
+                print(age)
+    
+    activities = list(Activity.query.order_by(Activity.activity_name).all()) 
+    return render_template("activities_by_age.html", age=age, activities=activities)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

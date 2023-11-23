@@ -4,19 +4,12 @@
 <div class="container-fluid mt-0 text-center title-container">
 <h1 class="pg-title">Age Groups</h1></div>
 <div class="row justify-content-center">
-<div class="col-4 col-sm-2 age-group"><div class="age-container"><p>>12 Months</p><img src="{{ url_for('static', filename='assets/images/age-groups/under12.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>12-18 Months</p><img src="{{ url_for('static', filename='assets/images/age-groups/12-18.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>18-24 Months</p><img src="{{ url_for('static', filename='assets/images/age-groups/18-24.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>2-3 Years</p><img src="{{ url_for('static', filename='assets/images/age-groups/2-3.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>3-5 Years</p><img src="{{ url_for('static', filename='assets/images/age-groups/3-5.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>5-7 Years</p><img src="{{ url_for('static', filename='assets/images/age-groups/5-7.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>7-11 Years</p><img src="{{ url_for('static', filename='assets/images/age-groups/7-11.png') }}"></div></div>
-<div class="col-4 age-group"><div class="age-container"><p>11+ Years</p><img src="{{ url_for('static', filename='assets/images/age-groups/11.png') }}"></div></div>
-</div>
-
+    {% for age in ages %}
     
-        </div>
-
-
+<div class="col-4 col-sm-2 age-group">
+<a href="{{ url_for('activities_by_age', age_id=age.age_id) }}">
+<div class="age-container"><p>{{ age.age_group }}</p><img src="{{ age.age_img }}"></div>
+</a></div>
+    {% endfor %}
 
 {% endblock %}
