@@ -100,7 +100,7 @@ Target audience of this website are people working with children, i.e. playworke
 ---
 ![Profile Page](documentation/readme/wireframes/profile.png)
 ---
-![Login Page](documentation/readme/wireframes/profile-mobile.png)
+![Profile Page Mobile](documentation/readme/wireframes/profile-mobile.png)
 ---
 ![Login Page](documentation/readme/wireframes/activities.png)
 ---
