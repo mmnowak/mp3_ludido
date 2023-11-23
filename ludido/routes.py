@@ -1,5 +1,5 @@
 import json
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from ludido import app, db
 from ludido.models import Occasion, Activity, Users, Favourite
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -31,7 +31,7 @@ def add_activity():
 
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if request.method == "POST":
-        activity = Activity(
+            activity = Activity(
             activity_name=request.form.get("activity_name"),
             activity_description=request.form.get("activity_description"),
             activity_age=request.form.get("activity_age"),
@@ -40,10 +40,10 @@ def add_activity():
             activity_createdby=session.get("user"),
             occasion_id=request.form.get("occasion_id")
             )
-        db.session.add(activity)
-        db.session.commit()
-        flash("Thank you for adding a new activity!")
-        return redirect(url_for("activities"))
+            db.session.add(activity)
+            db.session.commit()
+            flash("Thank you for adding a new activity!")
+            return redirect(url_for("activities"))
     return render_template("add_activity.html", occasions=occasions)    
 
 

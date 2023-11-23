@@ -13,7 +13,7 @@
         <label for="activity_name" class="form-label">Activity Name</label>
     </div>
     <div class="mb-3">
-        <select class="form-select"  id="activity_age" name="activity_age" aria-label="Default select example">
+        <select class="form-select"  id="activity_age" name="activity_age" aria-label="Age Group" required>
             <option selected>Age Group</option>
             <option value="12 months">>12 months</option>
             <option value="12-18 Months">12-18 Months</option>
@@ -26,7 +26,7 @@
         </select>
     </div>
     <div class="mb-3">
-        <select class="form-select"  id="activity_developmental" name="activity_developmental" aria-label="Default select example">
+        <select class="form-select"  id="activity_developmental" name="activity_developmental" aria-label="Developmental type" required>
             <option selected>Developmental Area</option>
             <option value="Social">Social</option>
             <option value="Fine Motor">Fine Motor</option>
@@ -37,7 +37,7 @@
         </select>
     </div>
     <div class="mb-3">
-        <select class="form-select" id="activity_type" name="activity_type" aria-label="Default select example">
+        <select class="form-select" id="activity_type" name="activity_type" aria-label="Activity Type" required>
             <option selected>Activity Type</option>
             <option value="Physical">Physical</option>
             <option value="Construction">Construction</option>
@@ -50,7 +50,7 @@
         </select>
     </div>
     <div class="mb-3">
-        <select class="form-select" id="occasion_id" name="occasion_id" aria-label="Default select example">
+        <select class="form-select" id="occasion_id" name="occasion_id" aria-label="Occcasion" required>
             <option selected>Occcasion</option>
             {% for occasion in occasions %}
             <option value="{{ occasion.id }}">{{ occasion.occasion_name }}</option>
@@ -60,9 +60,6 @@
     <div class="mb-3">
         <textarea id="activity_description" name="activity_description" rows="5" type="text" class="validate form-control" required>Instructions</textarea>
         </div>
-     <div class="mb-3">        
-        <input class="form-control" type="file" id="images" multiple>
-      </div>
       <div class="col-auto">
         <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-plus"></i> Add Activity</button>
       </div>
