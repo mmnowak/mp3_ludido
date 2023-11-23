@@ -98,7 +98,7 @@ Target audience of this website are people working with children, i.e. playworke
 ---
 ![Register Page Mobile](documentation/readme/wireframes/register-mobile.png)
 ---
-![Login Page](documentation/readme/wireframes/profile.png)
+![Profile Page](documentation/readme/wireframes/profile.png)
 ---
 ![Login Page](documentation/readme/wireframes/profile-mobile.png)
 ---
