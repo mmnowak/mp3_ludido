@@ -7,14 +7,14 @@
 <div class="container mt-0 w-100 text-center">
 <!-- Bootstrap Form -->
 <div class="container m-4">
-    <form class="col s12" method="POST" action="{{ url_for('add_activity') }}">
+    <form class="col s12" method="POST" name="activity-form" action="{{ url_for('add_activity') }}">
     <div class="mb-3 form-floating">
         <input id="activity_name" name="activity_name" minlength="3" maxlength="25" type="text" class="validate form-control" required>
         <label for="activity_name" class="form-label">Activity Name</label>
     </div>
     <div class="mb-3">
         <select class="form-select"  id="activity_age" name="activity_age" aria-label="Age Group" required>
-            <option selected>Age Group</option>
+            <option value="" selected>Age Group</option>
             <option value="12 months">>12 months</option>
             <option value="12-18 Months">12-18 Months</option>
             <option value="18-24 Months">18-24 Months</option>
@@ -27,7 +27,7 @@
     </div>
     <div class="mb-3">
         <select class="form-select"  id="activity_developmental" name="activity_developmental" aria-label="Developmental type" required>
-            <option selected>Developmental Area</option>
+            <option value="" selected>Developmental Area</option>
             <option value="Social">Social</option>
             <option value="Fine Motor">Fine Motor</option>
             <option value="Gross Motor">Gross Motor</option>
@@ -38,7 +38,7 @@
     </div>
     <div class="mb-3">
         <select class="form-select" id="activity_type" name="activity_type" aria-label="Activity Type" required>
-            <option selected>Activity Type</option>
+            <option value="" selected>Activity Type</option>
             <option value="Physical">Physical</option>
             <option value="Construction">Construction</option>
             <option value="Roleplay and Pretence">Roleplay and Pretence</option>
@@ -51,7 +51,7 @@
     </div>
     <div class="mb-3">
         <select class="form-select" id="occasion_id" name="occasion_id" aria-label="Occcasion" required>
-            <option selected>Occcasion</option>
+            <option value="" selected>Occcasion</option>
             {% for occasion in occasions %}
             <option value="{{ occasion.id }}">{{ occasion.occasion_name }}</option>
             {% endfor %}
