@@ -215,6 +215,8 @@ body {
     font-family: 'Chewy', cursive;
 }
 
+/* Age Groups Page */
+
 .age-group {
     background-color: #FF9D2E;
     width: 200px;
@@ -223,7 +225,12 @@ body {
     padding: 1%;
 }
 
-.age-group img {
+.age-group:hover {
+    transform: scale(1.1);  
+  }
+  
+
+.age-img {
     width: 100%; 
 } 
 
@@ -232,14 +239,17 @@ body {
   text-align: center;
 }
 
-.age-container p {
+.age-group-name {
   position: absolute;
+  height: 100%;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'Varela Round', sans-serif;
   color: #13245D;
+  background-color: rgba(255, 157, 46, 0.6)
 } 
 
 /* Profile Page */

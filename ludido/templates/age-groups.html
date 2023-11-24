@@ -3,13 +3,12 @@
 
 <div class="container-fluid mt-0 text-center title-container">
 <h1 class="pg-title">Age Groups</h1></div>
-<div class="row justify-content-center">
-    {% for age in ages %}
-    
-<div class="col-4 col-sm-2 age-group">
-<a href="{{ url_for('activities_by_age', age_id=age.age_id) }}">
-<div class="age-container"><p>{{ age.age_group }}</p><img src="{{ age.age_img }}"></div>
-</a></div>
-    {% endfor %}
+<div class="row justify-content-center m-0">
+{% for age in ages %}
+    <div class="col-4 col-sm-2 age-group">
+    <a href="{{ url_for('activities_by_age', age_id=age.age_id) }}">
+    <div class="age-container"><div class="age-group-name d-flex align-items-center justify-content-center"><p><strong>{{ age.age_group }}</strong></p></div><img class="age-img" src="{{ age.age_img }}"></div>
+    </a></div>
+{% endfor %}
 
 {% endblock %}

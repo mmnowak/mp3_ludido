@@ -2,49 +2,49 @@
     {
       "age_id": "1",
       "age_group": ">12 Months",
-      "age_description": "",
-      "age_img": "static/assets/images/age-groups/under12.png"
+      "age_description": "fdfd",
+      "age_img": "/static/assets/images/age-groups/under12.png"
     },
     {
         "age_id": "2",
         "age_group": "12-18 Months",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/12-18.png"
+        "age_img": "/static/assets/images/age-groups/12-18.png"
       },
       {
         "age_id": "3",
         "age_group": "18-24 Months",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/18-24.png"
+        "age_img": "/static/assets/images/age-groups/18-24.png"
       },
       {
         "age_id": "4",
         "age_group": "2-3 Years",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/2-3.png"
+        "age_img": "/static/assets/images/age-groups/2-3.png"
       },
       {
         "age_id": "5",
         "age_group": "3-5 Years",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/3-5.png"
+        "age_img": "/static/assets/images/age-groups/3-5.png"
       },
       {
         "age_id": "6",
         "age_group": "5-7 Years",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/5-7.png"
+        "age_img": "/static/assets/images/age-groups/5-7.png"
       },
       {
         "age_id": "7",
         "age_group": "7-11 Years",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/7-11.png"
+        "age_img": "/static/assets/images/age-groups/7-11.png"
       },
     {
         "age_id": "8",
         "age_group": "11+ Years",
         "age_description": "",
-        "age_img": "static/assets/images/age-groups/11.png"
+        "age_img": "/static/assets/images/age-groups/11.png"
       }
 ]
