@@ -14,33 +14,35 @@
     <div class="row mt-3 justify-content-center"> 
     {% for occasion in occasions %}
         {% if occasion.occasion_createdby == session["user"] %}
-            <div class="col d-flex justify-content-center">
-                <div class="justify-content-center m-auto">
-                <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}">
-            <div class="card occasion-card m-2">
-                <div class="card-body text-center m-3">
-                    <h2 class="card-title">{{ occasion.occasion_name }}</h2>
-                    <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
-                    <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>
-                </div>
-            </div></a>
-            </div></div>
-    
-        <!-- Bootstrap Modal-->
-        <div class="modal fade" id="modal-{{ occasion.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content delete-modal">
-                <div class="modal-header">
-                    <h4 class="modal-title">Are you sure you want to delete this occasion?</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
-                    <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
-                </div>
-                </div>
+        <div class="col d-flex justify-content-center">
+          <div class="justify-content-center m-auto">
+            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}" class="occasion">
+        <div class="occasion-card m-2 d-flex justify-content-center align-items-center">
+            <div class="text-center m-3">
+              <h4>{{ occasion.occasion_name }}</h4>
+              {% if occasion.occasion_createdby == session["user"] %}
+              <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
+              <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>
+              {% endif %}
             </div>
+        </div></a>
+        </div></div>
+
+    <!-- Bootstrap Modal-->
+    <div class="modal fade" id="modal-{{ occasion.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content delete-modal">
+            <div class="modal-header">
+              <h4 class="modal-title">Are you sure you want to delete this occasion?</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
+              <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
         {% endif %}  
     {% endfor %}
 </div>

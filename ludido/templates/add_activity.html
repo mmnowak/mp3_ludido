@@ -51,7 +51,7 @@
     </div>
     <div class="mb-3">
         <select class="form-select" id="occasion_id" name="occasion_id" aria-label="Occcasion" required>
-            <option value="" selected>Occcasion</option>
+            <option value="" selected>Occasion</option>
             {% for occasion in occasions %}
             <option value="{{ occasion.id }}">{{ occasion.occasion_name }}</option>
             {% endfor %}

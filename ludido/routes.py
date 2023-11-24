@@ -30,7 +30,14 @@ def add_activity():
         return redirect(url_for("login"))
 
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
+
     if request.method == "POST":
+            existing_activity = Activity.query.filter(Activity.activity_name == \
+                                           request.form.get("activity_name")).all()
+            if existing_activity:
+                flash("This activity already exists!")
+                return redirect(url_for("add_activity"))
+
             activity = Activity(
             activity_name=request.form.get("activity_name"),
             activity_description=request.form.get("activity_description"),
@@ -44,6 +51,7 @@ def add_activity():
             db.session.commit()
             flash("Thank you for adding a new activity!")
             return redirect(url_for("activities"))
+
     return render_template("add_activity.html", occasions=occasions)    
 
 
