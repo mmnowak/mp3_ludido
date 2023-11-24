@@ -35,7 +35,7 @@ def add_activity():
             existing_activity = Activity.query.filter(Activity.activity_name == \
                                            request.form.get("activity_name")).all()
             if existing_activity:
-                flash("This activity already exists!")
+                flash("An activity with this name already exists!")
                 return redirect(url_for("add_activity"))
 
             activity = Activity(
@@ -208,6 +208,12 @@ def add_occasion():
         return redirect(url_for("login"))
 
     if request.method == "POST":
+        existing_occasion = Occasion.query.filter(Occasion.occasion_name == \
+                                           request.form.get("occasion_name")).all()
+        if existing_occasion:
+            flash("An occasion with this name already exists!")
+            return redirect(url_for("add_occasion"))
+
         occasion = Occasion(
             occasion_name=request.form.get("occasion_name"),
             occasion_createdby=session.get("user"),)
