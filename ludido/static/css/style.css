@@ -252,6 +252,17 @@ body {
   background-color: rgba(255, 157, 46, 0.6)
 } 
 
+.age-text {
+    background-color: #c5def9;
+    height: 15rem;
+    border: 5px solid #13245D;
+}
+
+.byage-img {
+    height: 14.4rem;
+    margin: 0;
+}
+
 /* Profile Page */
 
 .profile-name {
