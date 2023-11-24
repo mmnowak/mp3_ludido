@@ -12,10 +12,10 @@
         {% for occasion in occasions %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
-            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}" class="occasion-name">
-        <div class="card occasion-card m-2 d-flex align-items-center">
-            <div class="card-body text-center m-3 align-items-center">
-              <h2 class="card-title">{{ occasion.occasion_name }}</h2>
+            <a href="{{ url_for('activities_by_occasion', occasion_id=occasion.id) }}" class="occasion">
+        <div class="occasion-card m-2 d-flex justify-content-center align-items-center">
+            <div class="text-center m-3">
+              <h4>{{ occasion.occasion_name }}</h4>
               {% if occasion.occasion_createdby == session["user"] %}
               <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>

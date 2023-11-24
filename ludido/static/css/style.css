@@ -71,16 +71,10 @@ body {
 
 #flash-msgs {
     font-family: 'Varela Round', sans-serif;
-    font-size: x-large;
-    height: 50px;
-    margin: 1% auto;
-    background-color: #ffff8b;
+    font-size: medium;
+    height: 30px;
     margin: 0 auto;
-}
-
-#flash-msgs div {
-    color: #13245D;
-    height: 50px;
+    background-color: #ffff8b;
 }
 
 .header-image {
@@ -108,27 +102,26 @@ body {
 
 /* OCCASIONS Pge */
 .occasion-card {
-    width: 15rem;
-    height: 10rem;
+    width: 13rem;
+    height: 7rem;
     background-color: #FF9D2E;
-    border: 2px solid #13245D;
+    border: 3px solid #13245D;
     font-family: 'Varela Round', sans-serif;
+    border-radius: 25px;
 }
 
-.occasion-name {
+.occasion {
     text-decoration: none;
-    color: #13245D;
+    color: #13245D;    
 }
 
-.occasion-name:hover {
+.occasion:hover {
     color: rgb(255, 255, 139);
 }
 
 .title-container {
     background-color: #13245D;
     width: 100%;
-    display: flex;
-    justify-content: center;
     margin-bottom: 1%;
 }
 
