@@ -354,5 +354,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+    
+@app.errorhandler(404) 
+def not_found(e):
+    return render_template("404.html")
+
 
 

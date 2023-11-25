@@ -34,6 +34,11 @@ nav {
     color: #FF9D2E;
 }
 
+#error-message {
+    color: #13245D;
+    font-family: 'Varela Round', sans-serif;
+}
+
 /* FOOTER */
 footer {
     background-color: #13245D;

@@ -141,9 +141,8 @@ User Story 3:	I want to be able to view the website on any device.
 
 User Story 4:  I want to be able to return to the page without using browser buttons if I encounter an error.
 
-* User is automatically redirected to the index page in case of an error
 * Custom Error 404 and Error 500 built
-* A link to return to the index page manually
+* A link to return to the index page
 
 User Story 5:  I want to view activities and occasions.
 

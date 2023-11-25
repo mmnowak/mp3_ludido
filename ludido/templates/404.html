@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container text-center">
+<img src="{{ url_for('static', filename='assets/images/404.png') }}" alt="Error 404"><br>
+<h1 id="error-message">Something went wrong!</h1>
+<a href="{{ url_for('index') }}" class="btn unfav-btn mt-2"><i class="fa-solid fa-house"></i> Go back</a>
+</div>
+
+{% endblock %}
