@@ -160,34 +160,40 @@ body {
     margin-top: 2rem;
     margin-bottom: 1rem;
     border: 2px solid #13245D;
+    border-radius: 25px;
     font-family: 'Varela Round', sans-serif;
     color: #13245D;
-    background-color: #f5c895;
-}
-
-.activity-card h4 a {
-    font-family: 'Chewy', cursive;
-    text-decoration: none;
-    color: #13245D;
+    background-color: #ffffda;
+    overflow: hidden;
 }
 
 .activity-card p {
     text-align: start;
 }
 
-.activity-card h4:hover {
+.act-title {
+    background-color: #13245D;
+}
+
+.act-title h4:hover {
     transform: scale(1.1);
+}
+
+.activity-card h4 a {
+    text-decoration: none;
+    color: #ffff8b;
+    background-color: #13245D;
 }
 
 .instructions-button {
     background-color: #13245D;
-    color: #f5c895 !important;
+    color: #ffff8b !important;
     border: 1px solid #13245D;
 }
 
 .instructions-button:hover {
-    background-color: #f5c895;
-    color: #13245D;
+    background-color: #ffff8b;
+    color: #13245D !important;
     border: 1px solid #13245D;
 }
 

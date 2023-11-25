@@ -14,10 +14,9 @@
         {% for activity in activities %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
-        <div class="card activity-card">
-            <div class="card-body">
-              <h4 class="card-title mt-2"><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4>
-              <div class="card-text activities-card-text">
+        <div class="activity-card">
+              <div class="act-title p-2"><h4><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4></div>
+              <div class="activities-card-text p-2">
                 <p><strong>Age Group: </strong>{{ activity.activity_age }}</p>
                 <p><strong>Developmental Area: </strong>{{ activity.activity_developmental }}</p>
                 <p><strong>Activity Type: </strong>{{ activity.activity_type }}</p>
@@ -39,10 +38,6 @@
               {% endfor %}
               {% endif %}
                 
-                  
-            
-              
-            </div>
           </div>
         </div></div>
         
