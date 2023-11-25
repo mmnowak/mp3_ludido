@@ -4,9 +4,15 @@
 <div class="">Ludido - the basic biological drive to play (<a href="https://ipaewni.files.wordpress.com/2016/05/colorado-paper.pdf">Sturrock, The Colorado Paper</a>)</div>
 <div class="container text-center d-flex justify-content-center">
     <div><a href="{{ url_for('activities') }}" class="btn add-btn btn-lg me-4">Explore</a></div>
-    <div class="pb-3"><a href="{{ url_for('login') }}" class="btn add-btn btn-lg me-4">Login</a><br><a href="{{ url_for('register') }}" class="me-4 reg">Register</a></div>
+
+    {% if session.user %} 
+    <a href="{{ url_for('profile', username=session['user']) }}" class="btn add-btn btn-lg me-4">My Profile</a>
+    {% else %}
+    <div><a href="{{ url_for('login') }}" class="btn add-btn btn-lg me-4">Login</a><br><a href="{{ url_for('register') }}" class="me-4 reg">Register</a></div>
+    {% endif %}
+
 </div>
-<div class="container-fluid features mb-3">
+<div class="container-fluid features mb-3 mt-2">
     <div class="row row-eq-height">
         <div class="col-lg feature text-center"><a href="{{ url_for('occasions') }}"><img class="index-img" src="{{ url_for('static', filename='assets/images/index1.png') }}" alt="cartoon images of children playing"><p>Add activities you'd like to share with others! Create your own occasions, or search activities by existing occasions. Whether it's seasonal crafts or a holiday-themed activity, you can find ideas easily or share your own!</p></a></div>
         <div class="col-lg feature text-center"><a href="{{ url_for('age_groups') }}"><img class="index-img" src="{{ url_for('static', filename='assets/images/index2.png') }}" alt="cartoon images of children playing"><p>Learn more about how children play at each stage of their development. Need ideas for a tummy-time with an infant, a sensory tray for a toddler or a group game for bored teenagers? Search activities suitable for each age group.</p></a></div>

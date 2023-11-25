@@ -37,6 +37,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+              <p>This action is permanent and will delete all activities associated with the occasion.</p>
               <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
               <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
             </div>
