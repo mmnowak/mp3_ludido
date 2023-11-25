@@ -7,7 +7,7 @@
     <div><a href="{{ url_for('activities') }}" class="btn add-btn btn-lg me-4">Explore</a></div>
 
     {% if session.user %} 
-    <a href="{{ url_for('profile', username=session['user']) }}" class="btn add-btn btn-lg me-4">My Profile</a>
+    <a href="{{ url_for('profie', username=session['user']) }}" class="btn add-btn btn-lg me-4">My Profile</a>
     {% else %}
     <div><a href="{{ url_for('login') }}" class="btn add-btn btn-lg me-4">Login</a><br><a href="{{ url_for('register') }}" class="me-4 reg">Register</a></div>
     {% endif %}
