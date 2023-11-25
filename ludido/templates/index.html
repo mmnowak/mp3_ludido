@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid w-100">
-
 <div class="">Ludido - the basic biological drive to play (<a href="https://ipaewni.files.wordpress.com/2016/05/colorado-paper.pdf">Sturrock, The Colorado Paper</a>)</div>
+
+<div class="container-fluid features">
+    <div class="row row-eq-height">
+        <div class="col-lg feature text-center"><img class="index-img" src="{{ url_for('static', filename='assets/images/index1.png') }}" alt="cartoon images of children playing"><p>Add activities you'd like to share with others! Create your own occasions, or search activities by existing occasions. Whether it's seasonal crafts or a holiday-themed activity, you can find ideas easily or share your own!</p></div>
+        <div class="col-lg feature text-center"><img class="index-img" src="{{ url_for('static', filename='assets/images/index2.png') }}" alt="cartoon images of children playing"><p>Learn more about how children play at each stage of their development. Need ideas for a tummy-time activity for an infant, a sensory tuff tray for a toddler, or a group game for bored teenagers? Search activities suitable for each age group.</p></div>
+        <div class="col-lg feature text-center"><img class="index-img" src="{{ url_for('static', filename='assets/images/index3.png') }}" alt="cartoon images of children playing"><p>Found and activity you especially like, or want to save for later? If you are a registered user, you can save activities to favourites and easily find them on your profile. Just create an account and you can start saving activities you like!</p></div>
+    </div>
 
 
 {% endblock %}

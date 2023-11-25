@@ -100,6 +100,28 @@ body {
     width: 100%
 }
 
+.index-img {
+    width: 70%;
+    border: 3px solid #c5def9;
+}
+
+.features {
+    background-color: #13245D;
+    color: #c5def9;
+    margin: 0;
+}
+
+.feature {
+    text-align: center;
+    padding: 1rem;
+    }
+
+.feature p {
+    width: 70%;
+    margin: 0 auto;
+    border: 3px solid #c5def9;
+}
+
 /* OCCASIONS Pge */
 .occasion-card {
     width: 13rem;
