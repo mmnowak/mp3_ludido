@@ -107,7 +107,6 @@ body {
 
 .features {
     background-color: #13245D;
-    color: #c5def9;
     margin: 0;
 }
 
@@ -116,10 +115,26 @@ body {
     padding: 1rem;
     }
 
+.feature a {
+    text-decoration: none;
+    color: #c5def9;
+    }
+
+.feature:hover {
+    transform: scale(1.02);
+}
+
 .feature p {
     width: 70%;
     margin: 0 auto;
     border: 3px solid #c5def9;
+    padding: 1%;
+}
+
+.reg {
+    text-decoration: none;
+    font-size: small;
+    color: #13245D;
 }
 
 /* OCCASIONS Pge */
