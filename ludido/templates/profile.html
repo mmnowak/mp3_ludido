@@ -58,21 +58,20 @@
         {% if activity.activity_createdby == session["user"] %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
-        <div class="card activity-card">
-            <div class="card-body">
-              <h4 class="card-title mt-2"><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4>
-              <div class="card-text activities-card-text">
+        <div class="activity-card" style="border: 2px solid #ffff8b;">
+              <div class="act-title p-2"><h4><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4></div>
+              <div class="card-text activities-card-text p-2">
                 <p><strong>Age Group: </strong>{{ activity.activity_age }}</p>
                 <p><strong>Developmental Area: </strong>{{ activity.activity_developmental }}</p>
                 <p><strong>Activity Type: </strong>{{ activity.activity_type }}</p>
                 <p><strong>Occasion: </strong>{{ activity.occasion }}</p>
+                <br>
                 <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button"><strong>See Instructions</strong></a>
               </div>
               
               <br>
               <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
-            </div>
           </div>
         </div></div>
         
