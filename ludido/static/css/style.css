@@ -306,13 +306,17 @@ hr {
 
 .age-text {
     background-color: #c5def9;
-    height: 15rem;
-    border: 5px solid #13245D;
-}
+    max-height: fit-content;
+    }
 
 .byage-img {
-    height: 14.4rem;
+    height: 12rem;
     margin: 0;
+}
+
+.age-desctiption {
+    font-family: 'Varela Round', sans-serif;
+    font-size: large;
 }
 
 /* Profile Page */

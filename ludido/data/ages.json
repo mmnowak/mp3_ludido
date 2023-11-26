@@ -2,49 +2,49 @@
     {
       "age_id": "1",
       "age_group": ">12 Months",
-      "age_description": "fdfd",
+      "age_description": "For the first six months of babies' lives, play mainly involves exploration of their bodies and senses. They explore objects by bringing them to their mouth or make sounds by shaking and banging. Their actions are often repetitive; they enjoy experiencing new sights, sounds and textures. It is important for caregivers to create bonds through eye contact, and interaction, for example playing peek-a-boo. After six months, babies' reach and grasp become well-developed, they pass objects from hand to hand or bang them together. They begin to imitate actions and understand cause and effect. Play involves reaching for and manipulating objects, rattling, banging and sliding them.",
       "age_img": "/static/assets/images/age-groups/under12.png"
     },
     {
         "age_id": "2",
         "age_group": "12-18 Months",
-        "age_description": "",
+        "age_description": "During this stage, play mainly involves exploring their environment through physical movement and the senses. Children enjoy playing with items that involve push, pull or button pressing, due to their emerging appreciation of cause and effect. They might become interested in mark-making or exploring objects by actions such as putting things in and out of containers and stacking or knocking them down. They may engage in imitative play involving familiar items such as a bottle, or with dolls or soft toys. Their interest in language is growing, they vocalize and begin to utter their first words.",
         "age_img": "/static/assets/images/age-groups/12-18.png"
       },
       {
         "age_id": "3",
         "age_group": "18-24 Months",
-        "age_description": "",
+        "age_description": "Children may begin to engage in parallel play. Their confidence in running, climbing and carrying items improves. They enjoy small-world play, showing that they know what things are and what they normally do. They might play by imitating and copying the actions of others. At this age, children begin to engage in roleplay at familiar situations, such as mum feeding baby. Their interest in mark-making is growing.",
         "age_img": "/static/assets/images/age-groups/18-24.png"
       },
       {
         "age_id": "4",
         "age_group": "2-3 Years",
-        "age_description": "",
+        "age_description": "While solitary play remains predominant, children may engage in parallel play more and even take turns. Their physical skills, such as kicking a ball, jumping or skipping improve. They begin to match colours and shapes. Their improved memory, recall and sequencing becomes more evident. They engage in more pretence and role play, pretend at situations such as shop. They can complete simple puzzles. They start showing awareness of others' feelings.",
         "age_img": "/static/assets/images/age-groups/2-3.png"
       },
       {
         "age_id": "5",
         "age_group": "3-5 Years",
-        "age_description": "",
+        "age_description": "While they might return to solitary play in unfamiliar situactions, at this age children enjoy co-operative play. They may have favourite play partners. Their developing fine motor skills allow them to engage in activities such as drawing and art. They become more interested in making music. Their play is mostly sensory and physical. They enjoy small-world play and role-play. Their turn-taking, negotiation and understanding of group rules improve.",
         "age_img": "/static/assets/images/age-groups/3-5.png"
       },
       {
         "age_id": "6",
         "age_group": "5-7 Years",
-        "age_description": "",
+        "age_description": "Children enjoy playing with others and being accepted becomes more important. They make friendships and engage in co-operative activities. They enjoy risky and challenging play which helps them extend their physical skills. Their appreciation of rules is growing. They may become interested in board games and group names. They enjoy making things, either by copying or from their own imagination. Their developed understanding of rules of language is evident in their enjoyment of jokes and complex humour.",
         "age_img": "/static/assets/images/age-groups/5-7.png"
       },
       {
         "age_id": "7",
         "age_group": "7-11 Years",
-        "age_description": "",
+        "age_description": "As their friendships become more stable, play at this age involves more group-based games with increasingly complex rules. Activities such as gymnastics and dance help them improve their physical capabilities such as balance and co-ordination. They might enjoy construction play, such as playing with blocks. They explore their identities, for example, playing by trying out new hairstyles and make-up.",
         "age_img": "/static/assets/images/age-groups/7-11.png"
       },
     {
         "age_id": "8",
         "age_group": "11+ Years",
-        "age_description": "",
+        "age_description": "As puberty brings great challenges, play behaviours change. Young people become more aware of the views of others and reflect on their sense of self in light of these views. Play may involve hanging out with friends, social networking or online gaming. Young people may continue to enjoy hobbies and sports. They play at real life in cooking or rearranging their rooms. Young people often play with their identities by changing their image or attitude toward certain things.",
         "age_img": "/static/assets/images/age-groups/11.png"
       }
 ]
