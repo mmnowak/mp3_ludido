@@ -10,17 +10,14 @@
     <div class="col-lg-10 age-desctiption p-4"><p>{{ age.age_description }}</p></div>
     </div></div>
   
-
-
-<div class="container mt-0 w-100 text-center">    
-    <div class="row mt-3 justify-content-center">        
-        {% for activity in activities if activity.activity_age == age.age_group %}         
-            <div class="col d-flex justify-content-center">
-              <div class="justify-content-center m-auto">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">{{ activity.activity_name }}</h5>
-                  <div class="card-text">
+    <div class="container mt-0 w-100 text-center">    
+      <div class="row mt-3 justify-content-center">  
+{% for activity in activities if activity.activity_age == age.age_group %}
+<div class="col d-flex justify-content-center">
+  <div class="justify-content-center m-auto">
+<div class="activity-card">
+      <div class="act-title p-2"><h4><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4></div>
+      <div class="activities-card-text p-2">
                     <p>Age Group: {{ activity.activity_age }}</p>
                     <p>Developmental Area: {{ activity.activity_developmental }}</p>
                     <p>Activity Type: {{ activity.activity_type }}</p>
