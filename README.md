@@ -266,5 +266,14 @@ User Story 15:  I want to be able to easily view my favourite activities.
 
 <details><summary>Ages Page</summary>
 <img src="documentation/readme/wireframes/ages.png">
-<img src="documentation/readme/wireframes/submit-occasion-mobile.png">
+<img src="documentation/readme/wireframes/ages-mobile.png">
+</details>
+
+<details><summary>Activities by Age Page</summary>
+<img src="documentation/readme/wireframes/activities-by-age.png">
+<img src="documentation/readme/wireframes/activities-byage-mobile.png">
+</details>
+
+<details><summary>Custom Error 404 and 500 Pages</summary>
+<img src="documentation/readme/wireframes/error.png">
 </details>
