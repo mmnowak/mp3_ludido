@@ -215,6 +215,10 @@ User Story 15:  I want to be able to easily view my favourite activities.
 * Activity cards on Activities Page, Activities by Occasion Page and Activities by Age Page contain a button triggering the Remove from Favourites Function if the Activity is favourited
 * Favourites Page features a button triggering the Unfavourite All function
 
+#### Database Schema
+
+![DBSchema](documentation/readme/dbschema.png)
+
 ### Surface Plane
 
 #### Wireframes

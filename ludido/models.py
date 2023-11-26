@@ -2,8 +2,8 @@ from ludido import db
 
 class Users(db.Model):
     # schema for the Users model
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50), unique=True, nullable=False)
+    id = db.Column(db.Integer, nullable=False)
+    username = db.Column(db.String(50), unique=True, nullable=False, primary_key=True)
     password = db.Column(db.String(500), nullable=False)
     activities = db.relationship("Activity", backref="user_activity", cascade="all, delete", lazy=True)
     occasions = db.relationship("Occasion", backref="user_occasion", cascade="all, delete", lazy=True)
