@@ -80,19 +80,22 @@ Target audience of this website are people working with children, i.e. playworke
 5.  I want to view activities and occasions.
 6.  I want to filter activities by occasion or by age.
 
-**As a logged out User**
+**As a logged out User:**
+
 7.  I want to be able to easily register a new account.
 8.  I want to be able to locate a log in page easily.
 9.  I want to know the benefits of registering as a user.
 
-**As a logged in User**
+**As a logged in User:**
+
 10.  I want to be able to see my profile.
 11.	 I want to be able to add, edit or delete my own occasions.
 12.	 I want to be able to add, edit or delete my own activities.
 13.	 I want to easily locate occasions and activities I have created.
 14.	 I want to be able to add existing activities to favourites.
 15.  I want to be able to easily view my favourite activities.
-16.  I want to be able to delete one or all of my favourite activities.
+16.  I want to be able to remove one or all of my favourite activities.
+17.  I want to receive feedback when completed an action.
 
 ### Scope Plane
 
@@ -215,6 +218,10 @@ User Story 15:  I want to be able to easily view my favourite activities.
 * Activity cards on Activities Page, Activities by Occasion Page and Activities by Age Page contain a button triggering the Remove from Favourites Function if the Activity is favourited
 * Favourites Page features a button triggering the Unfavourite All function
 
+17.  I want to receive feedback when completed an action.
+
+* Flash messages appear to confirm an action initiated by user was executed.
+
 #### Database Schema
 
 ![DBSchema](documentation/readme/dbschema.png)
@@ -281,3 +288,153 @@ User Story 15:  I want to be able to easily view my favourite activities.
 <details><summary>Custom Error 404 and 500 Pages</summary>
 <img src="documentation/readme/wireframes/error.png">
 </details>
+
+
+## Features
+
+### All Pages
+
+**Navigation Bar**
+
+* Fully responsive; collapapses into a toggler menu on small devices;
+* Features a logo which leads to the Index page when clicked;
+* Logo increases in size on hover;
+* Features links to the Index, Activities, Occasion and Ages pages;
+* For users that are not logged in, it features links to the Register and Log In pages;
+* For logged in users, it features links to the Profile Page and Log Out functionallity;
+* Links change colour on hover.
+
+User Stories covered: 2, 3.
+
+![Navigation bar for logged in users](documentation/readme/features/navbar.png)
+![Navigation bar for logged out users](documentation/readme/features/navbar2.png)
+![Navigation bar on mobile](documentation/readme/features/navbar-mobile.png)
+
+**Footer**
+
+* Contains credits and a link to the developer's Github and Linkedin accounts;
+* The link icons change colour on hover;
+
+![Footer](documentation/readme/features/footer.png)
+
+**Flash messages**
+
+* Flash messages give user feedback after they completed an action, e.g. delete an Occasion or add an Activity to favourites;
+* They also appear to inform a user they do not have an access to certain pages; e.g. if a user who is not logged in tries to add an Activity;
+* A flash message appears upon logging in to inform the user they need to reload their profile to see their Occasions and Activities;
+* Flash messages div is incorporated into the header and matches the aesthetic of the website.
+
+User Stories covered: 17.
+
+![Flash messages](documentation/readme/features/flash-msg.png)
+
+### Index Page
+
+**Text paragraph**
+
+* Informs the user about the purpose of the site;
+* Lists benefits of creating an account
+
+User Stories covered: 1, 9.
+
+**Action Buttons**
+
+* The Explore button leads to the Activities page;
+* Logged in users see the My Profile button which leads to the Profile Page;
+* Logged out users see a Log in button and a Register link;
+* The buttons change size on hover.
+
+User stories covered: 2, 8, 13. 
+
+![Action buttons for logged in users](documentation/readme/features/indexbuttons.png)
+---
+![Action buttons for logged out users](documentation/readme/features/indexbuttons2.png)
+
+**Features section**
+
+* Three containers of images and text which describe some of the website's features;
+* The containers are clickable links and increase in size on hover;
+* The first container informs user they can add their own occasion or filter activities by existing occasions.
+* It leads to the Occasions page when clicked.
+* The second container informs user they can filter activities by age and learn more about play at each development stage.
+* It leads to the Ages page when clicked.
+* The third container informs user they can add activities to favourites if they have an account.
+* It leads to the Favourites page if the user is logged in and the Register page if they are not logged in.
+* The images used match the imagery used in the header as well as the colour scheme.
+
+User stories covered: 1, 7, 15.
+
+![Features section](documentation/readme/features/indexfeatures.png)
+
+### Activities Page
+
+**Add Activity button**
+
+* Displayed if the user is logged in;
+* Leads to the Add Activity page;
+* Changes colour on hover.
+
+User stories covered: 2, 12.
+
+**My Favourites button**
+
+* Displayed if the user is logged in;
+* Leads to the Favourites page;
+* Changes colour on hover.
+
+User stories covered: 2, 12, 15.
+
+![Acctivities page buttons](documentation/readme/features/activities-buttons.png)
+
+**Activity cards**
+
+* Display activities added by users;
+* Contain activity name, age group, developmental area, activity type, occasion and the username of the user who created the activity.
+* Contain See Instructions button;
+* If the user is logged in and has created the activity, the cards contain Edit and Delete buttons;
+* If the user is logged in and has not created the activity, the cards contain Add to Favoutites/Remove from favourites button.
+
+User stories covered: 5.
+
+![Activity cards](documentation/readme/features/activity-cards.png)
+![Activity cards](documentation/readme/features/activity-cards2.png)
+
+**See Instructions button**
+
+* Leads to the Full Activity page where the users can obtain instructions for the selected activity;
+* Changes colour on hover.
+
+User stories covered: 5.
+
+![See Instructions button](documentation/readme/features/instruction-button.png)
+
+**Edit and Delete button**
+
+* Displayed if the user is logged in and has created the activity;
+* The Edit button leads to the Edit Activity page;
+* The Delete button triggers a modal which ask the user if they are sure they want to delete the activity.
+* The Delete button on the modal triggers the delete_activity functionallity.
+
+User stories covered: 12.
+
+![Edit and delete button](documentation/readme/features/activitycard-buttons.png)
+
+ADD MODAL SCREENSHOT HERE
+
+**Add to favourites button**
+
+* Displayed if the user is logged in and is not the author of the activity.
+* Adds the activity to user's favourites when clicked.
+
+User stories covered: 14.
+
+![Add to favourites button](documentation/readme/features/fav-button.png)
+
+**Removed from favourites button**
+
+* Displayed if the user is logged in, is not the author of the activity and has previously added the activity to their favourites.
+* Removes the activity from user's favourites when clicked.
+
+User stories covered: 16.
+
+![Remove from favourites button](documentation/readme/features/unfav-button.png)
