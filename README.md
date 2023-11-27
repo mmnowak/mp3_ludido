@@ -1,10 +1,10 @@
-# LUDIDO
+# LUDIDO Activity database
 
 ![Am I Responsive](documentation/readme/amiresponsive.png)
 
 (Developer: Martyna Nowak)
 
-[Live Webpage](https://mmnowak.github.io/tarot-quiz/index.html)
+[Live Webpage](https://ludido-ba4a496efb9b.herokuapp.com/)
 
 ## Table of Contents
 
@@ -572,7 +572,7 @@ User stories covered: 11.
 
 User stories covered: 11.
 
-![Edit Occasion button](documentation/readme/features/editactivity-form.png)
+![Edit Occasion button](documentation/readme/features/editoccasion-form.png)
 
 **'Edit Occasion' button**
 
