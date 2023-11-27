@@ -438,3 +438,88 @@ User stories covered: 14.
 User stories covered: 16.
 
 ![Remove from favourites button](documentation/readme/features/unfav-button.png)
+
+### Occasions Page
+
+**'Add Occasion' button**
+
+* Displayed if the user is logged in;
+* Leads to the Add Occasion Page when clicked;
+* Changes colour on hover.
+
+User stories covered: 2, 11.
+
+![Add Occasion button](documentation/readme/features/addoccasion-button.png)
+
+**Occasion cards**
+
+* Display occasions added by users.
+* Contain 'Edit' and 'Delete' button if the user is logged in and is an author of the occasion.
+* The name of the activity is clickable and leads to a relevant Activities by Occasion page.
+
+User stories covered: 5, 6.
+
+![Occasion cards if the user is logged in](documentation/readme/features/occasions.png)
+![Occasion cards if the user is not logged in](documentation/readme/features/occasions2.png)
+
+**'Edit' and 'Delete' buttons**
+
+* Displayed if the user is logged in and has created the occasion.
+* The 'Edit' button leads to the Edit Occasion page.
+* The 'Delete' button opens a modal which asks the user if they definitely intend to delete the occasion.
+* The modal informs the user that upon deleting an occasion, all associated activities will be deleted as well.
+* The 'Delete' button on the modal triggers the delete_occasion functionallity.
+
+User stories covered: 11.
+
+![Occasion buttons](documentation/readme/features/occasion-buttons.png)
+
+SCREENSHOT OF THE MODAL HERE
+
+### Ages Page
+
+**Age group cards**
+
+* Contain the eight age groups listed in the Add Activity form.
+* Each card contains a relevant image and a name of the age group.
+* The age groups are taken from the /data/ages.json file.
+* The cards are clickable and lead to a relevant Activities by Age page when clicked.
+* The cards increase in size on hover to indicate to user that they are clickable.
+
+User stories covered: 6.
+
+![Age group cards](documentation/readme/features/agegroups.png)
+
+### Profile Page
+
+**User's name**
+
+* Display a capitalized username of the user.
+
+![User's name](documentation/readme/features/profile-name.png)
+
+**'My favourites' button**
+
+* Leads to the Favourites page when clicked.
+* Changes colour on hover.
+
+User stories covered: 15.
+
+**'My Occasions' dropdown**
+
+* Displays the occasions created by the user when clicked.
+* Changes colour on hover.
+
+User stories covered: 13.
+
+![My favourites button](documentation/readme/features/profile-buttons.png)
+
+**'My Activities' dropdown**
+
+* Displays the activities created by the user when clicked.
+* Changes colour on hover.
+
+User stories covered: 13.
+
+![My favourites button](documentation/readme/features/profile-buttons.png)
+
