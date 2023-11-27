@@ -333,9 +333,12 @@ User Stories covered: 17.
 **Text paragraph**
 
 * Informs the user about the purpose of the site;
-* Lists benefits of creating an account
+* Lists benefits of creating an account.
+* Contains a link to the document where the site's name came from.
 
 User Stories covered: 1, 9.
+
+![Index page text](documentation/readme/features/indextext.png)
 
 **Action Buttons**
 
@@ -419,7 +422,7 @@ User stories covered: 12.
 
 ![Edit and delete button](documentation/readme/features/activitycard-buttons.png)
 
-ADD MODAL SCREENSHOT HERE
+![Delete Activivy modal](documentation/readme/features/modal-activity.png)
 
 **Add to favourites button**
 
@@ -474,7 +477,19 @@ User stories covered: 11.
 
 ![Occasion buttons](documentation/readme/features/occasion-buttons.png)
 
-SCREENSHOT OF THE MODAL HERE
+![Delete Occasion modal](documentation/readme/features/modal-occasions.png)
+
+### Activity by Occasion Page
+
+**Activity by Occasion cards**
+
+* Display Activities within relevant Occasion.
+* Contain 'See Instructions' button.
+* If the user is logged in, contain either 'Edit' and 'Delete' buttons or 'Add to/Remove from Favourites' buttons.
+
+User stories covered: 6, 12, 14, 16.
+
+![Activity by Occasion cards](documentation/readme/features/activity-byoccasion.png)
 
 ### Ages Page
 
@@ -489,6 +504,26 @@ SCREENSHOT OF THE MODAL HERE
 User stories covered: 6.
 
 ![Age group cards](documentation/readme/features/agegroups.png)
+
+### Activities by Age Page
+
+**Age group text div**
+
+* Display a picture and a short paragraph about play at the selected development stage.
+* The picture and text are taken from the /data/ages.json file.
+
+![Age group text](documentation/readme/features/activities-byage-text.png)
+
+**Activities by Age cards**
+
+* Display Activities for the relevant age group.
+* Contain the 'See Instructions' button.
+* If the user is logged in, contain either 'Edit' and 'Delete' buttons or 'Add to/Remove from Favourites' buttons.
+
+User stories covered: 6, 12, 14.
+
+![Activities by age cards](documentation/readme/features/activity-byage.png)
+
 
 ### Profile Page
 
@@ -512,7 +547,7 @@ User stories covered: 15.
 
 User stories covered: 13.
 
-![My favourites button](documentation/readme/features/profile-buttons.png)
+![My favourites button](documentation/readme/features/pro)
 
 **'My Activities' dropdown**
 
@@ -521,7 +556,7 @@ User stories covered: 13.
 
 User stories covered: 13.
 
-![My favourites button](documentation/readme/features/profile-buttons.png)
+![My favourites button](documentation/readme/features/profile-favbutton.png)
 
 **My Occasions' cards**
 
