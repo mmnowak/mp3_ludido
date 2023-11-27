@@ -523,3 +523,79 @@ User stories covered: 13.
 
 ![My favourites button](documentation/readme/features/profile-buttons.png)
 
+**My Occasions' cards**
+
+* Display the Occasions created by the user.
+* Contain 'Edit' and 'Delete' buttons.
+
+User stories covered: 11, 13.
+
+![My Occasions cards](documentation/readme/features/profile-occasions.png)
+
+**'My Activities' cards**
+
+* Display the activities created by the user.
+* Contain 'See Instructions' button.
+* Contain 'Edit' and 'Delete' button.
+* Unlike the activies cards displayed on other pages, the one on the Profile page do not contain a 'Created by:' field since they have been created by the user viewing the profile.
+
+User stories covered: 12, 13.
+
+![My Activities cards](documentation/readme/features/profile-activities.png)
+
+### Register page
+
+**Register form**
+
+* Contains three fields: Username, Password and Confirm password. All fields are required.
+* The user can only registered if the passwords match.
+* The passwords are hashed for security.
+* The username needs to be unique; if the username is already taken, user is notified via flash message.
+
+User stories covered: 7.
+
+![Register form](documentation/readme/features/register-form.png)
+
+**'Register' button**
+
+* Adds a new user to the user table.
+
+User stories covered: 7.
+
+!['Register' button](documentation/readme/features/register-button.png)
+
+**'Log in' link**
+
+* Redirects the user to the Log in page if they already have an account.
+
+User stories covered: 2, 8.
+
+!['Log in' link](documentation/readme/features/login-link.png)
+
+### Log in page
+
+**Log in form**
+
+* Contains two fields: 'Username' and 'Password'.
+* The password is hashed for security.
+
+User stories covered: 8
+
+![Log in form](documentation/readme/features/login-form.png)
+
+**'Log in' button**
+
+* When clicked:
+    * If the username does not match an existing account, user is notified via a flash message.
+    * If the password does not match the username, user is notified via a flash message.
+    * If the username and password do match, the user is logged in and redirected to the Profile Page.
+
+![Log in button](documentation/readme/features/login-button.png)
+
+**'Register Here' link**
+
+* Redirects user to the Register page if they do not have an account yet.
+
+User stories covered: 2, 7.
+
+![Register link](documentation/readme/features/register-link.png)
