@@ -260,9 +260,10 @@ def delete_occasion(occasion_id):
 @app.route("/activities_by_occasion/<int:occasion_id>")
 def activities_by_occasion(occasion_id):
     activities = list(Activity.query.order_by(Activity.activity_name).all())
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
     occasion = Occasion.query.get_or_404(occasion_id) 
     return render_template("activities_by_occasion.html", 
-                           occasion=occasion, activities=activities, occasions=occasions)
+                           occasion=occasion, activities=activities, occasions=occasions, favourites=favourites)
 
 
 @app.route("/age-groups")
@@ -284,7 +285,8 @@ def activities_by_age(age_id):
                 print(age)
     
     activities = list(Activity.query.order_by(Activity.activity_name).all()) 
-    return render_template("activities_by_age.html", age=age, activities=activities)
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
+    return render_template("activities_by_age.html", age=age, activities=activities, favourites=favourites)
 
 
 @app.route("/register", methods=["GET", "POST"])

@@ -25,11 +25,11 @@
         </div></div>
 
     <!-- Bootstrap Modal-->
-    <div class="modal fade" id="modal-{{ occasion.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-{{ occasion.id }}" tabindex="-1" aria-labelledby="deleteModalLabel-{{ occasion.id }}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content delete-modal">
             <div class="modal-header">
-              <h4 class="modal-title">Are you sure you want to delete this occasion?</h4>
+              <h4 class="modal-title" id="deleteModalLabel-{{ occasion.id }}">Are you sure you want to delete this occasion?</h4>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

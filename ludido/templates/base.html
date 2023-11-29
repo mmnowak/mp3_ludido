@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kablammo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32×32" href="{{ url_for('static', filename='assets/images/favicon/favicon.ico') }}"> 
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon/favicon.ico') }}"> 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 </head>
@@ -62,7 +62,7 @@
 </nav>
 
 <div id="page-container" class="mt-0"><div id="content-container" class="w-100 mt-0">
-  <section id="flash-msgs" class="text-center">
+  <div id="flash-msgs" class="text-center">
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
@@ -72,7 +72,7 @@
         {% endfor %}
       {% endif %}
     {% endwith %}
-  </section>
+      </div>
 
 <div class="header-image container-fluid w-100 mt-0 d-flex justify-content-center">
   <img src="{{ url_for('static', filename='assets/images/content-header.png') }}" alt="cartoon images of children playing">
@@ -83,7 +83,7 @@
 {% block content %}
 {% endblock %}
     
-</div><br><br>
+</div></div><br><br>
 <!-- Footer -->
 <footer class="w-100 p-1 bottom-0">
 <div class="footer-links text-center bottom-0">
