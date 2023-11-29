@@ -79,15 +79,112 @@ See results:
 
 
 5.  I want to view activities and occasions.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Activities Page | Navigate to the Activites Page | Activity cards are displayed | Works as expected |
+| Activity cards | Click on the 'See Instructions' button | Full Activity page opens | Works as expected |
+| Occasions Page | Navigate to the Occasions Page | Occasion cards are displayed | Works as expected |
+
 6.  I want to filter activities by occasion or by age.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Occasion cards | Click on a occasion name | Activities by Occasion page opens, displays activities for the correct occasion | Works as expected |
+| Age Group cards | Click on an age group card | Activities by Age page opens, displays activities for the correct age | Works as expected |
+
 7.  I want to be able to easily register a new account.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Register form | Fill out the register form | A new account is created | Works as expected |
+
 8.  I want to be able to locate a log in page easily.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Navigation bar | Click on the 'Log in' link | The Log in page opens | Works as expected |
+| Index page | Click on the 'Log in' link | The Log in page opens | Works as expected |
+| Register page | Click on the 'Log in' link | The Log in page opens | Works as expected |
+| A page accesible to logged in users only | Try to access the page without logging in | Redirected to the Log in page | Works as expected |
+
 9.  I want to know the benefits of registering as a user.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Index Page | Navigate to the Index Page | A paragraph with information on features avaliable to logged in users appears | Works as expected |
+
 10.  I want to be able to see my profile.
+
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Navigation bar | Click on the 'Profile' link | The Profile page loads | Works as expected |
+| Log in page | Log in to your accout | The Profile page loads | Works as expected |
+
 11.	 I want to be able to add, edit or delete my own occasions.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Occasions page | Click on the 'Add Occasion' button | The Add Occasion page opens | Works as expected |
+| Add Occasions form | Fill out the form | A new occasion is added | Works as expected |
+| Occasion cards | Click on the 'Edit' button | The Edit Occasion page opens | Works as expected |
+| Edit Occasion form | Fill out the form | The occasion is edited | Works as expected |
+| Occasion cards | Click on the 'Delete' button | The occasion is removed from the DB | Works as expected |
+
+
 12.	 I want to be able to add, edit or delete my own activities.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Activities page | Click on the 'Add Activity' button | The Add Activity page opens | Works as expected |
+| Add Activity form | Fill out the form | A new activity is added | Works as expected |
+| Activity cards | Click on the 'Edit' button | The Edit Activity page opens | Works as expected |
+| Edit Activity form | Fill out the form | The activity is edited | Works as expected |
+| Activity cards | Click on the 'Delete' button | The activity is removed from the DB | Works as expected |
+
 13.	 I want to easily locate occasions and activities I have created.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Profile page | Click on the 'My Occasions' dropdown | Occasions created by the user appear | Works as expected |
+| Profile page | Click on the 'My Activities' dropdown | Activities created by the user appear | Works as expected |
+
 14.	 I want to be able to add existing activities to favourites.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Activity cards | Click on the 'Add to favourites' button | The activity is added to favourites | Works as expected |
+
 15.  I want to be able to easily view my favourite activities.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Index page | Click on the third feature section | My Favourites page opens | Works as expected |
+| Activities page | Click on the 'My favourites' button | My Favourites page opens | Works as expected |
+| Profile page | Click on the 'My favourites' button | My Favourites page opens | Works as expected |
+
+
 16.  I want to be able to remove one or all of my favourite activities.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Activity cards | Click on the 'Remove from Favourites' button | The activity is removed from favourites | Works as expected |
+| Favourites page | Click on the 'Unfavourite All' button | All favourite activities are removed from favourites | Works as expected |
+
 17.  I want to receive feedback when completed an action.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|:-----------:|:----------:|:-------------------:|:-----------------:|
+| Add Activity page | Add a new activity | A flash message appears | Works as expected |
+| Edit Activity page | Edit the activity | A flash message appears | Works as expected |
+| Activities cards | Click on the 'delete' button | A flash message appears | Works as expected |
+| Add Occasion page | Add a new occasion | A flash message appears | Works as expected |
+| Edit Occasion page | Edit the occasion | A flash message appears | Works as expected |
+| Occasion cards | Click on the 'delete' button | A flash message appears | Works as expected |
+| Activities cards | Click on the 'Add to Favourites' button | A flash message appears | Works as expected |
+| Activities cards | Click on the 'Remove from Favourites' button | A flash message appears | Works as expected |
+| Favourites page | Click on the 'Unfavourite all' button | A flash message appears | Works as expected |
+| Navigation bar | Click on the 'Log out' link | A flash message appears | Works as expected |
+| Log in page | Log in | A flash message appears | Works as expected |
+| A page accesible to logged in users only | Try to access the page without logging in | A flash message appears | Works as expected |
