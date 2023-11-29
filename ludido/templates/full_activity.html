@@ -3,9 +3,9 @@
 
 <div class="container">
 <div class="container-fluid justify-content-center text-center mt-4">
-    <a href="{{ url_for('activities') }}" class="btn unfav-btn">Go back to Activities</a>
+    <a href="{{ url_for('activities') }}" class="btn unfav-btn m-1">Go back to Activities</a>
     {% if session.user %}
-    <a href="{{ url_for('favourite_activities', username=session['user']) }}" class="btn unfav-btn">My favourites</a>
+    <a href="{{ url_for('favourite_activities', username=session['user']) }}" class="btn unfav-btn m-1">My favourites</a>
     {% endif %}
     <div class="mt-4 full-activity">
         <div class="fullact-name mb-3"><h2>{{ activity.activity_name }}</h2></div>
