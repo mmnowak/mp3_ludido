@@ -13,6 +13,11 @@ This is the testing documentation for the LUDIDO website. For the README file, [
 1. [Introduction](#introduction)
 2. [Automated Testing](#automatic-testing)
     1. [HTML Validation](#html-validation)
+3. [Manual Testing](#manual-testing)
+    1. [Device Testing](#device-testing)
+    2. [Browser compatibility](#browser-compatibility)
+    3. [Testing User Stories](#testing-user-stories)
+    4. [Feature Testing](#feature-testing)
 
 ## Introduction
 
@@ -192,3 +197,199 @@ The W3C Jigsaw CSS Validation Service was used to validate the css file for the 
 | Navigation bar | Click on the 'Log out' link | A flash message appears | ![User story 17](documentation/testing/user-stories/us17j.gif) | Yes |
 | Log in page | Log in | A flash message appears | ![User story 17](documentation/testing/user-stories/us17k.gif) | Yes |
 | A page accesible to logged in users only | Try to access the page without logging in | A flash message appears | ![User story 17](documentation/testing/user-stories/us17l.gif) | Yes |
+
+## Feature Testing
+
+**All Pages** 
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Whole Page | The page is fully responsive | Tested on various devices as well as Google Developer Tools screen size simulator | All elements are fully responsive | Pass |
+| Favicon | Appears on all pages | Tested on various device sizes and browsers | Appears correctly | Pass |
+| Navigation bar | Appears on all pages | Tested on various device sizes and browsers | Appears correctly | Pass |
+| Navigation bar links | Lead to the correct pages | Click on all the links | Redirected to the correct pages | Pass |
+| Navigation bar links | Change colour on hover | Hover over all the links | Link colour changes | Pass |
+| Navigation bar Logo | Leads to Index Page when clicked | Click on the logo | Index page loads | Pass |
+| Footer | Appears on all pages | Tested on various device sizes and browsers | Appears correctly | Pass |
+| Footer links | Lead to the correct external sites | Click on all the links | Redirected to the correct external sites | Pass |
+| Footer links | Change colour on hover | Hover over all the links | Icon colour changes | Pass |
+| Flash messages | Appear when relevant | Execute all actions that result in flash messages appearing | Appear correctly ![Flash messages](documentation/testing/user-stories/us17l.gif) | Pass |
+
+**Index Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Text paragraph | Appears when the Index page loads | Navigate to the Index page | Apear correctly | Pass |
+| Action buttons | Lead to the correct pages | Click on the buttons both logged in and out | The correct pages load | Pass |
+| Action buttons | Change colour on hover | Hover over the buttons | The colour changes | Pass |
+| Features section images | Correct images appear | Load the Index page | The correct images appear | Pass |
+| Features section divs | Increase in size on hover | Hover over the divs | Divs increase in size | Pass |
+| Features section divs | Lead to correct pages when clicked | Click on the divs both logged in and out | The correct pages load | Pass |
+
+**Activities Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Add Activity button | Lead to the Add Activity page when clicked | Click on the button | The Add Activity page loads | Pass |
+| Add Activity button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| My Favourites button | Lead to the Favourites page when clicked | Click on the button | The Favourites page loads | Pass |
+| My Favourites button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| Activity Cards | Display activities added by users | Add a new activity | The new activity is displayed correctly | Pass |
+| Activity Cards | Contain Edit & Delete buttons if created by the user | See the activity added | Buttons displayed correctly | Pass |
+| Activity Cards | Contain Add to/Remove from Favourites button if created by somebody else | Load the page | Button displayed correctly | Pass |
+| See Instructions button | Lead to the correct Full Activity page | Click on the button | Correct pages load | Pass |
+| See Instructions button | Changes colour on hover | Hover over the button | Button colour changes | Pass |
+| Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Activity modal | Deletes the activity when the Delete button is clicked | Click on the button | The activity is deleted from the DB | Pass |
+| Add to favourites button | Adds an activity to favourites | Click on the button | The activity appears on the Favourite page | Pass |
+| Remove from favourites button | Remove the activity from favourites | Click on the button | The activity disappears from the Favourite page | Pass |
+
+**Add Activity Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Add Activity form | All fields display correctly | Load the page | Correct fields appear | Pass |
+| Add Activity form | All fields are required | Try to submit without filling out all the fields | Unable to submit | Pass |
+| Add Activity form | Activity Name must be unique | Attempt to submit an activity with a name thats already taken | Unable to submit | Pass |
+| Add Activity form | User occasions apear in dropdown | Click on the occasions dropdown | All occasions appear correctly | Pass |
+| Add Activity button | Adds a new activity to the DB when clicked | Add a new activity | The new activity is displayed on the Activity page | Pass |
+| Add Activity button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| Flash message | Appears when a new activity is added | Add a new activity | A flash message appears | Pass |
+
+**Edit Activity Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Edit Activity form | All fields display correctly | Load the page | Correct fields appear | Pass |
+| Edit Activity form | The fields are populated with the existing data for the selected activity | Load the page | Correct existing data appears | Pass |
+| Edit Activity button | Amends the activity in the DB when clicked | Edit an activity | The edited activity is displayed on the Activity page | Pass |
+| Edit Activity button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| Flash message | Appears when an activity is edited | Edit an activity | A flash message appears | Pass |
+
+**Occasions Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Add Occasion button | Lead to the Add Occasion page when clicked | Click on the button | The Add Occasion page loads | Pass |
+| Add Occasion button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| Occasion Cards | Display occasions added by users | Add a new occasion | The new occasion is displayed correctly | Pass |
+| Occasion Cards | Contain Edit & Delete buttons if created by the user | See the occasion added | Buttons displayed correctly | Pass |
+| Occasion name | Leads to a relevant Activities by Occasion page when clicked | Click on a name | Correct page loads | Pass |
+| Occasion name | Changes colour on hover | Hover over a name | Link changes colour | Pass |
+| Edit button | Lead to the Edit Occasion page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Occasion modal | Deletes the occasion when the Delete button is clicked | Click on the button | The occasion is deleted from the DB | Pass |
+
+**Add Occasion Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Add Occasion form | Contains an Occasion Name field | Load the page | Form displays correctly | Pass |
+| Add Occasion form | Occasion name must be unique | Try to submit an occasion with an existing name | Unable to submit | Pass |
+| Add Occasion button | Add a new occasion to the DB | Add a new occasion | The new occasion is displayed on the Occasions page | Pass |
+| Add Occasion button | Change colour on hover | Hover over the button | The button changes colour | Pass |
+| Flash message | Appears when a new occasion is added | Add a new occasion | A flash message appears | Pass |
+
+**Edit Occasion Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Edit Occasion form | Contains an Occasion Name field | Load the page | Form displays correctly | Pass |
+| Edit Occasion form | Name field populated with the correct Occasion name | Load the page | Correct name appears | Pass |
+| Edit Occasion button | Amends the occasion in the DB | Edit an occasion | The edited occasion is displayed on the Occasions page | Pass |
+| Edit Occasion button | Change colour on hover | Hover over the button | The button changes colour | Pass |
+| Flash message | Appears when an occasion is edited | Edit a occasion | A flash message appears | Pass |
+
+**Activities by Occasion Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Activity cards | Display activities for the correct occasion | Load the page | Correct activities appear | Pass |
+| Activity Cards | Contain Edit & Delete buttons if created by the user | See the activity added | Buttons displayed correctly | Pass |
+| Activity Cards | Contain Add to/Remove from Favourites button if created by somebody else | Load the page | Button displayed correctly | Pass |
+| See Instructions button | Lead to the correct Full Activity page | Click on the button | Correct pages load | Pass |
+| See Instructions button | Changes colour on hover | Hover over the button | Button colour changes | Pass |
+| Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Activity modal | Deletes the activity when the Delete button is clicked | Click on the button | The activity is deleted from the DB | Pass |
+| Add to favourites button | Adds an activity to favourites | Click on the button | The activity appears on the Favourite page | Pass |
+| Remove from favourites button | Remove the activity from favourites | Click on the button | The activity disappears from the Favourite page | Pass |
+
+**Ages Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Ages cards | Display the eight age groups from the /data/ages.json file | Load the page | Age cards appear correcly | Pass |
+| Ages cards | Display correct images for each age group | Load the page | Images appear correcly | Pass |
+| Ages cards | Lead to a relevant Activities by Age page when clicked | Click on each card | Correct page loads | Pass |
+| Ages cards | Increase in size on hover | Hover over each card | The cards increase in size | Pass |
+
+**Activities by Age Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Age group text div | Display the correct image | Load each page | Correct image appears | Pass |
+| Age group text div | Display the correct text | Load each page | Correct text appears | Pass |
+| Activity cards | Display activities for the correct age group | Load the page | Correct activities appear | Pass |
+| Activity Cards | Contain Edit & Delete buttons if created by the user | See the activity added | Buttons displayed correctly | Pass |
+| Activity Cards | Contain Add to/Remove from Favourites button if created by somebody else | Load the page | Button displayed correctly | Pass |
+| See Instructions button | Lead to the correct Full Activity page | Click on the button | Correct pages load | Pass |
+| See Instructions button | Changes colour on hover | Hover over the button | Button colour changes | Pass |
+| Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Activity modal | Deletes the activity when the Delete button is clicked | Click on the button | The activity is deleted from the DB | Pass |
+| Add to favourites button | Adds an activity to favourites | Click on the button | The activity appears on the Favourite page | Pass |
+| Remove from favourites button | Remove the activity from favourites | Click on the button | The activity disappears from the Favourite page | Pass |
+
+**Profile Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| User name | Display a capitalized username of the user | Log in and load the profile | Correct name appears | Pass |
+| My Favourites button | Lead to the Favourites page when clicked | Click on the button | The Favourites page loads | Pass |
+| My Favourites button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| My Occasions dropdown | Displays the occasions added by the user when clicked | Click on the button | The correct occasions appear | Pass |
+| My Occasions dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| My Activities dropdown | Displays the activities added by the user when clicked | Click on the button | The correct activities appear | Pass |
+| My Activities dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
+| My Activities cards | Display the Activities created by the user | Click on the button | The correct activities appear | Pass |
+| Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Activity modal | Deletes the activity when the Delete button is clicked | Click on the button | The activity is deleted from the DB | Pass |
+| My Occasions cards | Display the Occasions created by the user | Click on the button | The correct activities appear | Pass |
+| Edit button | Lead to the Edit Occasion page | Click on the button | Correct page loads | Pass |
+| Delete button | Opens a modal | Click on the button | Modal opens | Pass |
+| Delete Occasion modal | Deletes the occasion when the Delete button is clicked | Click on the button | The occasion is deleted from the DB | Pass |
+
+**Register Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Register form | Contains the correct fields | Load the page | Correct form fields appear | Pass |
+| Register form | The passwords must match to register | Input different passwords in the Password and Confirm Password fields | Unable to register | Pass |
+| Register form | The passwords are hashed | Type in passwords | Hashed upon registration | Pass |
+| Register form | The username must be unique | Atempt to register as 'admin' | Unable to register | Pass |
+| Register button | Adds a new user to the user table | Register as a new user | Username and password added to the DB | Pass |
+| Log in link | Redirects the user to the Log in page | Click on the link | The Log in page loads | Pass |
+
+**Log in Page**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Log in form | Contains the correct fields | Load the page | Correct form fields appear | Pass |
+| Log in form | The username and the password must match | Try to log in with a wrong password | Unable to log in | Pass |
+| Log in form | The username must exist | Try to log in with a non-existing username | Unable to log in | Pass |
+| Log in button | Loads the profile page if both fields correct | Log in | The profile page loads | Pass |
+| Register link | Redirects the user to the Register page | Click on the link | The Register page loads | Pass |
+
+**Error pages**
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
+| --- | --- | --- | --- | --- |
+| Error image | Displays a relevant error image | Trigger an error | The correct image appears | Pass |
+| Error text | Displays an error text | Trigger an error | The correct text appears | Pass |
+| Go back button | Redirects the user to the Index page when clicked | Click on the button | The Index page loads | Pass |
+
+
+

@@ -364,7 +364,7 @@ User Stories covered: 1, 9.
 * The Explore button leads to the Activities page;
 * Logged in users see the My Profile button which leads to the Profile Page;
 * Logged out users see a Log in button and a Register link;
-* The buttons change size on hover.
+* The buttons change colour on hover.
 
 User stories covered: 2, 8, 13. 
 
