@@ -365,5 +365,9 @@ def not_found(e):
 def internal_error(e):
     return render_template("500.html"),500
 
+@app.errorhandler(403) 
+def error_forbidden(e):
+    return render_template("403.html"),500
+
 
 
