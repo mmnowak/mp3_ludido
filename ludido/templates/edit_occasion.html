@@ -6,8 +6,8 @@
 </div>
 <div class="container mt-0 text-center">  
 <!-- Bootstrap Form -->
-<div class="container m-4">
-    <form class="col s12" method="POST" action="{{ url_for('edit_occasion', occasion_id=occasion.id) }}">
+<div class="container m-auto">
+    <form class="col s12 form" method="POST" action="{{ url_for('edit_occasion', occasion_id=occasion.id) }}">
     <div class="mb-3 form-floating">
         <input id="occasion_name" name="occasion_name" value="{{ occasion.occasion_name }}" minlength="3" maxlength="50" type="text" class="validate form-control" required>
         <label for="occasion_name" class="form-label">Occasion Name</label>
@@ -16,7 +16,6 @@
         <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-pen-to-square"></i> Edit Name</button>
       </div>
     </form>
-</div>
 </div>
 
 
