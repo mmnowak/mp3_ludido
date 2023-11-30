@@ -67,28 +67,178 @@ All python files were run through the [Python linter](https://pep8ci.herokuapp.c
 ### Accessibility Testing
 
 The pages were ran through the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/).
-There were no errors. 
+There were no errors. The alerts mostly related to skipped heading levels. 
 
 See results:
 
-[Index Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/index)
+* [Index Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/index)
 
-[Activities Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities)
+* [Activities Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities)
 
-[Occasions Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/occasions)
+* [Occasions Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/occasions)
 
-[Ages Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/age-groups)
+* [Ages Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/age-groups)
 
-[Register Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/register)
+* [Register Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/register)
 
-[Log in Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/login)
+* [Log in Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/login)
 
-[Profile Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/login)
+* [Profile Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/login)
 
+* [Error Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/404)
 
+* [Activities by Occasion](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities_by_occasion/11)
+
+* [Activities by Age](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities_by_age/3)
 
 
 ## Manual Testing
+
+### Device Testing
+
+The website was tested on following devices:
+
+* Redmi Note 12 Pro 5g
+
+* iPhone XR
+
+* iPhone 14 Pro
+
+* iPhone 12 Pro
+
+* Lenovo Yoga 460
+
+* iPad 5gen ver iPadOS 16.6
+
+* Google Chrome Developer Tools - all the different device avaliable, as well as all the size options
+
+### Browser Compatibility
+
+**Index Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Text paragraph | Pass | Pass | Pass |
+| Action buttons | Pass | Pass | Pass | 
+| Features section images | Pass | Pass | Pass |
+| Features section links | Pass | Pass | Pass |
+
+**Activities Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Add Activity button | Pass | Pass | Pass |
+| My Favourites button | Pass | Pass | Pass |
+| Activity Cards | Pass | Pass | Pass |
+| See Instructions button | Pass | Pass | Pass |
+| Edit button | Pass | Pass | Pass |
+| Delete button | Pass | Pass | Pass |
+| Add to Favourites button | Pass | Pass | Pass |
+| Remove from Favourites button | Pass | Pass | Pass |
+
+**Add Activity page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Add Activity form  | Pass | Pass | Pass |
+| Add Activity button | Pass | Pass | Pass |
+
+**Edit Activity page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Edit Activity form | Pass | Pass | Pass |
+| Edit Activity button | Pass | Pas
+
+**Occasions Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Add Occasion button | Pass | Pass | Pass |
+| Occasion cards | Pass | Pass | Pass |
+| Edit button | Pass | Pass | Pass |
+| Delete button | Pass | Pass | Pass |
+
+**Add Occasion Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Add Occasion form | Pass | Pass | Pass |
+| Add Occasion button | Pass | Pass | Pass |
+
+**Edit Occasion Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Edit Occasion form | Pass | Pass | Pass |
+| Edit Occasion button | Pass | Pass | Pass |
+
+**Activity by Occasion Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Activity by occasion cards | Pass | Pass | Pass |
+| See Instructions button | Pass | Pass | Pass |
+| Edit button | Pass | Pass | Pass |
+| Delete button | Pass | Pass | Pass |
+| Add to Favourites button | Pass | Pass | Pass |
+| Remove from Favourites button | Pass | Pass | Pass |
+
+**Ages Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Age group cards | Pass | Pass | Pass |
+| Age group images | Pass | Pass | Pass |
+| Age group links | Pass | Pass | Pass |
+
+**Activities by Age cards**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Age group image | Pass | Pass | Pass |
+| Age group text | Pass | Pass | Pass |
+| Activities by Age cards | Pass | Pass | Pass |
+| See Instructions button | Pass | Pass | Pass |
+| Edit button | Pass | Pass | Pass |
+| Delete button | Pass | Pass | Pass |
+| Add to Favourites button | Pass | Pass | Pass |
+| Remove from Favourites button | Pass | Pass | Pass |
+
+**Profile Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| User's name | Pass | Pass | Pass |
+| My favourites button | Pass | Pass | Pass |
+| My Occasions dropdown | Pass | Pass | Pass |
+| My Activitied dropdown | Pass | Pass | Pass |
+| My Occasions cards | Pass | Pass | Pass |
+| My Activities cards | Pass | Pass | Pass |
+
+**Register Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Register form | Pass | Pass | Pass |
+| Register button | Pass | Pass | Pass |
+| Log in link | Pass | Pass | Pass |
+
+**Log in Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Log in Form | Pass | Pass | Pass |
+| Log in button | Pass | Pass | Pass |
+| Register link | Pass | Pass | Pass |
+
+**404 Page**
+
+| Feature | Google Chrome | Opera | Microsoft Edge |
+| ------- |:-------------:| :----:| :------------- |
+| Image | Pass | Pass | Pass |
+| Text | Pass | Pass | Pass |
+| Go back button | Pass | Pass | Pass |
 
 ### Testing User Stories
 
