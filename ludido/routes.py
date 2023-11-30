@@ -84,12 +84,11 @@ def add_favourite(activity_id):
             username=session.get("user"),
             activity_id=activity_id
             )
-        flash("Added to favourites!")
-
+        
         # adds user favourite to db
         db.session.add(favourite)
         db.session.commit()
-        print(favourite)
+        flash("Added to favourites!")
 
     return render_template("full_activity.html", activity=activity)
 

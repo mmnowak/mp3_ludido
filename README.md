@@ -761,3 +761,27 @@ User stories covered: 2, 7.
 ![Error page button](documentation/readme/features/404-button.png)
 
 User stories covered: 4.
+
+## Technologies Used
+
+### Languages
+
+* HTML
+* CSS
+* Python
+
+### Frameworks and Tools
+
+* Heroku
+* Flask
+* Jinja
+* Bootstrap CSS
+* Google Fonts
+* Gitpod
+* Github
+* Werkzeug
+* SQLAlchemy
+* ElephantSQL
+* Balsamiq
+* dbdiagram
+* Canva
