@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container text-center">
-<img src="{{ url_for('static', filename='assets/images/403.png') }}" alt="Error 403"><br>
+<img src="{{ url_for('static', filename='assets/images/403.png') }}" alt="Error 403" class="error-img"><br>
 <h1 id="error-message">Something went wrong!</h1>
 <a href="{{ url_for('index') }}" class="btn unfav-btn mt-2"><i class="fa-solid fa-house"></i> Go back</a>
 

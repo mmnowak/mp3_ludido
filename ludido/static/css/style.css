@@ -397,3 +397,9 @@ hr {
     background-color: #13245D;
     color: #96B0CB !important;
 }
+
+/* Error pages */
+
+.error-img {
+    width: 60%;
+}
