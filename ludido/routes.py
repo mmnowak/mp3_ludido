@@ -35,8 +35,8 @@ def add_activity():
 
     if request.method == "POST":
         existing_activity = \
-        Activity.query.filter(Activity.activity_name ==
-                              request.form.get("activity_name")).all()
+            Activity.query.filter(Activity.activity_name ==
+                                  request.form.get("activity_name")).all()
         if existing_activity:
             flash("An activity with this name already exists!")
             return redirect(url_for("add_activity"))
@@ -108,7 +108,7 @@ def remove_favourite(activity_id):
 
     for favourite in favourites:
         if username == favourite.username and activity.id \
-        == favourite.activity_id:
+         == favourite.activity_id:
             # removes user favourite from db
             db.session.delete(favourite)
             db.session.commit()
@@ -213,8 +213,8 @@ def add_occasion():
 
     if request.method == "POST":
         existing_occasion = \
-        Occasion.query.filter(Occasion.occasion_name ==
-                              request.form.get("occasion_name")).all()
+         Occasion.query.filter(Occasion.occasion_name ==
+                               request.form.get("occasion_name")).all()
         if existing_occasion:
             flash("An occasion with this name already exists!")
             return redirect(url_for("add_occasion"))
@@ -301,8 +301,8 @@ def register():
     if request.method == 'POST':
         # check if username already exists in db
         existing_user = \
-        Users.query.filter(Users.username ==
-                           request.form.get("username").lower()).all()
+         Users.query.filter(Users.username ==
+                            request.form.get("username").lower()).all()
 
         if existing_user:
             flash("Username already exists")
@@ -332,8 +332,8 @@ def register():
 def login():
     if request.method == "POST":
         existing_user = \
-        Users.query.filter(Users.username ==
-                           request.form.get("username").lower()).all()
+         Users.query.filter(Users.username ==
+                            request.form.get("username").lower()).all()
 
         if existing_user:
             if check_password_hash(existing_user[0].password,
