@@ -785,3 +785,49 @@ User stories covered: 4.
 * Balsamiq
 * dbdiagram
 * Canva
+* Gyazo Video 
+
+## Testing and bugs
+
+For more information on testing, [see here](https://github.com/mmnowak/mp3_ludido/blob/main/TESTING.md).
+
+## Credits
+
+### Media
+
+**Images used for the age groups**
+
+* [By Tatiana Syrikova](https://www.pexels.com/photo/baby-in-white-onesie-holding-wooden-blocks-3933250/)
+* [By cottonbro studio](https://www.pexels.com/photo/boy-in-white-long-sleeve-shirt-and-green-pants-sitting-on-floor-beside-girl-in-red-3661452/)
+* [By cottonbro studio](https://www.pexels.com/photo/a-child-sitting-on-the-floor-playing-with-toys-3661335/)
+* [By pixabay](https://www.pexels.com/photo/boy-in-white-tank-top-playing-blue-coupe-die-cast-near-brown-wooden-bench-chair-during-daytime-163768/)
+* [By Dominika Roseclay](https://www.pexels.com/photo/low-angle-photo-of-a-boy-playing-soccer-2682543/)
+* [By Ron Lach](https://www.pexels.com/photo/kids-playing-in-the-backyard-10044378/)
+* [By Yaroslav Shuraev](https://www.pexels.com/photo/two-people-playing-chess-7697984/)
+* [By Ivan Samkov](https://www.pexels.com/photo/baby-boy-playing-with-wooden-toy-on-floor-8504336/)
+
+**Favicon** 
+
+The favicon was created using [Favicon.io](https://favicon.io/).
+
+**Other images**
+
+All the other images were created in Canva using elements by [Sketchify](https://www.canva.com/p/sketchify/) and adjusting the colours to match the website.
+
+### Code Used
+
+Navbar, Modals, Cards, Buttons and Footer were created with Bootstrap CSS.
+
+Error handling was done following a tutorial by [Geeksforgeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
+
+All the other code was written following tutorials by Code Institute, 
+
+### Content
+
+The descriptions of play behaviours at each developmental stage were taken from a textbook "The Essence of Play" by J. Howard and K. McInnes.
+
+The instructions for example activities featured on the page are from Pinterest or [Early Childhood Activities bank](https://www.educationworld.com/a_earlychildhood/archives/activity.shtml).
+
+## Deployment
+
+## Acknowledgements

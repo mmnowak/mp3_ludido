@@ -21,6 +21,9 @@ This is the testing documentation for the LUDIDO website. For the README file, [
     2. [Browser compatibility](#browser-compatibility)
     3. [Testing User Stories](#testing-user-stories)
     4. [Feature Testing](#feature-testing)
+4. [Bugs](#bugs)
+    1. [Resolved](#resolved)
+    2. [Unresolved](#unresolved)
 
 ## Introduction
 
@@ -117,7 +120,7 @@ The website was tested on following devices:
 **Index Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Text paragraph | Pass | Pass | Pass |
 | Action buttons | Pass | Pass | Pass | 
 | Features section images | Pass | Pass | Pass |
@@ -126,7 +129,7 @@ The website was tested on following devices:
 **Activities Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Add Activity button | Pass | Pass | Pass |
 | My Favourites button | Pass | Pass | Pass |
 | Activity Cards | Pass | Pass | Pass |
@@ -139,21 +142,21 @@ The website was tested on following devices:
 **Add Activity page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Add Activity form  | Pass | Pass | Pass |
 | Add Activity button | Pass | Pass | Pass |
 
 **Edit Activity page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Edit Activity form | Pass | Pass | Pass |
-| Edit Activity button | Pass | Pas
+| Edit Activity button | Pass | Pass | Pass |
 
 **Occasions Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Add Occasion button | Pass | Pass | Pass |
 | Occasion cards | Pass | Pass | Pass |
 | Edit button | Pass | Pass | Pass |
@@ -162,21 +165,21 @@ The website was tested on following devices:
 **Add Occasion Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Add Occasion form | Pass | Pass | Pass |
 | Add Occasion button | Pass | Pass | Pass |
 
 **Edit Occasion Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Edit Occasion form | Pass | Pass | Pass |
 | Edit Occasion button | Pass | Pass | Pass |
 
 **Activity by Occasion Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Activity by occasion cards | Pass | Pass | Pass |
 | See Instructions button | Pass | Pass | Pass |
 | Edit button | Pass | Pass | Pass |
@@ -187,7 +190,7 @@ The website was tested on following devices:
 **Ages Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Age group cards | Pass | Pass | Pass |
 | Age group images | Pass | Pass | Pass |
 | Age group links | Pass | Pass | Pass |
@@ -195,7 +198,7 @@ The website was tested on following devices:
 **Activities by Age cards**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Age group image | Pass | Pass | Pass |
 | Age group text | Pass | Pass | Pass |
 | Activities by Age cards | Pass | Pass | Pass |
@@ -208,7 +211,7 @@ The website was tested on following devices:
 **Profile Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | User's name | Pass | Pass | Pass |
 | My favourites button | Pass | Pass | Pass |
 | My Occasions dropdown | Pass | Pass | Pass |
@@ -219,7 +222,7 @@ The website was tested on following devices:
 **Register Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Register form | Pass | Pass | Pass |
 | Register button | Pass | Pass | Pass |
 | Log in link | Pass | Pass | Pass |
@@ -227,7 +230,7 @@ The website was tested on following devices:
 **Log in Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Log in Form | Pass | Pass | Pass |
 | Log in button | Pass | Pass | Pass |
 | Register link | Pass | Pass | Pass |
@@ -235,7 +238,7 @@ The website was tested on following devices:
 **404 Page**
 
 | Feature | Google Chrome | Opera | Microsoft Edge |
-| ------- |:-------------:| :----:| :------------- |
+| ------- |:-------------:| :----:| :------------: |
 | Image | Pass | Pass | Pass |
 | Text | Pass | Pass | Pass |
 | Go back button | Pass | Pass | Pass |
@@ -580,5 +583,9 @@ The website was tested on following devices:
 | Error text | Displays an error text | Trigger an error | The correct text appears | Pass |
 | Go back button | Redirects the user to the Index page when clicked | Click on the button | The Index page loads | Pass |
 
+## Bugs
 
+### Resolved
+
+### Unresolved
 

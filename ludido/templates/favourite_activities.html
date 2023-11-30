@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="container-fluid w-100 text-center title-container">
-    <h1 class="pg-title">{{ username }}'s favourites</h1>
+    <h1 class="pg-title">My favourites</h1>
   </div>
   <div class="container mt-0 text-center">
     <a href="{{ url_for('profile', username=session['user']) }}" class="btn unfav-btn">My Profile</a>
