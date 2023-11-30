@@ -107,8 +107,8 @@ def remove_favourite(activity_id):
         username = session["user"]
 
     for favourite in favourites:
-        if username == favourite.username and activity.id \
-         == favourite.activity_id:
+        if username == favourite.username and \
+         activity.id == favourite.activity_id:
             # removes user favourite from db
             db.session.delete(favourite)
             db.session.commit()

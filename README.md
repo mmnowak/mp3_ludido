@@ -739,3 +739,25 @@ User stories covered: 8
 User stories covered: 2, 7.
 
 ![Register link](documentation/readme/features/register-link.png)
+
+### Custom Error Pages
+
+**Page images and text**
+
+* Appear when the user encounters an error.
+* Colours and aesthetic match the rest of the page.
+
+![404 Page](documentation/readme/features/404.png)
+
+![403 Page](documentation/readme/features/403pg.png)
+
+![500 Page](documentation/readme/features/500pg.png)
+
+**Error page button**
+
+* Redirects the user back to the Index page.
+* Changes colour on hover.
+
+![Error page button](documentation/readme/features/404-button.png)
+
+User stories covered: 4.

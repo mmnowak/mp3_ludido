@@ -13,6 +13,9 @@ This is the testing documentation for the LUDIDO website. For the README file, [
 1. [Introduction](#introduction)
 2. [Automated Testing](#automatic-testing)
     1. [HTML Validation](#html-validation)
+    2. [CSS Validation](#css-validation)
+    3. [Python Linting](#python-linting)
+    4. [Accessibility Testing](#accessibility-testing)
 3. [Manual Testing](#manual-testing)
     1. [Device Testing](#device-testing)
     2. [Browser compatibility](#browser-compatibility)
@@ -48,6 +51,42 @@ See results:
 The W3C Jigsaw CSS Validation Service was used to validate the css file for the website via file upload. No errors were found.
 
 ![CSS Jigsaw score](documentation/testing/css-validation.png)
+
+### Python Linting
+
+All python files were run through the [Python linter](https://pep8ci.herokuapp.com/). There were a number of errors coming from either lines being too long, over/under indentation and whitespace. The errors have since been corrected.
+
+**routes.py file:**
+
+![Python linter results](documentation/testing/pythlinter1.png)
+
+**models.py file:**
+
+![Python linter results](documentation/testing/pythlinter2.png)
+
+### Accessibility Testing
+
+The pages were ran through the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/).
+There were no errors. 
+
+See results:
+
+[Index Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/index)
+
+[Activities Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities)
+
+[Occasions Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/occasions)
+
+[Ages Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/age-groups)
+
+[Register Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/register)
+
+[Log in Page](https://wave.webaim.org/report#/http://ludido-ba4a496efb9b.herokuapp.com/login)
+
+[Profile Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/login)
+
+
+
 
 ## Manual Testing
 
