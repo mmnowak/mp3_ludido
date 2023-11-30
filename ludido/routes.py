@@ -1,5 +1,6 @@
 import json
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, \
+                    url_for, flash, session
 from ludido import app, db
 from ludido.models import Occasion, Activity, Users, Favourite
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -12,10 +13,11 @@ def home():
 
 @app.route("/activities")
 def activities():
-    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all())
     activities = list(Activity.query.order_by(Activity.activity_name).all())
     activity_id = Activity.id
-    return render_template("activities.html", activities=activities, favourites=favourites)
+    return render_template("activities.html", activities=activities,
+                           favourites=favourites)
 
 
 @app.route("/index")
@@ -32,13 +34,14 @@ def add_activity():
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
 
     if request.method == "POST":
-            existing_activity = Activity.query.filter(Activity.activity_name == \
-                                           request.form.get("activity_name")).all()
-            if existing_activity:
-                flash("An activity with this name already exists!")
-                return redirect(url_for("add_activity"))
+        existing_activity = \
+        Activity.query.filter(Activity.activity_name ==
+                              request.form.get("activity_name")).all()
+        if existing_activity:
+            flash("An activity with this name already exists!")
+            return redirect(url_for("add_activity"))
 
-            activity = Activity(
+        activity = Activity(
             activity_name=request.form.get("activity_name"),
             activity_description=request.form.get("activity_description"),
             activity_age=request.form.get("activity_age"),
@@ -47,12 +50,12 @@ def add_activity():
             activity_createdby=session.get("user"),
             occasion_id=request.form.get("occasion_id")
             )
-            db.session.add(activity)
-            db.session.commit()
-            flash("Thank you for adding a new activity!")
-            return redirect(url_for("activities"))
+        db.session.add(activity)
+        db.session.commit()
+        flash("Thank you for adding a new activity!")
+        return redirect(url_for("activities"))
 
-    return render_template("add_activity.html", occasions=occasions)    
+    return render_template("add_activity.html", occasions=occasions)
 
 
 @app.route("/full_activity/<int:activity_id>")
@@ -71,21 +74,22 @@ def add_favourite(activity_id):
 
     if request.method == "POST":
 
-        is_favourite = Favourite.query.filter(Favourite.activity_id == activity_id).first() 
+        is_favourite = Favourite.query.filter(Favourite.activity_id
+                                              == activity_id).first()
         if is_favourite:
             flash("Already in favourites!")
             return redirect(url_for("activities"))
-        
+
         favourite = Favourite(
-        username = session.get("user"),
-            activity_id = activity_id
+            username=session.get("user"),
+            activity_id=activity_id
             )
         flash("Added to favourites!")
-    
+
         # adds user favourite to db
         db.session.add(favourite)
         db.session.commit()
-        print(favourite)   
+        print(favourite)
 
     return render_template("full_activity.html", activity=activity)
 
@@ -94,7 +98,7 @@ def add_favourite(activity_id):
 def remove_favourite(activity_id):
     activity = Activity.query.get_or_404(activity_id)
     activities = list(Activity.query.order_by(Activity.id).all())
-    favourites = list(Favourite.query.order_by(Favourite.username).all ()) 
+    favourites = list(Favourite.query.order_by(Favourite.username).all())
 
     if "user" not in session:
         flash("You need to log in to do this!")
@@ -102,16 +106,18 @@ def remove_favourite(activity_id):
     else:
         username = session["user"]
 
-    for favourite in favourites: 
-        if username == favourite.username and activity.id == favourite.activity_id:
-        # removes user favourite from db
+    for favourite in favourites:
+        if username == favourite.username and activity.id \
+        == favourite.activity_id:
+            # removes user favourite from db
             db.session.delete(favourite)
             db.session.commit()
             flash("Removed from favourites!")
             return redirect(url_for("activities"))
-    
+
     return render_template("favourite_activities.html",
-                           activities=activities, favourites=favourites, username=session["user"])
+                           activities=activities, favourites=favourites,
+                           username=session["user"])
 
 
 @app.route("/favourite-activities/<username>/unvafourite_all")
@@ -121,16 +127,16 @@ def unfavourite_all(username):
         return redirect(url_for("login"))
     else:
         username = session["user"]
-    
+
     activities = list(Activity.query.order_by(Activity.id).all())
-    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
+    favourites = list(Favourite.query.order_by(Favourite.username).all())
 
     for favourite in favourites:
-        if username == favourite.username: 
+        if username == favourite.username:
             # removes all user favourites from db
             db.session.delete(favourite)
             db.session.commit()
-    
+
     flash("Removed all favourites!")
     return redirect(url_for("activities"))
 
@@ -142,23 +148,23 @@ def favourite_activities(username):
         return redirect(url_for("activities"))
     else:
         username = session["user"]
-   
-    activities = list(Activity.query.order_by(Activity.id).all())
-    favourites = list(Favourite.query.order_by(Favourite.username).all()) 
-    return render_template("favourite_activities.html", 
-                           activities=activities, favourites=favourites, username=session["user"])
 
+    activities = list(Activity.query.order_by(Activity.id).all())
+    favourites = list(Favourite.query.order_by(Favourite.username).all())
+    return render_template("favourite_activities.html",
+                           activities=activities, favourites=favourites,
+                           username=session["user"])
 
 
 @app.route("/edit_activity/<int:activity_id>", methods=["GET", "POST"])
 def edit_activity(activity_id):
     activity = Activity.query.get_or_404(activity_id)
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
-         
+
     if "user" not in session:
         flash("You need to log in to edit an activity!")
         return redirect(url_for("login"))
-    
+
     if activity.activity_createdby != session["user"]:
         flash("You can only edit your own activities!")
         return redirect(url_for("activities"))
@@ -176,9 +182,8 @@ def edit_activity(activity_id):
         flash("You edited the activity!")
         return redirect(url_for("activities"))
 
-    return render_template("edit_activity.html", activity=activity, 
+    return render_template("edit_activity.html", activity=activity,
                            occasions=occasions)
-            
 
 
 @app.route("/delete_activity/<int:activity_id>")
@@ -194,7 +199,6 @@ def delete_activity(activity_id):
     return redirect(url_for("activities"))
 
 
-
 @app.route("/occasions")
 def occasions():
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
@@ -208,8 +212,9 @@ def add_occasion():
         return redirect(url_for("login"))
 
     if request.method == "POST":
-        existing_occasion = Occasion.query.filter(Occasion.occasion_name == \
-                                           request.form.get("occasion_name")).all()
+        existing_occasion = \
+        Occasion.query.filter(Occasion.occasion_name ==
+                              request.form.get("occasion_name")).all()
         if existing_occasion:
             flash("An occasion with this name already exists!")
             return redirect(url_for("add_occasion"))
@@ -231,7 +236,7 @@ def edit_occasion(occasion_id):
     if "user" not in session:
         flash("You need to log in to edit an occasion!")
         return redirect(url_for("login"))
-    
+
     if occasion.occasion_createdby != session["user"]:
         flash("You can only edit your own occasions!")
         return redirect(url_for("occasions"))
@@ -260,17 +265,18 @@ def delete_occasion(occasion_id):
 @app.route("/activities_by_occasion/<int:occasion_id>")
 def activities_by_occasion(occasion_id):
     activities = list(Activity.query.order_by(Activity.activity_name).all())
-    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
-    occasion = Occasion.query.get_or_404(occasion_id) 
-    return render_template("activities_by_occasion.html", 
-                           occasion=occasion, activities=activities, occasions=occasions, favourites=favourites)
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all())
+    occasion = Occasion.query.get_or_404(occasion_id)
+    return render_template("activities_by_occasion.html",
+                           occasion=occasion, activities=activities,
+                           occasions=occasions, favourites=favourites)
 
 
 @app.route("/age-groups")
 def age_groups():
     data = []
     with open("ludido/data/ages.json", "r") as json_data:
-        data = json.load(json_data) 
+        data = json.load(json_data)
     return render_template("age-groups.html", ages=data)
 
 
@@ -283,30 +289,33 @@ def activities_by_age(age_id):
             if obj["age_id"] == age_id:
                 age = obj
                 print(age)
-    
-    activities = list(Activity.query.order_by(Activity.activity_name).all()) 
-    favourites = list(Favourite.query.order_by(Favourite.activity_id).all()) 
-    return render_template("activities_by_age.html", age=age, activities=activities, favourites=favourites)
+
+    activities = list(Activity.query.order_by(Activity.activity_name).all())
+    favourites = list(Favourite.query.order_by(Favourite.activity_id).all())
+    return render_template("activities_by_age.html", age=age,
+                           activities=activities, favourites=favourites)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == 'POST':
-    # check if username already exists in db
-        existing_user = Users.query.filter(Users.username == \
-                                           request.form.get("username").lower()).all()
-        
+        # check if username already exists in db
+        existing_user = \
+        Users.query.filter(Users.username ==
+                           request.form.get("username").lower()).all()
+
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        
-        if request.form.get("password") != request.form.get("confirm_password"):
+
+        if request.form.get("password") != \
+           request.form.get("confirm_password"):
             flash("Passwords do not match!")
             return redirect(url_for("register"))
 
         user = Users(
-            username = request.form.get("username").lower(),
-            password = generate_password_hash(request.form.get("password"))
+            username=request.form.get("username").lower(),
+            password=generate_password_hash(request.form.get("password"))
             )
         db.session.add(user)
         db.session.commit()
@@ -318,25 +327,28 @@ def register():
 
     return render_template("register.html")
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        existing_user = Users.query.filter(Users.username == \
-                                           request.form.get("username").lower()).all() 
+        existing_user = \
+        Users.query.filter(Users.username ==
+                           request.form.get("username").lower()).all()
 
         if existing_user:
-            if check_password_hash(
-                existing_user[0].password, request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Click on your username to load profile")
-                    return render_template("profile.html", username=session["user"])
+            if check_password_hash(existing_user[0].password,
+                                   request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Click on your username to load profile")
+                return render_template("profile.html",
+                                       username=session["user"])
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-    
+
     return render_template("login.html")
 
 
@@ -345,7 +357,8 @@ def profile(username):
     activities = list(Activity.query.order_by(Activity.activity_name).all())
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     if "user" in session:
-        return render_template("profile.html", username=session["user"], activities=activities, occasions=occasions)   
+        return render_template("profile.html", username=session["user"],
+                               activities=activities, occasions=occasions)
     else:
         return redirect(url_for("login"))
 
@@ -356,18 +369,17 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-    
-@app.errorhandler(404) 
+
+@app.errorhandler(404)
 def not_found(e):
-    return render_template("404.html"),404
+    return render_template("404.html"), 404
 
-@app.errorhandler(500) 
+
+@app.errorhandler(500)
 def internal_error(e):
-    return render_template("500.html"),500
+    return render_template("500.html"), 500
 
-@app.errorhandler(403) 
+
+@app.errorhandler(403)
 def error_forbidden(e):
-    return render_template("403.html"),500
-
-
-
+    return render_template("403.html"), 500
