@@ -6,6 +6,8 @@ if os.path.exists("env.py"):
 
 
 app = Flask(__name__)
+
+# Database configuration
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 if os.environ.get("DEVELOPMENT") == "True":
@@ -16,6 +18,7 @@ else:
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
+# Initialize Flask extensions
 db = SQLAlchemy(app)
 
 from ludido import routes  # noqa

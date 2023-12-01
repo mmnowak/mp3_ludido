@@ -111,6 +111,8 @@ The website was tested on following devices:
 
 * Lenovo Yoga 460
 
+* Dell 22 Monitor P2222H
+
 * iPad 5gen ver iPadOS 16.6
 
 * Google Chrome Developer Tools - all the different device avaliable, as well as all the size options
@@ -541,9 +543,9 @@ The website was tested on following devices:
 | User name | Display a capitalized username of the user | Log in and load the profile | Correct name appears | Pass |
 | My Favourites button | Lead to the Favourites page when clicked | Click on the button | The Favourites page loads | Pass |
 | My Favourites button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
-| My Occasions dropdown | Displays the occasions added by the user when clicked | Click on the button | The correct occasions appear | Pass |
+| My Occasions dropdown | Displays the occasions added by the user when clicked | Click on the button ![Occasions](documentation/testing/user-stories/us13a.gif) | The correct occasions appear | Pass |
 | My Occasions dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
-| My Activities dropdown | Displays the activities added by the user when clicked | Click on the button | The correct activities appear | Pass |
+| My Activities dropdown | Displays the activities added by the user when clicked | Click on the button ![Activities](documentation/testing/user-stories/us13b.gif) | The correct activities appear | Pass |
 | My Activities dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
 | My Activities cards | Display the Activities created by the user | Click on the button | The correct activities appear | Pass |
 | Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |

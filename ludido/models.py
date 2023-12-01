@@ -15,7 +15,8 @@ class Users(db.Model):
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-        return self.username
+        return "#{0} - username: {1} | password: {2}".format(
+            self.username, self.password)
 
 
 class Occasion(db.Model):
