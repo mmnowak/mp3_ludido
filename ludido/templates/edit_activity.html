@@ -48,6 +48,7 @@
     </div>
     <div class="mb-3">
         <select class="form-select" id="occasion_id" name="occasion_id" value="{{ activity.activity_name }}" aria-label="Default select example">
+            <!-- Retrieves occasions added by users -->
             {% for occasion in occasions %}
                 {% if occasion == activity.occasion %}
                     <option value="{{ occasion.id }}" selected>{{ occasion.occasion_name }}</option>
@@ -61,7 +62,8 @@
         <textarea id="activity_description" name="activity_description" rows="5" type="text" class="validate form-control" required>{{ activity.activity_description }}</textarea>
         </div>
       <div class="col-auto">
-        <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-plus"></i> Edit Activity</button>
+    <!-- Edit Activity button -->
+        <button type="submit" class="btn mb-3 add-btn"><i class="fa-solid fa-pen-to-square"></i> Edit Activity</button>
       </div>
     </form>
 </div>

@@ -4,10 +4,14 @@
 <div class="container-fluid mt-0 text-center title-container">
 <h1 class="pg-title">Age Groups</h1></div>
 <div class="row justify-content-center m-0">
+<!-- Retrieves data from the JSON file -->
 {% for age in ages %}
     <div class="col-4 col-sm-2 age-group">
     <a href="{{ url_for('activities_by_age', age_id=age.age_id) }}">
-    <div class="age-container"><div class="age-group-name d-flex align-items-center justify-content-center"><p><strong>{{ age.age_group }}</strong></p></div><img class="age-img" src="{{ age.age_img }}" alt="{{ age.age_name }}"></div>
+    <div class="age-container">
+        <div class="age-group-name d-flex align-items-center justify-content-center">
+            <p><strong>{{ age.age_group }}</strong></p></div>
+        <img class="age-img" src="{{ age.age_img }}" alt="{{ age.age_name }}"></div>
     </a></div>
 {% endfor %}
 

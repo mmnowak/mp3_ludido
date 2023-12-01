@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="text-center index-text-small m-auto">"Ludido" - the basic biological drive to play (<a href="https://ipaewni.files.wordpress.com/2016/05/colorado-paper.pdf">Sturrock, The Colorado Paper</a>)</div>
+<!-- Index text -->
+<div class="text-center index-text-small m-auto">"Ludido" - the basic biological drive to play (Sturrock, The Colorado Paper)</div>
 <div class="container-fluid text-center index-text p-3 m-0">
 <p>LUDIDO is a portal designed for parents, playworkers, nannies, au pairs and anyone spending time with children to find and share ideas for activities and games. 
     <br>See all activities, or filter them by occasion or age group!</p>
@@ -9,28 +10,47 @@
 <p>Registered users enjoy benefits such as being able to add their own occasions and activities, as well as save activities they like to favourites!</p>
 </div>
 <div class="container text-center d-flex justify-content-center">
+    <!-- Explore button -->
     <div><a href="{{ url_for('activities') }}" class="btn add-btn btn-lg me-4">Explore</a></div>
 
+    <!-- Checks if the user is logged in -->
     {% if session.user %} 
+    <!-- My profile button -->
     <a href="{{ url_for('profile', username=session['user']) }}" class="btn add-btn btn-lg me-4">My Profile</a>
     {% else %}
-    <div><a href="{{ url_for('login') }}" class="btn add-btn btn-lg me-4">Login</a><br><a href="{{ url_for('register') }}" class="me-4 reg">Register</a></div>
+    <!-- Log in button -->
+    <div><a href="{{ url_for('login') }}" class="btn add-btn btn-lg me-4">Login</a>
+        <!-- Register link -->
+        <br><a href="{{ url_for('register') }}" class="me-4 reg">Register</a></div>
     {% endif %}
 
 </div>
+
+<!-- Features section -->
 <div class="container-fluid features mb-3 mt-2">
     <div class="row row-eq-height">
-        <div class="col-lg feature text-center"><a href="{{ url_for('occasions') }}"><img class="index-img" src="{{ url_for('static', filename='assets/images/index1.png') }}" alt="cartoon images of children playing"><p>Add activities you'd like to share with others! Create your own occasions, or search activities by existing occasions. Whether it's seasonal crafts or a holiday-themed activity, you can find ideas easily or share your own!</p></a></div>
-        <div class="col-lg feature text-center"><a href="{{ url_for('age_groups') }}"><img class="index-img" src="{{ url_for('static', filename='assets/images/index2.png') }}" alt="cartoon images of children playing"><p>Learn more about how children play at each stage of their development. Need ideas for a tummy-time with an infant, a sensory tray for a toddler or a group game for bored teenagers? Search activities suitable for each age group.</p></a></div>
+        <!-- Redirects to the occasions page -->
+        <div class="col-lg feature text-center"><a href="{{ url_for('occasions') }}">
+            <img class="index-img" src="{{ url_for('static', filename='assets/images/index1.png') }}" alt="images of children doing seasonal crafts">
+            <p>Add activities you'd like to share with others! Create your own occasions, or search activities by existing occasions. 
+                Whether it's seasonal crafts or a holiday-themed activity, you can find ideas easily or share your own!</p></a></div>
+        <!-- Redirects to the ages page -->
+        <div class="col-lg feature text-center"><a href="{{ url_for('age_groups') }}">
+            <img class="index-img" src="{{ url_for('static', filename='assets/images/index2.png') }}" alt="images of children of various ages">
+            <p>Learn more about how children play at each stage of their development. Need ideas for a tummy-time with an infant, a sensory tray 
+                for a toddler or a group game for bored teenagers? Search activities suitable for each age group.</p></a></div>
         <div class="col-lg feature text-center">
-            {% if session.user %}   
+            <!-- Checks if the user is logged in -->
+            {% if session.user %}
+            <!-- Redirects to the favourites page -->
             <a href="{{ url_for('favourite_activities', username=session['user']) }}">
             {% else %}
+            <!-- Redirects to the register page -->
             <a href="{{ url_for('register') }}">
             {% endif %}
-            <img class="index-img" src="{{ url_for('static', filename='assets/images/index3.png') }}" alt="cartoon images of children playing"><p>Found and activity you especially like, or want to save for later? If you are a registered user, you can save activities to favourites and easily find them on your profile. Just create an account and you can start saving activities you like!</p></a></div>
+            <img class="index-img" src="{{ url_for('static', filename='assets/images/index3.png') }}" alt="children jumping on a trampoline">
+            <p>Found and activity you especially like, or want to save for later? If you are a registered user, you can save activities to favourites
+                 and easily find them on your profile. Just create an account and you can start saving activities you like!</p></a></div>
     </div>
-
-
 
 {% endblock %}

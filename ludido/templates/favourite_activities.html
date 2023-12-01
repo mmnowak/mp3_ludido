@@ -4,9 +4,12 @@
     <h1 class="pg-title">My favourites</h1>
   </div>
   <div class="container mt-0 text-center">
+    <!-- My profile button -->
     <a href="{{ url_for('profile', username=session['user']) }}" class="btn unfav-btn">My Profile</a>
+    <!-- Unfavourite all button -->
     <a data-bs-toggle="modal" data-bs-target="#unfavourite-all" class="btn unfav-btn">Unfavourite All</a>
-    <div class="row mt-3 justify-content-center">  
+    <div class="row mt-3 justify-content-center">
+      <!-- Displays the user's favourite activities -->
       {% for favourite in favourites if favourite.username == session["user"] %}
             {% for activity in activities if favourite.activity_id == activity.id %}          
             <div class="col d-flex justify-content-center">
@@ -21,7 +24,8 @@
                     <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
                     <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
                     <br><br>
-                    {% if favourite.activity_id == activity.id %}          
+                    {% if favourite.activity_id == activity.id %}
+                    <!-- Remove favourite button -->       
                     <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
                     {% endif %}
                   </div>
@@ -41,6 +45,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <!-- Unfavourite all button -->
             <a class="btn btn-danger" href="{{ url_for('unfavourite_all', username=session['user']) }}">Unfavourite All</a>
             <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
           </div>

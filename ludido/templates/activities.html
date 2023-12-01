@@ -6,11 +6,15 @@
 </div>
 
 <div class="container mt-0 w-100 text-center">
+  <!-- Checks if the user is logged in -->
     {% if session.user %}
+    <!-- Add Activity button -->
     <a class="btn add-btn btn-primary" href="{{ url_for('add_activity') }}">Add Activity</a> 
+    <!-- My Favourites button -->
     <a class="btn add-btn btn-primary" href="{{ url_for('favourite_activities', username=session['user']) }}">My favourites</a>
     {% endif %}
-    <div class="row mt-0 justify-content-center">        
+    <div class="row mt-0 justify-content-center"> 
+      <!-- Displays activities created by users -->       
         {% for activity in activities %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
@@ -24,16 +28,21 @@
                 <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
                 <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
               </div>
+              <!-- Checks if the user has created the activity -->
               {% if activity.activity_createdby == session["user"] %}
               <br>
+              <!-- Edit activity button -->
               <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
+              <!-- Delete activity button -->
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
               {% endif %}
               {% if session.user and activity.activity_createdby != session["user"] %}
               <br>
-              {% for favourite in favourites if favourite.activity_id == activity.id %}          
+              {% for favourite in favourites if favourite.activity_id == activity.id %}
+              <!-- Remove from favourites button -->          
                 <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
               {% else %}
+              <!-- Add to favourites button -->
                 <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>  
               {% endfor %}
               {% endif %}
@@ -50,6 +59,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+          <!-- Deletes the activity from the DB -->
             <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">Delete</a>
             <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
           </div>

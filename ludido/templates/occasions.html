@@ -4,11 +4,13 @@
 <div class="container-fluid w-100 text-center title-container">
   <h1 class="pg-title">Occasions</h1>
 </div>
-<div class="container mt-0 w-100 text-center">    
+<div class="container mt-0 w-100 text-center">
+  <!-- Checks if the user is logged in -->    
     {% if session.user %}
     <a class="btn add-btn btn-primary" href="{{ url_for('add_occasion') }}">Add Occasion</a>
     {% endif %}
-    <div class="row mt-3 justify-content-center">        
+    <div class="row mt-3 justify-content-center"> 
+      <!-- Displays occasions added by users -->       
         {% for occasion in occasions %}
         <div class="col d-flex justify-content-center">
           <div class="justify-content-center m-auto">
@@ -16,8 +18,11 @@
         <div class="occasion-card m-2 d-flex justify-content-center align-items-center">
             <div class="text-center m-3">
               <h4>{{ occasion.occasion_name }}</h4>
+              <!-- Checks if the user has created the activity -->
               {% if occasion.occasion_createdby == session["user"] %}
+              <!-- Edit button -->
               <a href="{{ url_for('edit_occasion', occasion_id=occasion.id) }}" class="btn btn-success">Edit</a>
+              <!-- Delete button -->
               <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ occasion.id }}">Delete</a>
               {% endif %}
             </div>
@@ -34,6 +39,7 @@
             </div>
             <div class="modal-body">
               <p>This action is permanent and will delete all activities associated with the occasion.</p>
+              <!-- Delete button -->
               <a class="btn btn-danger" href="{{ url_for('delete_occasion', occasion_id=occasion.id) }}">Delete</a>
               <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
             </div>

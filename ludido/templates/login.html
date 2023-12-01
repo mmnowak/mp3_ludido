@@ -3,6 +3,7 @@
 
 <div class="container user-form p-3">
     <h1 class="text-center">Log In</h1>
+    <!-- Bootstrap form -->
       <form method="POST" action="{{ url_for('login') }}">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="username" required>       
@@ -10,8 +11,10 @@
         <input type="password" id="password" name="password" class="form-control" aria-describedby="password" required>
         <div id="passwordBlock" class="form-text">
         </div>
+      <!-- Log in button -->
         <button type="submit" class="btn btn-primary mt-3">Log in</button>
       </form><br>
+      <!-- Register link -->
       <p class="text-center">Don't have an account yet? <a href="{{ url_for('register') }}">Register Here</a></p>
 
 
