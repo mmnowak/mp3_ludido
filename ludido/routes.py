@@ -111,7 +111,8 @@ def add_favourite(activity_id):
             flash("Already in favourites!")
             return redirect(url_for("activities"))
         else:
-            # Adds a new favourite activity to the DB            
+            # Adds a new favourite activity to the DB
+            
             favourite = Favourite(
                 username=session.get("user"),
                 activity_id=activity_id
@@ -316,9 +317,13 @@ def add_occasion():
         """
         Checks if the name chosen already exists
         """
-        existing_occasion = Occasion.query.filter(Occasion.occasion_name
-                                                  == request.form.get(
-                                                      ("occasion_name")).all())
+        existing_occasion = (
+            Occasion.query
+            .filter(Occasion.occasion_name ==
+                    request.form.get("occasion_name"))
+            .all()
+        )
+
         if existing_occasion:
             flash("An occasion with this name already exists!")
             return redirect(url_for("add_occasion"))
