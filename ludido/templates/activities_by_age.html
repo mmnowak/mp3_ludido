@@ -7,69 +7,70 @@
 </div>
   <div class="container m-auto d-flex justify-content-center align-items-center">
     <div class="row age-text">
-    <div class="col-lg-2 d-flex justify-content-center align-items-center"><img class="byage-img" src="{{ age.age_img }}" alt="{{ age.age_name }}"></div>
+      <div class="col-lg-2 d-flex justify-content-center align-items-center">
+        <img class="byage-img" src="{{ age.age_img }}" alt="{{ age.age_name }}">
+      </div>
     <div class="col-lg-10 age-desctiption p-4"><p>{{ age.age_description }}</p></div>
-    </div></div>
+    </div>
+  </div>
 
 <!-- Displays activities for the selected age group -->
-    <div class="container mt-0 w-100 text-center">    
-      <div class="row mt-3 justify-content-center">  
-{% for activity in activities if activity.activity_age == age.age_group %}
-<div class="col d-flex justify-content-center">
-  <div class="justify-content-center m-auto">
+<div class="container mt-0 w-100 text-center">    
+    <div class="row mt-3 justify-content-center">  
+      {% for activity in activities if activity.activity_age == age.age_group %}
+      <div class="col d-flex justify-content-center">
+        <div class="justify-content-center m-auto">
 <div class="activity-card">
-      <div class="act-title p-2"><h4><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4></div>
+      <div class="act-title p-2"><h4><a href="{{ url_for('full_activity', activity_id=activity.id) }}">{{ activity.activity_name }}</a></h4>
+      </div>
       <div class="activities-card-text p-2">
-                    <p>Age Group: {{ activity.activity_age }}</p>
-                    <p>Developmental Area: {{ activity.activity_developmental }}</p>
-                    <p>Activity Type: {{ activity.activity_type }}</p>
-                    <p>Occasion: {{ activity.occasion }}</p>
-                    <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
-                    <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
-                  </div>
-                  <!-- Checks if the user has created the activity -->
-                  {% if session.user and activity.activity_createdby == session["user"] %}
-                  <br>
-                  <!-- Edit button -->
-                  <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
-                  <!-- Delete button -->
-                  <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
-                {% endif %}
-                {% if session.user and activity.activity_createdby != session["user"] %}
-                <!-- Checks if the activity is in activities -->
-                {% for favourite in favourites if favourite.activity_id == activity.id and session["user"] == favourite.username %}
-                <!-- Remove from favourites button -->          
-                  <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
-                {% else %}
-                <!-- Add to favourites button -->
-                  <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>  
-                {% endfor %}
-                {% endif %}
-              </div>
-            </div>
-          </div>
+        <p>Age Group: {{ activity.activity_age }}</p>
+        <p>Developmental Area: {{ activity.activity_developmental }}</p>
+        <p>Activity Type: {{ activity.activity_type }}</p>
+        <p>Occasion: {{ activity.occasion }}</p>
+        <p><strong>Created by: </strong>{{ activity.activity_createdby }}</p>
+        <a href="{{ url_for('full_activity', activity_id=activity.id) }}" class="btn instructions-button btn-primary"><strong>See Instructions</strong></a>
+      </div>
+      <!-- Checks if the user has created the activity -->
+      {% if session.user and activity.activity_createdby == session["user"] %}
+      <br>
+      <!-- Edit button -->
+      <a href="{{ url_for('edit_activity', activity_id=activity.id) }}" class="btn btn-success card-link">Edit</a>
+      <!-- Delete button -->
+      <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ activity.id }}">Delete</a>
+      {% endif %}
+      {% if session.user and activity.activity_createdby != session["user"] %}
+      <!-- Checks if the activity is in activities -->
+        {% for favourite in favourites if favourite.activity_id == activity.id and session["user"] == favourite.username %}
+        <!-- Remove from favourites button -->          
+        <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
+        {% else %}
+        <!-- Add to favourites button -->
+        <form method="POST" action="{{ url_for('add_favourite', activity_id=activity.id) }}"><button type="submit" class="btn btn-success card-link">Add to favourites</button></form>  
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
 
-    <!-- Bootstrap Modal-->
-    <div class="modal fade" id="modal-{{ activity.id }}" tabindex="-1" aria-labelledby="deleteModalLabel-{{ activity.id }}" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content delete-modal">
-          <div class="modal-header">
-            <h4 class="modal-title" id="deleteModalLabel-{{ activity.id }}">Are you sure you want to delete this activity?</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-             <!-- Deletes favourite from the DB -->
-            <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">Delete</a>
-            <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
-          </div>
-        </div>
+<!-- Bootstrap Modal-->
+<div class="modal fade" id="modal-{{ activity.id }}" tabindex="-1" aria-labelledby="deleteModalLabel-{{ activity.id }}" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content delete-modal">
+      <div class="modal-header">
+        <h4 class="modal-title" id="deleteModalLabel-{{ activity.id }}">Are you sure you want to delete this activity?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Deletes favourite from the DB -->
+        <a class="btn btn-danger" href="{{ url_for('delete_activity', activity_id=activity.id) }}">Delete</a>
+        <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
       </div>
     </div>
+  </div>
+</div>
     
-        {% endfor %}
-        </div>
-
-
-
+      {% endfor %}
+</div>
 
 {% endblock %}

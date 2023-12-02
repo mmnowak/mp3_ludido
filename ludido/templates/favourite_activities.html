@@ -36,21 +36,21 @@
           {% endfor %}
         </div>
 
-    <!-- Bootstrap Modal-->
-    <div class="modal fade" id="unfavourite-all" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered text-center">
-        <div class="modal-content delete-modal">
-          <div class="modal-header">
-            <h4 class="modal-title">Are you sure you want to do this?</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <!-- Unfavourite all button -->
-            <a class="btn btn-danger" href="{{ url_for('unfavourite_all', username=session['user']) }}">Unfavourite All</a>
-            <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
-          </div>
-        </div>
+<!-- Bootstrap Modal-->
+<div class="modal fade" id="unfavourite-all" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered text-center">
+    <div class="modal-content delete-modal">
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure you want to do this?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Unfavourite all button -->
+        <a class="btn btn-danger" href="{{ url_for('unfavourite_all', username=session['user']) }}">Unfavourite All</a>
+        <a class="btn btn-warning" data-bs-dismiss="modal">Cancel</a>
       </div>
     </div>
+  </div>
+</div>
 
 {% endblock %}
