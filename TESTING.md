@@ -597,7 +597,7 @@ While attempting to deploy to Heroku for the first time, the following error occ
 After consulting with the Code Istitute Tutoring team and trying out a number of solutions, the issue was fixed by downgrading Python via the following method:
 
 1. Create a runtime.txt file;
-2. Input python-3.9.18 into the runtime.txt file
+2. Input `python-3.9.18` into the runtime.txt file
 
 **Favourites bug**
 
