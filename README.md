@@ -21,6 +21,8 @@
         3. [Imagery](#imagery)
         4. [Colour scheme](#colour-scheme)
 3. [Features](#features)
+    1. [Existing Features](#existing-features)
+    2. [Future Features](#future-features)
 4. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks and Tools](#frameworks-and-tools)
@@ -310,6 +312,8 @@ The colour orange was chosen as according to the colour theory, it is associated
 ![Colour palette](documentation/readme/color-palette.png)
 
 ## Features
+
+### Existing Features
 
 ### All Pages
 
@@ -762,6 +766,19 @@ User stories covered: 2, 7.
 
 User stories covered: 4.
 
+### Future Features
+
+In the future development, I would like to add the following features:
+
+* An option to filter the activities by Activity Type and Developmental Area.
+* An option to add more than one age group and occasion to an activity.
+* A search feature.
+* An option to add a source link and images to an activity.
+* An edit/delete user account functionality.
+* A reset password functionality.
+* A feedback form.
+* Improved formatting of the Instruction section on the Full Activity page.
+
 ## Technologies Used
 
 ### Languages
@@ -877,3 +894,8 @@ The instructions for example activities featured on the page are from Pinterest 
 17. Click 'Open App'.
 
 ## Acknowledgements
+
+I would like to express my gratitude to:
+
+* My mentor, Mo Shami, for his guidance, support and advice;
+* My friends and family for kindly testing the website on their devices.
