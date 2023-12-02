@@ -33,7 +33,7 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 
 See results:
 
-* [Index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fludido-ba4a496efb9b.herokuapp.com%2Findex)
+* [Index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fludido-ba4a496efb9b.herokuapp.com%2F)
 * [Activities page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fludido-ba4a496efb9b.herokuapp.com%2Factivities)
 * [Add Activity page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fludido-ba4a496efb9b.herokuapp.com%2Fadd_activity)
 * [Edit Activity page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fludido-ba4a496efb9b.herokuapp.com%2Fedit_activity%2F5)
@@ -72,7 +72,7 @@ There were no errors. The alerts mostly related to skipped heading levels.
 
 See results:
 
-* [Index Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/index)
+* [Index Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/)
 
 * [Activities Page](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities)
 
@@ -617,11 +617,11 @@ The website was tested on following devices:
 
 | **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
 | --- | --- | --- | --- | --- |
-| My Profile button | Opens the Profile page when clicked | Click on the button | The Profile page opens | Pass |
+| My Profile button | Opens the Profile page when clicked | Click on the button | The Profile page opens ![my profile button](documentation/testing/feature-testing/myprofilebutton.gif) | Pass |
 | My Profile button | Changes colour on hover | Hover over the button | The colour changes | Pass |
-| Unfavourite All button | Remove all the user's favourites from the DB | Click on the button | All the favourites are removed | Pass |
+| Unfavourite All button | Remove all the user's favourites from the DB | Click on the button | All the favourites are removed ![unfavourite all](documentation/testing/feature-testing/unfavouriteallbutton.gif) | Pass |
 | Unfavourite All button | Changes colour on hover | Hover over the button | The colour changes | Pass |
-| Favourite Activity cards | Display activities favourited by the user | Load the page | The favourite activities are displayed | Pass |
+| Favourite Activity cards | Display activities favourited by the user | Load the page | The favourite activities are displayed ![fav activities](documentation/testing/user-stories/us15b.gif) | Pass |
 | See Instructions buttons | Open the Full Activity page | Click on the button | Opens the Full Activity page | Pass |
 | Remove from Favourites button | Removes the activity from the user's favourites | Click on the button | Removes the activity from favourites | Pass |
 
