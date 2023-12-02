@@ -33,7 +33,7 @@
                 <!-- Checks if the activity is in user's favourites-->
                 {% if session.user and activity.activity_createdby != session["user"] %}
                 <br>
-                {% for favourite in favourites if favourite.activity_id == activity.id %}
+                {% for favourite in favourites if favourite.activity_id == activity.id and session["user"] == favourite.username %}
                 <!-- Remove from Favourites button -->          
                   <a href="{{ url_for('remove_favourite', activity_id=activity.id) }}" class="btn btn-danger">Remove from favourites</a>    
                 {% else %}

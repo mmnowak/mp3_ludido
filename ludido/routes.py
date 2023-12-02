@@ -8,9 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/")
 def index():
-    """
-    Function to render the index html page
-    """
+    # Function to render the index html page
     return render_template("index.html")
 
 
@@ -34,21 +32,15 @@ def add_activity():
     the chosen name already exists, then add the new activity to the DB
     """
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to add an activity!")
         return redirect(url_for("login"))
 
-    """
-    Loads occasions added to the DB by users and inserts into the form
-    """
+    # Loads occasions added to the DB by users and inserts into the form
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
 
     if request.method == "POST":
-        """
-        Checks if an activity with the name inputed already exists
-        """
+        # Checks if an activity with the name inputed already exists
         existing_activity = \
             Activity.query.filter(Activity.activity_name ==
                                   request.form.get("activity_name")).all()
@@ -56,9 +48,7 @@ def add_activity():
             flash("An activity with this name already exists!")
             return redirect(url_for("add_activity"))
 
-        """
-        Adds a new activity to the DB
-        """
+        # Adds a new activity to the DB
         activity = Activity(
             activity_name=request.form.get("activity_name"),
             activity_description=request.form.get("activity_description"),
@@ -78,9 +68,7 @@ def add_activity():
 
 @app.route("/full_activity/<int:activity_id>")
 def full_activity(activity_id):
-    """
-    Renders a page displaying all the activity details
-    """
+    # Renders a page displaying all the activity details
     activity = Activity.query.get_or_404(activity_id)
     return render_template("full_activity.html", activity=activity)
 
@@ -95,24 +83,19 @@ def add_favourite(activity_id):
     activity = Activity.query.get_or_404(activity_id)
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to add to favourites!")
         return render_template("full_activity.html", activity=activity)
 
     if request.method == "POST":
-        """
-        Checks if the activity is already in favourites
-        """
+        # Checks if the activity is already in favourites
         is_favourite = Favourite.query.filter(Favourite.activity_id
-                                              == activity_id).first()
-        if is_favourite:
+                                              == activity.id).all()
+        if is_favourite and session["user"] == Favourite.username:
             flash("Already in favourites!")
             return redirect(url_for("activities"))
         else:
             # Adds a new favourite activity to the DB
-            
             favourite = Favourite(
                 username=session.get("user"),
                 activity_id=activity_id
@@ -137,17 +120,13 @@ def remove_favourite(activity_id):
     favourites = list(Favourite.query.order_by(Favourite.username).all())
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to do this!")
         return render_template("full_activity.html", activity=activity)
     else:
         username = session["user"]
 
-    """
-    Removes the favourite activity from the DB for the user
-    """
+    # Removes the favourite activity from the DB for the user
     for favourite in favourites:
         if username == favourite.username and \
          activity.id == favourite.activity_id:
@@ -169,9 +148,7 @@ def unfavourite_all(username):
     remove all activities from their favourites
     """
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to do this!")
         return redirect(url_for("login"))
     else:
@@ -181,9 +158,7 @@ def unfavourite_all(username):
     favourites = list(Favourite.query.order_by(Favourite.username).all())
 
     for favourite in favourites:
-        """
-        Removes all favourite activities from the DB for the ser
-        """
+        # Removes all favourite activities from the DB for the ser
         if username == favourite.username:
             # removes all user favourites from db
             db.session.delete(favourite)
@@ -195,14 +170,10 @@ def unfavourite_all(username):
 
 @app.route("/favourite-activities/<username>")
 def favourite_activities(username):
-    """
-    Displays favourite activities for the user
-    """
+    # Displays favourite activities for the user
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to see your favourites!")
         return redirect(url_for("activities"))
     else:
@@ -217,40 +188,32 @@ def favourite_activities(username):
 
 @app.route("/edit_activity/<int:activity_id>", methods=["GET", "POST"])
 def edit_activity(activity_id):
-    """
-    Function that allows user edit the activities they have added
-    """
+    # Function that allows user edit the activities they have added
+
     activity = Activity.query.get_or_404(activity_id)
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to edit an activity!")
         return redirect(url_for("login"))
 
     if activity.activity_createdby != session["user"]:
-        """
-        Checks if the user is trying to edit their own activity
-        """
+        # Checks if the user is trying to edit their own activity
         flash("You can only edit your own activities!")
         return redirect(url_for("activities"))
 
     if request.method == "POST":
-        """
-        Checks if an activity with the name inputed already exists
-        """
+        # Checks if an activity with the name inputed already exists
         existing_activity = \
             Activity.query.filter(Activity.activity_name ==
                                   request.form.get("activity_name")).all()
-        if existing_activity:
+        if (existing_activity and
+           request.form.get("activity_name") != activity.activity_name):
             flash("An activity with this name already exists!")
-            return redirect(url_for("edit_activity"))
+            return redirect(url_for('edit_activity', activity_id=activity_id))
 
-        """
-        Handle the form submission with the updated data
-        """
+        # Handle the form submission with the updated data
         activity.activity_name = request.form.get("activity_name"),
         activity.activity_description = \
             request.form.get("activity_description"),
@@ -269,20 +232,15 @@ def edit_activity(activity_id):
 
 @app.route("/delete_activity/<int:activity_id>")
 def delete_activity(activity_id):
-    """
-    Function that lets user delete activity they have created
-    """
+    # Function that lets user delete activity they have created
     activity = Activity.query.get_or_404(activity_id)
+
     if activity.activity_createdby != session["user"]:
-        """
-        Checks if the user is trying to delete their own activity
-        """
+        # Checks if the user is trying to delete their own activity
         flash("You can only delete your own activities!")
         return redirect(url_for("activities"))
     else:
-        """
-        Delete the activity from the DB
-        """
+        # Delete the activity from the DB
         db.session.delete(activity)
         db.session.commit()
         flash("You deleted the activity!")
@@ -291,9 +249,8 @@ def delete_activity(activity_id):
 
 @app.route("/occasions")
 def occasions():
-    """
-    Displays all the occasions added by users
-    """
+    # Displays all the occasions added by users
+
     occasions = list(Occasion.query.order_by(Occasion.occasion_name).all())
     return render_template("occasions.html", occasions=occasions)
 
@@ -307,16 +264,12 @@ def add_occasion():
     """
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to add an occasion!")
         return redirect(url_for("login"))
 
     if request.method == "POST":
-        """
-        Checks if the name chosen already exists
-        """
+        # Checks if the name chosen already exists
         existing_occasion = (
             Occasion.query
             .filter(Occasion.occasion_name ==
@@ -328,9 +281,7 @@ def add_occasion():
             flash("An occasion with this name already exists!")
             return redirect(url_for("add_occasion"))
 
-        """
-        Handle the form submission and adds a new occasion to the DB
-        """
+        # Handle the form submission and adds a new occasion to the DB
         occasion = Occasion(
             occasion_name=request.form.get("occasion_name"),
             occasion_createdby=session.get("user"),)
@@ -351,23 +302,30 @@ def edit_occasion(occasion_id):
     occasion = Occasion.query.get_or_404(occasion_id)
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to edit an occasion!")
         return redirect(url_for("login"))
 
     if occasion.occasion_createdby != session["user"]:
-        """
-        Checks if the user is editing their own occasion
-        """
+        # Checks if the user is editing their own occasion
         flash("You can only edit your own occasions!")
         return redirect(url_for("occasions"))
 
     if request.method == "POST":
-        """
-        Handles the form submission and amends the occasion in the DB
-        """
+        # Checks if the name chosen already exists
+        existing_occasion = (
+            Occasion.query
+            .filter(Occasion.occasion_name ==
+                    request.form.get("occasion_name"))
+            .all()
+        )
+
+        if (existing_occasion
+           and request.form.get("occasion_name") != occasion.occasion_name):
+            flash("An occasion with this name already exists!")
+            return redirect(url_for('add_occasion', occasion_id=occasion_id))
+
+        # Handles the form submission and amends the occasion in the DB
         occasion.occasion_name = request.form.get("occasion_name")
         db.session.commit()
         flash("You edited the occasion!")
@@ -385,16 +343,12 @@ def delete_occasion(occasion_id):
     occasion = Occasion.query.get_or_404(occasion_id)
 
     if "user" not in session:
-        """
-        Checks if the user is logged in
-        """
+        # Checks if the user is logged in
         flash("You need to log in to delete an occasion!")
         return redirect(url_for("login"))
 
     if occasion.occasion_createdby != session["user"]:
-        """
-        Checks if the user is deleting their own occasion
-        """
+        # Checks if the user is deleting their own occasion
         flash("You can only delete your own occasions!")
         return redirect(url_for("occasions"))
     else:
