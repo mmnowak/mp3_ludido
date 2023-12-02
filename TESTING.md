@@ -10,7 +10,7 @@ This is the testing documentation for the LUDIDO website. For the README file, [
 
 ## Table of Contents
 
-1. [Automated Testing](#automatic-testing)
+1. [Validation](#validation)
     1. [HTML Validation](#html-validation)
     2. [CSS Validation](#css-validation)
     3. [Python Linting](#python-linting)
@@ -24,11 +24,11 @@ This is the testing documentation for the LUDIDO website. For the README file, [
     1. [Resolved](#resolved)
     2. [Unresolved](#unresolved)
 
-## Automated Testing
+## Validation
 
 ### HTML Validation
 
-The W3C Markup Validation Service was used to validate the HTML of the website. All errors found were corrected, currently there is no errors.
+The W3C Markup Validation Service was used to validate the HTML of the website. All errors found were corrected, currently there are no errors.
 
 See results:
 
@@ -54,7 +54,7 @@ The W3C Jigsaw CSS Validation Service was used to validate the css file for the 
 
 ### Python Linting
 
-All python files were run through the [Python linter](https://pep8ci.herokuapp.com/). There were a number of errors coming from either lines being too long, over/under indentation and whitespace. The errors have since been corrected.
+All python files were run through the [Python linter](https://pep8ci.herokuapp.com/). There were a number of errors coming from either the lines being too long, over/under indentation and whitespace. The errors have since been corrected.
 
 **routes.py file:**
 
@@ -66,7 +66,7 @@ All python files were run through the [Python linter](https://pep8ci.herokuapp.c
 
 ### Accessibility Testing
 
-The pages were ran through the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/).
+The pages were run through the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/).
 There were no errors. The alerts mostly related to skipped heading levels. 
 
 See results:

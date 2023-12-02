@@ -116,16 +116,16 @@ Target audience of this website are people working with children, i.e. playworke
 * Logged in Users
 8.  Activities Page with Add Activity link and edit/delete links for own Activities
 9.  Add Activity form
-10. Edit Activity form and Delete Activity functionallity for Activities created by User
+10. Edit Activity form and Delete Activity functionallity for Activities created by the user
 11. Occasions Page with Add Occasion link and edit/delete links for own Occasions
 12. Add Occasion form
-13. Edit Occasion form and Delete Occasion functionallity for Occasions created by User
-14. Profile displaying Activities and Occasions created by User
+13. Edit Occasion form and Delete Occasion functionallity for Occasions created by the user
+14. Profile displaying Activities and Occasions created by the user
 15. Favourites Page with functionallity to delete favourites
 
 ### Structure Plane
 
-Based on the User stories and planned features, I created a website flowchart:
+Based on the the user stories and planned features, I created a website flowchart:
 
 ![Flowchart](documentation/readme/site-flowchart.png)
 
@@ -134,10 +134,10 @@ The website structure targets the user stories as follows:
 User Story 2:  I want to be able to navigate the site easily and intuitively.
 
 * Navigation bar to be displayed on all pages with relevant nav links, based on whether the user is logged in or not
-* User is led through site in an intuitive way
+* The user is led through site in an intuitive way
     * Register page contains a link to Log in Page and vice versa
-    * Logging in leads to user profile
-    * Full Activity page contains links to return to Activities Page or Favourites if user is logged in
+    * Logging in leads to the user profile
+    * Full Activity page contains links to return to Activities Page or Favourites if the user is logged in
     * Occasion and Ages pages lead to filtered Activities page
 
 User Story 3:	I want to be able to view the website on any device.
@@ -194,18 +194,18 @@ User Story 11:	 I want to be able to add, edit or delete my own occasions.
 User Story 12:	 I want to be able to add, edit or delete my own activities.
 
 * Activities Page contains a link to Add Activity Page
-* Add Activity page contains a form allowing user to add their own activities easily
+* Add Activity page contains a form allowing the user to add their own activities easily
 * Upon submission the created Activity will appear on Activity Page, User Profile Page and on the relevant Occasion and Age Group pages
 * Activity cards displayed on Activity Page, Activity by Occasion Page, Activities by Age Page and in User Profile feature a button to Edit Activity Page
 * Edit Activity page contains a form
 * Upon submission the user is notified they have successfully edited the Activity
-* Activity cards displayed on Activity Page, Activity by Occasion Page, Activities by Age Page and in User Profile feature a button to trigger the Delete Activity function
+* Activity cards displayed on Activity Page, Activity by Occasion Page, Activities by Age Page and in the User Profile feature a button to trigger the Delete Activity function
 * When the delete button is clicked, a modal appears to ensure the user intends to delete the Activity
 * The user is notified they have successfully deleted the Activity
 
 User Story 13:	 I want to easily locate occasions and activities I have created.
 
-* Profile page contains sections featuring occasions and activities created by user
+* Profile page contains sections featuring occasions and activities created by the user
 
 User Story 14:	 I want to be able to add existing activities to favourites.
 
@@ -411,11 +411,11 @@ User stories covered: 2, 8, 13.
 
 * Three containers of images and text which describe some of the website's features;
 * The containers are clickable links and increase in size on hover;
-* The first container informs user they can add their own occasion or filter activities by existing occasions.
+* The first container informs the user they can add their own occasion or filter activities by existing occasions.
 * It leads to the Occasions page when clicked.
-* The second container informs user they can filter activities by age and learn more about play at each development stage.
+* The second container informs the user they can filter activities by age and learn more about play at each development stage.
 * It leads to the Ages page when clicked.
-* The third container informs user they can add activities to favourites if they have an account.
+* The third container informs the user they can add activities to favourites if they have an account.
 * It leads to the Favourites page if the user is logged in and the Register page if they are not logged in.
 * The images used match the imagery used in the header as well as the colour scheme.
 
@@ -481,7 +481,7 @@ User stories covered: 12.
 **Add to favourites button**
 
 * Displayed if the user is logged in and is not the author of the activity.
-* Adds the activity to user's favourites when clicked.
+* Adds the activity to the user's favourites when clicked.
 
 User stories covered: 14.
 
@@ -490,7 +490,7 @@ User stories covered: 14.
 **Removed from favourites button**
 
 * Displayed if the user is logged in, is not the author of the activity and has previously added the activity to their favourites.
-* Removes the activity from user's favourites when clicked.
+* Removes the activity from the user's favourites when clicked.
 
 User stories covered: 16.
 
@@ -534,7 +534,7 @@ User stories covered: 12.
 **'Edit Activity' button**
 
 * Amends the activity details in the Database.
-* After editing the activity, the action is confirmed to user via flash message.
+* After editing the activity, the action is confirmed to the user via flash message.
 
 User stories covered: 12.
 
@@ -582,7 +582,7 @@ User stories covered: 11.
 **Add Occasion form**
 
 * Contains an Occasion Name field.
-* The occasion name must be unique; if the chosen name already exists, user is notified via flash message.
+* The occasion name must be unique; if the chosen name already exists, the user is notified via flash message.
 * The field is required.
 
 User stories covered: 11.
@@ -725,7 +725,7 @@ User stories covered: 12, 13.
 * Contains three fields: Username, Password and Confirm password. All fields are required.
 * The user can only registered if the passwords match.
 * The passwords are hashed for security.
-* The username needs to be unique; if the username is already taken, user is notified via flash message.
+* The username needs to be unique; if the username is already taken, the user is notified via flash message.
 
 User stories covered: 7.
 
@@ -761,15 +761,15 @@ User stories covered: 8
 **'Log in' button**
 
 * When clicked:
-    * If the username does not match an existing account, user is notified via a flash message.
-    * If the password does not match the username, user is notified via a flash message.
+    * If the username does not match an existing account, the user is notified via a flash message.
+    * If the password does not match the username, the user is notified via a flash message.
     * If the username and password do match, the user is logged in and redirected to the Profile Page.
 
 ![Log in button](documentation/readme/features/login-button.png)
 
 **'Register Here' link**
 
-* Redirects user to the Register page if they do not have an account yet.
+* Redirects the user to the Register page if they do not have an account yet.
 
 User stories covered: 2, 7.
 
