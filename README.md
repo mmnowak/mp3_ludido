@@ -228,6 +228,37 @@ User Story 15:  I want to be able to easily view my favourite activities.
 
 ![DBSchema](documentation/readme/dbschema.png)
 
+#### CRUD
+
+CRUD has been implemented as following:
+
+1. Create
+
+* Logged in users can create their own activities.
+* Logged in users can create their own occasions.
+
+2. Read
+
+* Activities and occasions added by users can be easily viewed.
+* Users can filter existing activities by occasions.
+* Users can filter existing activities by age groups.
+* Logged in users can see activities and occasions they have created on their profile.
+
+2. Update
+
+* Logged in users can easily edit their own occasions.
+* Logged in users can easily edit their own activities.
+* Edit activity functionallity can be accessed from the Activities page, Activities by Occasions page, Activities by Age page and Profile Page.
+
+3. Delete
+
+* Logged in users can delete their own occasions.
+* Logged in users can delete their own activities.
+* Delete activity functionallity can be accessed from the Activities page, Activities by Occasions page, Activities by Age page and Profile Page.
+* After initially pressing the Delete button, a modal pops up asking the user if they truly intend to delete their activity or occasions.
+
+Executing Create, Update and Delete functionallity results in an immediate feedback to the user via flash messages.
+
 ### Surface Plane
 
 #### Wireframes
