@@ -487,7 +487,7 @@ User stories covered: 14.
 
 ![Add to favourites button](documentation/readme/features/fav-button.png)
 
-**Removed from favourites button**
+**Remove from favourites button**
 
 * Displayed if the user is logged in, is not the author of the activity and has previously added the activity to their favourites.
 * Removes the activity from the user's favourites when clicked.
@@ -717,6 +717,36 @@ User stories covered: 11, 13.
 User stories covered: 12, 13.
 
 ![My Activities cards](documentation/readme/features/profile-activities.png)
+
+### Favourites page
+
+**My Profile button**
+
+* Leads to the Profile page when clicked.
+* Changes colour on hover.
+
+User Stories covered: 2.
+
+![my profile button](documentation/readme/features/myprofilebutton1.png)
+
+**Unfavourite All button**
+
+* Removes all the user's favourites.
+* Changes colour on hover.
+
+User Stories covered: 16.
+
+![unfavourite button](documentation/readme/features/unfavouriteallbutton.png)
+
+**Favourite Activity cards** 
+
+* Display activities favourited by the user.
+* Contain a 'See Instructions' button.
+* Contain a 'Remove from favourites button.
+
+User Stories covered: 15, 16.
+
+![favourite cards](documentation/readme/features/favpage.png)
 
 ### Register page
 
