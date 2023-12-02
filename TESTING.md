@@ -15,6 +15,7 @@ This is the testing documentation for the LUDIDO website. For the README file, [
     2. [CSS Validation](#css-validation)
     3. [Python Linting](#python-linting)
     4. [Accessibility Testing](#accessibility-testing)
+    5. [Performance Testing](#performance-testing)
 2. [Manual Testing](#manual-testing)
     1. [Device Testing](#device-testing)
     2. [Browser compatibility](#browser-compatibility)
@@ -91,6 +92,65 @@ See results:
 
 * [Activities by Age](https://wave.webaim.org/report#/https://ludido-ba4a496efb9b.herokuapp.com/activities_by_age/3)
 
+### Performance Testing
+
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. All pages have passed the audit.
+
+**Index Page**
+
+![Index Page](documentation/testing/lighthouse/lindex.png)
+
+**Activities Page**
+
+![Activities Page](documentation/testing/lighthouse/lactivities.png)
+
+**Add Activity Page**
+
+![Add Activity Page](documentation/testing/lighthouse/laddactivity.png)
+
+**Edit Activity Page**
+
+![Edit Activity Page](documentation/testing/lighthouse/leditactivity.png)
+
+**Occasions Page**
+
+![Occasions Page](documentation/testing/lighthouse/loccasions.png)
+
+**Add Occasion Page**
+
+![Add Occasion Page](documentation/testing/lighthouse/laddoccasion.png)
+
+**Edit Occasion Page**
+
+![Edit Occasion Page](documentation/testing/lighthouse/leditoccasion.png)
+
+**Activities by Occasion Page**
+
+![Activities by Occasion Page](documentation/testing/lighthouse/lactbyoccasion.png)
+
+**Ages Page**
+
+![Ages Page](documentation/testing/lighthouse/lages.png)
+
+**Activities by Age Page**
+
+![Activities by Age Page](documentation/testing/lighthouse/lactbyage.png)
+
+**Profile Page**
+
+![Profile Page](documentation/testing/lighthouse/lprofile.png)
+
+**Favourites Page**
+
+![Favourites Page](documentation/testing/lighthouse/lfaves.png)
+
+**Log in Page**
+
+![Log in Page](documentation/testing/lighthouse/llogin.png)
+
+**Register Page**
+
+![Register Page](documentation/testing/lighthouse/lregister.png)
 
 ## Manual Testing
 
