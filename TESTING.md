@@ -556,7 +556,7 @@ The website was tested on following devices:
 
 | **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
 | --- | --- | --- | --- | --- |
-| Activity cards | Display activities for the correct occasion | Load the page | Correct activities appear | Pass |
+| Activity cards | Display activities for the correct occasion | Load the page | Correct activities appear ![activity cards](documentation/testing/feature-testing/actbyoccasioncards.gif) | Pass |
 | Activity Cards | Contain Edit & Delete buttons if created by the user | See the activity added | Buttons displayed correctly | Pass |
 | Activity Cards | Contain Add to/Remove from Favourites button if created by somebody else | Load the page | Button displayed correctly | Pass |
 | See Instructions button | Lead to the correct Full Activity page | Click on the button | Correct pages load | Pass |
@@ -582,7 +582,7 @@ The website was tested on following devices:
 | --- | --- | --- | --- | --- |
 | Age group text div | Display the correct image | Load each page | Correct image appears | Pass |
 | Age group text div | Display the correct text | Load each page | Correct text appears | Pass |
-| Activity cards | Display activities for the correct age group | Load the page | Correct activities appear | Pass |
+| Activity cards | Display activities for the correct age group | Load the page | Correct activities appear ![activity cards](documentation/testing/feature-testing/actbyagecards.gif) | Pass |
 | Activity Cards | Contain Edit & Delete buttons if created by the user | See the activity added | Buttons displayed correctly | Pass |
 | Activity Cards | Contain Add to/Remove from Favourites button if created by somebody else | Load the page | Button displayed correctly | Pass |
 | See Instructions button | Lead to the correct Full Activity page | Click on the button | Correct pages load | Pass |
@@ -600,9 +600,9 @@ The website was tested on following devices:
 | User name | Display a capitalized username of the user | Log in and load the profile | Correct name appears | Pass |
 | My Favourites button | Lead to the Favourites page when clicked | Click on the button | The Favourites page loads ![My favourites](documentation/testing/user-stories/us15c.gif) | Pass |
 | My Favourites button | Changes colour on hover | Hover over the button | The button changes colour | Pass |
-| My Occasions dropdown | Displays the occasions added by the user when clicked | Click on the button ![Occasions](documentation/testing/user-stories/us13a.gif) | The correct occasions appear | Pass |
+| My Occasions dropdown | Displays the occasions added by the user when clicked | Click on the button | The correct occasions appear ![Occasions](documentation/testing/user-stories/us13a.gif) | Pass |
 | My Occasions dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
-| My Activities dropdown | Displays the activities added by the user when clicked | Click on the button ![Activities](documentation/testing/user-stories/us13b.gif) | The correct activities appear | Pass |
+| My Activities dropdown | Displays the activities added by the user when clicked | Click on the button | The correct activities appear ![Activities](documentation/testing/user-stories/us13b.gif) | Pass |
 | My Activities dropdown | Changes colour on hover | Hover over the button | The button changes colour | Pass |
 | My Activities cards | Display the Activities created by the user | Click on the button | The correct activities appear | Pass |
 | Edit button | Lead to the Edit Activity page | Click on the button | Correct page loads | Pass |
@@ -631,10 +631,10 @@ The website was tested on following devices:
 | **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
 | --- | --- | --- | --- | --- |
 | Register form | Contains the correct fields | Load the page | Correct form fields appear | Pass |
-| Register form | The passwords must match to register | Input different passwords in the Password and Confirm Password fields | Unable to register | Pass |
+| Register form | The passwords must match to register | Input different passwords in the Password and Confirm Password fields | Unable to register ![incorrect passwords](documentation/testing/feature-testing/passwordsdontmatch.gif) | Pass |
 | Register form | The passwords are hashed | Type in passwords | Hashed upon registration | Pass |
-| Register form | The username must be unique | Atempt to register as 'admin' | Unable to register | Pass |
-| Register button | Adds a new user to the user table | Register as a new user | Username and password added to the DB | Pass |
+| Register form | The username must be unique | Atempt to register as 'admin' | Unable to register ![incorrect username](documentation/testing/feature-testing/usernametaken.gif) | Pass |
+| Register button | Adds a new user to the user table | Register as a new user | Username and password added to the DB ![registered](documentation/testing/feature-testing/registered.gif) | Pass |
 | Log in link | Redirects the user to the Log in page | Click on the link | The Log in page loads | Pass |
 
 **Log in Page**
@@ -642,9 +642,9 @@ The website was tested on following devices:
 | **Feature** | **Expected Outcome** | **Testing Performed** | **Result** | **Pass/Fail** |
 | --- | --- | --- | --- | --- |
 | Log in form | Contains the correct fields | Load the page | Correct form fields appear | Pass |
-| Log in form | The username and the password must match | Try to log in with a wrong password | Unable to log in | Pass |
-| Log in form | The username must exist | Try to log in with a non-existing username | Unable to log in | Pass |
-| Log in button | Loads the profile page if both fields correct | Log in | The profile page loads | Pass |
+| Log in form | The username and the password must match | Try to log in with a wrong password | Unable to log in ![incorrect password](documentation/testing/feature-testing/incorrect-password.gif) | Pass |
+| Log in form | The username must exist | Try to log in with a non-existing username | Unable to log in ![incorrect username](documentation/testing/feature-testing/incorrect-username.gif) | Pass |
+| Log in button | Loads the profile page if both fields correct | Log in | The profile page loads ![login](documentation/testing/feature-testing/loggedin.gif) | Pass |
 | Register link | Redirects the user to the Register page | Click on the link | The Register page loads | Pass |
 
 **Error pages**
@@ -653,7 +653,7 @@ The website was tested on following devices:
 | --- | --- | --- | --- | --- |
 | Error image | Displays a relevant error image | Trigger an error | The correct image appears | Pass |
 | Error text | Displays an error text | Trigger an error | The correct text appears | Pass |
-| Go back button | Redirects the user to the Index page when clicked | Click on the button | The Index page loads | Pass |
+| Go back button | Redirects the user to the Index page when clicked | Click on the button | The Index page loads ![error](documentation/testing/feature-testing/error.gif) | Pass |
 
 ## Bugs
 
