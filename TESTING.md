@@ -10,22 +10,19 @@ This is the testing documentation for the LUDIDO website. For the README file, [
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Automated Testing](#automatic-testing)
+1. [Automated Testing](#automatic-testing)
     1. [HTML Validation](#html-validation)
     2. [CSS Validation](#css-validation)
     3. [Python Linting](#python-linting)
     4. [Accessibility Testing](#accessibility-testing)
-3. [Manual Testing](#manual-testing)
+2. [Manual Testing](#manual-testing)
     1. [Device Testing](#device-testing)
     2. [Browser compatibility](#browser-compatibility)
     3. [Testing User Stories](#testing-user-stories)
     4. [Feature Testing](#feature-testing)
-4. [Bugs](#bugs)
+3. [Bugs](#bugs)
     1. [Resolved](#resolved)
     2. [Unresolved](#unresolved)
-
-## Introduction
 
 ## Automated Testing
 
@@ -631,4 +628,3 @@ After:
 When the user is first redirected to their profile after logging in, the profile 'My Activities' and 'My Occasions' dropdowns do not work.
 
 To improve user experience, I added a flash message telling the user to click on their profile name to fully load their profile, however I would like to resolve this in the future.
-

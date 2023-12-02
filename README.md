@@ -778,6 +778,7 @@ In the future development, I would like to add the following features:
 * A reset password functionality.
 * A feedback form.
 * Improved formatting of the Instruction section on the Full Activity page.
+* Return back to the Activities by Age or Activities by Occasion after clicking edit, delete, Add to or Remove from Favourites buttons on these pages.
 
 ## Technologies Used
 
