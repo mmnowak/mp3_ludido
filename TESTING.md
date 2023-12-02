@@ -589,5 +589,46 @@ The website was tested on following devices:
 
 ### Resolved
 
+**Heroku deployment**
+
+While attempting to deploy to Heroku for the first time, the following error occured:
+"ERROR: Could not build wheels for greenlet, which is required to install pyproject.toml-based projects"
+
+After consulting with the Code Istitute Tutoring team and trying out a number of solutions, the issue was fixed by downgrading Python via the following method:
+
+1. Create a runtime.txt file;
+2. Input python-3.9.18 into the runtime.txt file
+
+**Favourites bug**
+
+During some final test, it appeared that upon registration, wrong activities were shown as in favourites, and were impossible to remove. For example, a "Remove from favourites" button would be displayed for activities that user has not added to the favourites. These activities were not shown on the Favourites page, yet clicking "Unfavourite All" and "Remove from favourites" button would not fix it.
+
+I have resolved the bug by changing the following files as follows:
+
+* routes.py
+
+Before:
+
+![Python Error before](documentation/testing/faverrorbefore1.png)
+
+After:
+
+![Python Error after](documentation/testing/faverrorafter1.png)
+
+* activities.html, activities_by_age.html, activities_by_occasion:
+
+Before:
+
+![HTML Error before](documentation/testing/faverrorbefore2.png)
+
+After:
+
+![HTML Error after](documentation/testing/faverrorafter2.png)
+
+
 ### Unresolved
+
+When the user is first redirected to their profile after logging in, the profile 'My Activities' and 'My Occasions' dropdowns do not work.
+
+To improve user experience, I added a flash message telling the user to click on their profile name to fully load their profile, however I would like to resolve this in the future.
 
